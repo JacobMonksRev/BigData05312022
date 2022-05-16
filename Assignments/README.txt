@@ -1,3 +1,5 @@
-This is for assignment submissions.
+This is where assignments will be posted.
 
-BE SURE TO ONLY USE YOUR OWN BRANCH.
+When you are finished with any assignment, please email me at jacob.monks@revature.com.
+-If it is a coding assignment, zip up the source files and send them that way.
+-If it is a hackerrank or other online assessment, take screenshots of your answers AND the answered questions. Hackerrank will mark any questions that you have successfully answered.
