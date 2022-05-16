@@ -1,1 +1,1 @@
-This is the repository for the Big Data - Next Gen 05/31/2022 curriculum. The notes may be separated by topic or by day, I will decide later.
+This is the repository for the Big Data - Next Gen 05/31/2022 curriculum. The notes are separated by topic, and you can see all assignments, project guidelines, and other useful resources here once they are ready.
