@@ -1,0 +1,7 @@
+The assignment is to create a short 5-10 minute persentation
+on a company that utilizes Big Data methods and technologies.
+
+-The presentation will be in PowerPoint format.
+-You will research into one company of your choice.
+-Talk about the ways in which this company utilizes Big Data.
+-If possible, talk about what technologies they use.
