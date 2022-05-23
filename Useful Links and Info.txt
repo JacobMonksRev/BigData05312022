@@ -1,2 +1,2 @@
-Practice Python:
-https://exercism.org/tracks/python
+Practice Python:    https://exercism.org/tracks/python
+Scala Documentation:    https://docs.scala-lang.org
