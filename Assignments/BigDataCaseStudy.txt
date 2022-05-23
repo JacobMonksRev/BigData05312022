@@ -5,3 +5,5 @@ on a company that utilizes Big Data methods and technologies.
 -You will research into one company of your choice.
 -Talk about the ways in which this company utilizes Big Data.
 -If possible, talk about what technologies they use.
+
+This will be presented on Friday, May 27.
