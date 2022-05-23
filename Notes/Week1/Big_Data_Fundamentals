@@ -1,5 +1,7 @@
 ##Fundamentals:
 
+What is Big Data?
+
 Big Data is A LOT of data.
 Traditional systems are not capable of handling such amounts of data.
 
@@ -9,10 +11,6 @@ Variety - different formats, different sizes, different qualities
 Value - how valuable is the information of data
 Velocity - handle a lot of data frequently
 Veracity - Reliability and value of data.
-
-Examples:
-Youtube clickstream information
-Netflix recommend shows that are succeeding over those are failing
 
 Types of Data
 Structured Data - defined format and size.
@@ -29,16 +27,20 @@ Unstructured Data - data without structure, format, or size definition.
 roughly 85 % of all data that exists
 Ex. Word document, PDF, video file
 
+Examples:
+Youtube clickstream information
+Netflix recommend shows that are succeeding over those that are failing
+
 How to handle all this data?
 
-1. Relational Databases RDBMS
+1. Relational Database Management Systems (RDBMS)
 Organize data into a structure to make it useful for analysis.
-This class uses MySQL.
+This training course uses MySQL.
 Good for structured data.
 
-2. Content Manageemtn system
-Data is held in a separate location to be stored.
-Amazon Web Services S3 storage
+2. Content Management system
+Data is held in a separate location such as cloud-based storage.
+Amazon Web Services (AWS) S3 storage.
 Good for unstructured data.
 
 Components of Big Data:
@@ -49,7 +51,7 @@ Extract - get data from designated source
 Transform - put the data into a usable form to perform analysis
 Load - put the transformed data into a system that allow you to analyze and query.
 
-Ingestion - grab the data, requires a plan.
-Storage - data is secured in a place that is safe and nonvolatile
+Ingestion - grab the data, requires a planned approach to address the different kinds of data that might come in.
+Storage - data is made homogenous and stored in a place that is safe and nonvolatile.
 Analysis - data gets sent through different tools in order to be processed into usable, valuable information.
-Consumption - data and analyses are presented officially in a human-readable.
+Consumption - data and analyses are presented officially in a human-readable way, often with carts and graphs.
