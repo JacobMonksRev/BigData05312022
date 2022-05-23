@@ -1,0 +1,55 @@
+##Fundamentals:
+
+Big Data is A LOT of data.
+Traditional systems are not capable of handling such amounts of data.
+
+Big Data 5 Vs
+Volume - a lot 
+Variety - different formats, different sizes, different qualities
+Value - how valuable is the information of data
+Velocity - handle a lot of data frequently
+Veracity - Reliability and value of data.
+
+Examples:
+Youtube clickstream information
+Netflix recommend shows that are succeeding over those are failing
+
+Types of Data
+Structured Data - defined format and size.
+You can use the patterns of the data in order to analyze effiiently
+Ex. Social security: ###-##-####
+
+Semi-Structured Data - defined structure, but variable size.
+Ex. Text file
+
+Quasi-Structured Data - no defined format but you can manipulate it into a usable format
+Ex Clickstream data
+
+Unstructured Data - data without structure, format, or size definition.
+roughly 85 % of all data that exists
+Ex. Word document, PDF, video file
+
+How to handle all this data?
+
+1. Relational Databases RDBMS
+Organize data into a structure to make it useful for analysis.
+This class uses MySQL.
+Good for structured data.
+
+2. Content Manageemtn system
+Data is held in a separate location to be stored.
+Amazon Web Services S3 storage
+Good for unstructured data.
+
+Components of Big Data:
+
+Follow steps of ETL
+Extract, Transform, Load
+Extract - get data from designated source
+Transform - put the data into a usable form to perform analysis
+Load - put the transformed data into a system that allow you to analyze and query.
+
+Ingestion - grab the data, requires a plan.
+Storage - data is secured in a place that is safe and nonvolatile
+Analysis - data gets sent through different tools in order to be processed into usable, valuable information.
+Consumption - data and analyses are presented officially in a human-readable.
