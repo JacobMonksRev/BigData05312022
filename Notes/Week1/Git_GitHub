@@ -1,2 +1,20 @@
 ##Intro to Git
 Version Control Tool
+
+GitHub
+A cloud service that stores your revious versions and current version of working projects.
+
+Git
+The tool to interact with GitHub and perform version control
+
+Terminology:
+'Branch' - A branch off the main 'trunk' that will not commit changes to the main.
+'Merge' - combining the codes from different branches or different versions into the main working program.
+
+Git commands:
+-git pull: grabs the respository from GitHub and copies it to your local computer.
+-git add: puts the files and changes made into the repository.
+-git commit: saves the additions and changes made into the local.
+-git push: copies the local repository into the cloud repo.
+
+When you do git commit -m: create a commit message
