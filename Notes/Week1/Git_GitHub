@@ -8,14 +8,21 @@ Git
 The tool to interact with GitHub and perform version control
 
 Terminology:
-'Branch' - A branch off the main 'trunk' that will not commit changes to the main.
-'Merge' - combining the codes from different branches or different versions into the main working program.
+'Branch' 
+- A branch off the main 'trunk' that will not commit changes to the main.
+'Merge' 
+- Combining the codes from different branches or different versions into the main working program.
+'Conflict' 
+- A conflict arises when two commits are made that cannot coexist.
+- You must perform a 'resolve conflict' by selecting which commits to keep and which to discard.
 
 Git commands:
--git pull: grabs the respository from GitHub and copies it to your local computer.
--git add: puts the files and changes made into the repository.
--git commit: saves the additions and changes made into the local.
--git push: copies the local repository into the cloud repo.
+-git init:      creates a local GitHub repository.
+-git clone:     clones a repository from the cloud.
+-git pull:      grabs the respository from GitHub and copies it to your local computer.
+-git add:       puts the files and changes made into the repository.
+-git commit:    saves the additions and changes made into the local.
+-git push:      copies the local repository into the cloud repo on GitHub.com.
 
 When you do git commit -m: create a commit message
 -It is a good habit to write a commit message at all times so that yourself and other group members can keep track of changes in the project more conveniently.
