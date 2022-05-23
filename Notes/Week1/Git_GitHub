@@ -18,3 +18,4 @@ Git commands:
 -git push: copies the local repository into the cloud repo.
 
 When you do git commit -m: create a commit message
+-It is a good habit to write a commit message at all times so that yourself and other group members can keep track of changes in the project more conveniently.
