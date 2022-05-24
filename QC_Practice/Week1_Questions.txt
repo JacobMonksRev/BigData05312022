@@ -1,0 +1,72 @@
+1. What is Big Data?
+
+2. Difference between Structured and Unstructured Data?
+
+3. Difference between Semi-structured and Quasi-structured Data?
+
+4. What are the stages in the data lifecycle?
+
+5. What are the five 'V's of Big Data? What do each of them refer to?
+
+6. Why do we need Big Data?
+
+7. What is SDLC?
+
+8. What are the phases of SDLC?
+
+9. What are the phases of the Waterfall model of SDLC?
+
+10. What is Agile? (Know the advantages/disavantages)
+
+11. What is Scrum?
+
+12. What is the role of the Product Owner? Scrum Master? Development Team?
+
+13. List the different Sprint Artifacts, what is their purpose?
+
+14. What does the product backlog contain?
+
+15. What is the difference between a Sprint Review and a Sprint Retrospective?
+
+16. What are some differences between hard disk and RAM?
+
+17. What does VM stand for and what is it?
+
+18. What is Unix/Linux?
+
+19. What is a kernel?
+
+20. What is a shell/terminal?
+
+21. What is 'Open Source'?
+
+22. Know the following Linux commands and be expected to give examples of their usages:
+- ls
+- cd
+- pwd
+- mkdir
+- nano
+- vim
+- man
+- cat
+- mv
+- cp
+- rm
+- rmdir
+- history
+- chmod
+- head
+- tail
+- sort
+
+23. What is the difference between root and home in Linux?
+
+24. What do 'yy', 'dd', 'dw', 'yw', 'p', and 'P' do in vi?
+
+25. What is XML?
+
+26. What is a prolog in XML? Is it necessary?
+
+27. What is a root element? IS it necessary?
+
+28. Does every element tag need to be closed?

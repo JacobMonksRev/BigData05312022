@@ -5,14 +5,40 @@ The brain of the computer
 Performs the work that you ask it to
 Processor Cores allow computer to function and perform tasks
 
-OS Operating System:
-Gives humans the ability to interact with computers.
-Windows, Mac, Linux
+Operating System (OS):
+- Gives humans the ability to interact with computers.
+- Windows, Mac, Linux
 
 Virtual machine:
-Creates virtual resources to perform different functions that the computer would not be able to do iteslf.
+- Creates virtual resources to perform different functions that the computer would not be able to do iteslf.
+- Able to run another OS, such as Linux
+- Resources are allocated from the actual hardwareto run a VM
 
 Memory:
-RAM - Random Access memory, the ability of the computer to do work
-Disk - storage for the computer.
-Disk is long term storage, RAM is short-term
+RAM:
+- Random Access memory.
+- The ability of the computer to do work.
+- Short-term memory (gets discarded after the program stops running).
+- Faster access.
+Disk  (HDD, SSD)
+- Storage for the computer.
+- Long-term memory (saved as files in the system).
+- Slower access.
+
+Cluster:
+- A network of computers that work together as a single unit.
+Node:
+- A single computer in a Cluster
+
+Binaries:
+- applications that can be run
+- typically located in a 'bin' folder.
+- written in Machine code which can be compiled by the processor
+
+Kernel:
+- The core of an OS.
+- Controls all tasks of the system.
+- Organizes and manages all data and processes.
+
+Shell/Terminal/Command Line Interface (CLI):
+- Interface that allows interaction with the kernel

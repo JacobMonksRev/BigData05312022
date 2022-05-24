@@ -1,47 +1,53 @@
 ##Fundamentals:
 
 What is Big Data?
+- Big Data is A LOT of data.
+- Traditional systems and tools are not capable of handling such amounts of data effectively.
+- Can take a long time to analyze data to come to fully informed decisions.
+- Big Data is a Solution that allows for faster decision making.
 
-Big Data is A LOT of data.
-Traditional systems are not capable of handling such amounts of data.
+The Five 'V's of Big Data:
+1. Volume - amount of data (scope in the Terrabytes and Petabytes (1000 TB))
+2. Variety - different formats, different sizes, different qualities, different types of data
+3. Value - how valuable is the information of data, there is a continuous flow of data
+4. Velocity - handle and accumulate a lot of data frequently
+5. Veracity - Reliability and Certainty of data according to verifiable quality checks
 
-Big Data 5 Vs
-Volume - a lot 
-Variety - different formats, different sizes, different qualities
-Value - how valuable is the information of data
-Velocity - handle a lot of data frequently
-Veracity - Reliability and value of data.
+Types of Data:
+Structured Data 
+- defined format and size.
+- You can use the patterns of the data in order to analyze efficiently
+- Ex. Social security: ###-##-####
 
-Types of Data
-Structured Data - defined format and size.
-You can use the patterns of the data in order to analyze effiiently
-Ex. Social security: ###-##-####
+Semi-Structured Data
+- defined structure, but variable size.
+- Ex. Text file
 
-Semi-Structured Data - defined structure, but variable size.
-Ex. Text file
+Quasi-Structured Data
+- no defined format but you can manipulate it into a usable format
+- Ex. Clickstream data
 
-Quasi-Structured Data - no defined format but you can manipulate it into a usable format
-Ex Clickstream data
+Unstructured Data
+- data without structure, format, or size definition.
+- roughly 80% of all data that gets accumulated
+- Ex. Word document, PDF, video file
 
-Unstructured Data - data without structure, format, or size definition.
-roughly 85 % of all data that exists
-Ex. Word document, PDF, video file
-
-Examples:
-Youtube clickstream information
-Netflix recommend shows that are succeeding over those that are failing
+Examples of Big Data in industry:
+Youtube collects clickstream information to promote certain advertisements
+Netflix recommends shows that are succeeding over those that are failing
+Banks hold records for all of their patrons' accounts and every transaction that occurs
 
 How to handle all this data?
 
 1. Relational Database Management Systems (RDBMS)
-Organize data into a structure to make it useful for analysis.
-This training course uses MySQL.
-Good for structured data.
+- Organize data into a schema to make it useful for analysis.
+- This training course uses MySQL.
+- Good for structured data.
 
 2. Content Management system
-Data is held in a separate location such as cloud-based storage.
-Amazon Web Services (AWS) S3 storage.
-Good for unstructured data.
+- Data is held in a separate location such as cloud-based storage.
+- Amazon Web Services (AWS) S3 storage.
+- Good for unstructured data.
 
 Components of Big Data:
 
@@ -51,7 +57,14 @@ Extract - get data from designated source
 Transform - put the data into a usable form to perform analysis
 Load - put the transformed data into a system that allow you to analyze and query.
 
-Ingestion - grab the data, requires a planned approach to address the different kinds of data that might come in.
-Storage - data is made homogenous and stored in a place that is safe and nonvolatile.
-Analysis - data gets sent through different tools in order to be processed into usable, valuable information.
-Consumption - data and analyses are presented officially in a human-readable way, often with carts and graphs.
+Lifecycle of Data:
+Creation > Collection > Processing > Storage > Management > Analysis > Visualization > Interpretation
+
+Collection:
+- grab the data, requires a planned approach to address the different kinds of data that may come in.
+Processing and Storage:
+- data is made homogenous and stored in a place that is safe and nonvolatile.
+Analysis:
+- data gets sent through different tools to be analyzed to create usable, valuable information.
+Visualization and Interpretation:
+- data and analyses are presented officially in a human-readable way, often with charts and graphs.

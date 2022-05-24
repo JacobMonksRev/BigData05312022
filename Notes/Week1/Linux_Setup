@@ -1,0 +1,7 @@
+Here are the steps if you are on a Windows PC:
+
+1. Search for 'Windows Powershell'
+2. Choose 'Open as Administrator'
+3. Type the command 'wsl --install'
+4. After the download, you may be prompted to restart your device. Please do so.
+5. To ensure you have installed Linux correctly, go to Powershell and type the command 'wsl -l -v'

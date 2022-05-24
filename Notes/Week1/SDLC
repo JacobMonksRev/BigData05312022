@@ -4,6 +4,9 @@ Different methodologies and processes that go into developing software.
 Requires a plan and philosophies so that work can be distributed as appropriate 
 and work can be done efficiently.
 
+General flow:
+Planning > Designing > Building > Testing > Deployment
+
 Big bang methodologies
 - No specific plan
 - Design, Testing
