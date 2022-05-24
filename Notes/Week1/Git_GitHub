@@ -19,8 +19,14 @@ Terminology:
 Git commands:
 -git init:      creates a local GitHub repository.
 -git clone:     clones a repository from the cloud.
--git fetch:     grab the latest commits on GitHub.
--git pull:      grabs the respository from GitHub and copies it to your local computer.
+-git status:    shows all uncommitted changes.
+-git branch:    create, delete, or list branches
+-git checkout:  change from current branch to another branch.
+-git fetch:     grab the current version of the repository on GitHub.
+-git merge:     merge a branch into an active one.
+-git diff:      show all conflicts between branches.
+-git pull:      grabs the respository from GitHub and merges it with your local repo. (fetch + merge)
+-git stash:     Stashes away any changes that are not ready to be committed.
 -git add:       puts the files and changes made into the repository.
 -git commit:    saves the additions and changes made into the local.
 -git push:      copies the local repository into the cloud repo on GitHub.com.
