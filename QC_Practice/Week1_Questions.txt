@@ -70,3 +70,20 @@
 27. What is a root element? IS it necessary?
 
 28. Does every element tag need to be closed?
+
+29. What is Git?
+
+30. What is GitHub?
+
+31. What git commands (and in what order) will save your local changes to the remote repository?
+
+32. Know the following Git commands:
+-git pull
+-git push
+-git fetch
+-git merge
+-git branch
+-git add
+-git commit
+-git status
+-git stash
