@@ -19,6 +19,7 @@ Terminology:
 Git commands:
 -git init:      creates a local GitHub repository.
 -git clone:     clones a repository from the cloud.
+-git fetch:     grab the latest commits on GitHub.
 -git pull:      grabs the respository from GitHub and copies it to your local computer.
 -git add:       puts the files and changes made into the repository.
 -git commit:    saves the additions and changes made into the local.
