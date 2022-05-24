@@ -1,0 +1,160 @@
+Software Development Lifecycle
+
+Different methodologies and processes that go into developing software.
+Requires a plan and philosophies so that work can be distributed as appropriate 
+and work can be done efficiently.
+
+Big bang methodologies
+- No specific plan
+- Design, Testing
+- No specific requirements, or ambiguous.
+- Good for handling prototypes or learning new languages.
+- Not good for more complex problems or long projects.
+
+##Waterfall Model
+
+- One phase transitions to the next.
+- Very structured and defined process.
+- Requires all specifications in the beginning.
+- Very easy to implement into projects due to documentation.
+
+Phases:
+1. Requirement Gathering - all requirements are known and recorded
+2. System Design - research in the requirements andthe means of making those come to fruition.
+3. Implementation - All the work. Software development, responisibilites are divided among workers.
+4. Integration and Testing - Code is put into a working product that is tested for functionality.
+5. Deployment - Finished working product is completed and made accessible to client.
+6. Maintenance - keeping the product up to date with requirements.
+
+Advantages:
+Very simple to follow and understand.
+Very easy to schedule deadlines.
+Work on smaller projects.
+
+Disadvantages:
+Testing happens late, making it difficult to identify challenges early on.
+Hard to accomodate for changes in the design.
+Not good for complex or obeject-oriented projects.
+
+##V-Model
+Same as waterfall, except it adds a testing phsae after each step.
+
+Advantages:
+All the same advantages as Waterfall
+Provides proactive in design and error tracking.
+
+Disadvantages:
+All the same as Waterfall
+Management is riskier due to the imprecise process.
+Requires more time for documentation purposes.
+
+##Agile Model
+
+An adaptive approach that relies on customer and client interaction.
+Focus on personal relationships, teamwork, and collaboration efforts.
+Tasks are divided among the teams of workers, and the teams must be in consistent cmmunication.
+Comes from the idea that all projects come with their own challenges.
+User Story:
+- A unit of market value, based upon someone's experience.
+- Look at the software from the perspective of people in different roles, jobs, etc.
+- Make software that is very reliable and user-friendly
+- Describe the function that is needed, and explain why it's needed.
+
+Advantages:
+- promotes commuication and teamwork
+- good for projects that have changing requirements
+- gives developers more flexibility in their work
+- rapid testing and deployment
+- low resource requirements
+
+Disadvantages:
+- Harder to manage due to the more variable nature of implementation
+- Requires very strict and clear communication
+- Hard to transfer knowledge from one team to the next
+- More risk of sustaining the project over exceptionally long periods
+
+YOLO:
+- No process defined,
+- No requirement steup
+- process: procrastinate > anxiety > scream > crunch
+
+Disadvantages:
+- Hard to acocmodate long timeframes
+- Not documented
+- Limited communication
+- Generally inefficient
+
+##SCRUM
+
+A branch-off from Agile methodology
+Scrum focuses on creating teams that have specific roles in the development process.
+
+SCRUM Values:
+1. Transparency - know the important aspects of process, the process must be visible and accessible.
+2. Inspection - Frequently check the SCRUM artifacts and progress towards the goals of the project.
+3. Adaptation - SCRUM mechanisms that allow you to adapt to problems or changes.
+
+SCRUM members:
+
+Product Owner 
+- manager of the product.
+- goal is to maximize effeciveness of all SCRUM teams and the product functionalities
+- Make sure the SCRUM teams understand their goals.
+- Manage the Product backlog.
+
+Development Team
+- responsible for delivering a releasable increment of the project.
+- Organize and manage their work with their fellow members to maximize efficiency
+- All developers are to be treated equally and with respect.
+
+SCRUM Master
+- Responsible for maintaining SCRUM methodologies and values
+- Make sure that the teams understand the SCRUM process
+- Help the Product owner manage the Product Backlog and other Artifacts
+- Manage SCRUM team events such as meetings, scheduled testing, and deployment events.
+
+SCRUM EVENTS
+
+- Create a routine for the SCRUM teams to follow.
+- SCRUM development is divided into time-boxes also called Sprints.
+- Sprints are all the same length (usually 2 or 3 weeks).
+- Each Sprint has a very specific goal for the end deliverable.
+
+    Sprint Planning
+    Decide what work needs to be done in the next Sprint.
+    Review their progress since the last Sprint.
+    Meetings are ~2 hours.
+
+    Daily SCRUM
+    Progress check on work done the day previously
+    Go over what needs to be done today
+    Optimizes team cohesion and efficiency
+
+    Sprint Review:
+    Held at the end of every Sprint
+    Ellicit feedback from the Product Owner on the functionalities and goals of the product
+    Adapt the Product backlog for work that has been completed
+    Decide how to best continue their work and optimize efficiency
+
+    Sprint Retrospective:
+    Held after a Sprint Review to inspect Scrum team and create a new plan for the next increment
+
+Sprint Artifacts
+Representations of the work done and needed to complete the product.
+    
+    Product backlog:
+    Summary of all items that are necessary to complete the deliverable product.
+    Updated at the end of every Sprint
+    Ordered List of priorities.
+    Collection of user stories.
+
+    Sprint backlog:
+    Set of product backlog items that are to be done during the current Sprint.
+    Includes a plan for how to complete all the work for each particular Sprint.
+    Forecast for the funcitonality of the end product.
+
+    Increment:
+    The summation of all the work done in a Sprint.
+    Includes a releasable product function(s).
+    Includes all documentation regarding Sprint artifacts.
+    Discusses the value of previous Sprints.
