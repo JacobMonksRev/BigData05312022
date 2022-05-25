@@ -21,13 +21,15 @@ Permissions:
 drwxrwxrwx
 drw-rw-r--
 d110110100
+This is a binary representation
 rwx = 111
 4 + 2 + 1 = 7
-11001
-1 + 8 + 16 = 25
+Binary is like our decimal system (0-9) except each digit is a power of 2 instead of 10
+11001 =/= eleven thousand and one
+11001 = 2^4 + 2^3 + 2^0 = 16 + 8 + 1 = 25
 
 Each set of three refers to a different user
-First one is the Owner
+First set is the Owner
 Second is Group
 Third is Other (meaning all other users)
 r - read
