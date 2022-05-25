@@ -1,0 +1,48 @@
+Linux/ UNix
+
+UNIX:
+
+Software developed in the 1970s by workers for AT&T.
+Since been copyrighted and is no longer open-source.
+Command Line Shell, Bourne Again Shell (BASH).
+Bash was created 1989.
+
+Linux:
+Open-Source rebirth of Unix.
+
+Two main directories:
+Home: ~
+    - Where all of your personal files are stored
+Root: /
+    - Topmost file in the computer hierarchy
+
+Permissions:
+
+drwxrwxrwx
+drw-rw-r--
+d110110100
+rwx = 111
+4 + 2 + 1 = 7
+11001
+1 + 8 + 16 = 25
+
+Each set of three refers to a different user
+First one is the Owner
+Second is Group
+Third is Other (meaning all other users)
+r - read
+w - write
+x - execute
+
+chmod - change moderation / permissions
+
+chmod 744 (give read privileges to all)
+chmod 253 owner = write, group = read, execute, other = write and execute
+chmod g-r (remove read privileges from group)
+
+File Editor
+2 main file editors:
+nano
+vim (vi)
+
+$ vi file_name
