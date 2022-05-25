@@ -1,0 +1,33 @@
+##Let's Practice with Linux Commands.
+
+1. Create a new directory called 'Linux-Activity'
+2. Create a file in that folder called 'NewFile.txt'
+3. Populate that file with the following text: 'Learning Linux is fun'
+4. Display that text on the command line
+5. Make a directory in 'Linux-Activity' called 'Test-dir'
+6. Move 'NewFile.txt' into 'Test-dir'
+7. Change directory to 'Test-dir'
+8. Rename the 'NewFile.txt' to 'File2.txt'
+9. Change all permissions of 'File2.txt' to read, write, and execute
+10. Check the file permissions
+11. Change the 'other' permissions of File2.txt to read and write only
+12. Copy 'File2.txt' to the parent folder
+13. Delete 'test-dir' directory
+14. Enter a text editor for 'File2.txt'
+15. While in INSERT mode, enter these lines anywhere in the file:
+
+'Linux is much better than Windows and Mac'
+'This line was added using a text editor'
+'I learned about Linux on Wednesday'
+'We will have a QC some day next week'
+
+16. Save the file and exit the text editor
+17. Print the lines of text in 'File2.txt' in alphabetical order
+18. Print all the lines of 'File2.txt' that contain 'Linux'
+19. Enter a text editor for 'File2.txt' and copy any line of text
+20. Put the copied line anywhere else in the file
+21. Delete a line of text that is different than the one that was copied
+22. Place the deleted line at the very top of the file
+23. Save the file and exit the text editor
+24. Print all lines of 'File2.txt' that contain 'day'
+25. Delete the 'Linux-Activity' folder and all files within it
