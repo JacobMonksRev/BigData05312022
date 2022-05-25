@@ -1,0 +1,47 @@
+Directory commands:
+$cd	-changes the directory
+	-add arguments:
+	'/' go to root
+	'~' or 'cd' go to home
+	'..' go to parent directory
+$ls	-lists contents in the current directory
+	-add arguments:
+	'-a' list all hidden items
+	'-f' list all files identifying directories and executable files
+	'-R' list recursive list of files and directories
+
+General Purpose commands:
+$mkdir	-create a new directory, takes an argument for directory name
+$rmdir	-remove directory, takes an argument for directory name
+$pwd	-print working directory
+$su	-switch users, default with no argument is root user
+$sudo	-run a particular command as root user
+$echo	-print a string or the result of a command
+$grep	-prints any lines in a file that follows some pattern
+$man	-prints the manual for a designated Linux command
+$history-shows command history (last 1000 commands or so)
+$echo	-types a message into the command line
+	-Can also use to populate a file with text by using '> file_name'
+
+File Commands:
+$cat	-prints the contents of a file to the console
+$head	-prints the first 10 lines of a file to the console
+$tail	-prints the last 10 lines of a file to the console
+$sort	-prints the lines of text in a file sorted in a specific order
+$touch	-modify the timestamp of a file, or create a new empty file if a file with that name does not yet exist
+$chmod	-change file permissions
+$cp	-creates a copy of a file in a chosen location
+	'-r' recursive copy, copies the directory and all files in it
+$mv	-rename a file
+	-move a file to a chosen directory
+	'-r' rename or move a directory
+$rm	-deletes a file
+	'-r' deletes a directory and all files in it
+$wc	-prints word count of a file
+	'-c' or '--bytes' to print number of bytes
+	'-m' or '--chars' to print number of characters
+	'-l' or '--lines' to print number of lines
+Edit Commands:
+$vi	-read, edit, or create a new file
+$vim	-vi with extra features
+$nano	-easy to use text editor
