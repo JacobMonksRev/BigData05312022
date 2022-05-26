@@ -1,0 +1,172 @@
+##Cloud Computing
+
+A virtual service that gives the user computing power, storage, and elastic functions.
+Amazon Web Serices
+Azure
+Dropbox
+Google Cloud Platform
+
+Problems with local computing:
+1. Companies need to invest their own resources into servers, computers, etc.
+2. Costs a lot of money.
+3. Risk of not enough resources or wasted money on unused resources.
+4. Limited collaboration capability
+
+Cloud Computing exists to alleviate these costs and risks.
+On-demand payment and use.
+Elastic = change the computing power/storage/etc. as needed.
+
+4 Types of Cloud Platforms
+1. Private Cloud - used by a company who doesn't want their resources to be utilized for public uses.
+2. Public Cloud - Accessible by the public for all sorts of different functions.
+3. Hybrid Cloud - Mix of both Private and Public.
+4. Multi-Cloud - have both public and private clouds to disperse reosources more efficiently and potentially save money.
+
+Different functions that a cloud is capable of offering (*aaS)
+- Let's use a House analogy
+IaaS - Infrastructure as a Service
+    - Gives the user the ability to access physical and virtual servers, storage systems, networking, re-configure things to their liking
+    - Access to the house blueprints, can change or alter what the houes is capable of doing
+PaaS - Platform as a Service
+    - On-demand access to cloud-hosted applications
+    - Develop, run, and configure programs, store data, maintain and manage applications
+    - Access to the house functions, able to utilize everything the houes currently offers
+SaaS - Software as a Service
+    - On-demand, ready to use software.
+    - Access individual rooms of the house and rent them out individually
+FaaS - Function as a Service
+    - Still new in development
+    - Only utilize specific functions of an application as they are needed.
+    - Rent out only certain appliances like the toaster or refrigerator.
+
+AWS - Amazon Web Services
+- Publicly released in 2004
+    Functions:
+        1. Short-term and long-term data storage
+        2. Elastic computing resources
+        3. Data management systems
+        4. Big Data analysis
+        5. Adaptible to company needs
+- has over 200 general-purpose services
+    S3 - Storage
+    EC2 - elastic computing
+    DBS - Cloud Databases
+    EMR - Elastic Mapreduce
+
+AWS Structure
+Divided into regions
+    - Cluster of data centers in a specific area of the world
+    - us-east-2
+    - Select a region based on a few criteria
+        1. Pricing
+        2. Local and company law
+        3. Services they provide
+        4. Proximity
+    - Regions are divided Availability Zones
+        - One or more data centers that contain redundant information
+        - Redundancy creates fault tolerance
+        - 2-6 Availability Zones per region
+    - Edge Locations
+        - Data center or Point of presence
+        - Over 300 of them worldwide
+        - 84 Availability Zones across 42 Countries
+        - Data Center locations are often remote
+
+Amazon S3 - Simple Storage Service
+- Cloud storage tool
+- Very strong data durability (99.999999%)
+- Offers multiple different types of storage depending on access and price
+- Store "objects" in "buckets" (like files in a directory)
+- A bucket must have a unique name
+    3-63 characters
+    No underscores, capital letters
+    Ex. my-bucket5
+    s3://my-bucket5/my-object
+    s3://my-bucket5/Subdirectory/my-object
+
+S3 Storage Options:
+- S3 Standard
+    - General Purpose Storage
+    - On-demand access
+- S3 Standard Infrequent Access
+    - cheaper than Standard
+    - minimum storage time
+    - good for backup storage
+- S3 One-Zone IA
+    - Only accessible from ONE availability zone
+    - cheaper than IA
+    - good for data that is easy to replace
+- S3 Glacier
+    - Very long-term storage
+    - minimum storage time 90 days
+    - cheaper than IA
+    - takes more time to retrieve data
+- S3 Glacier Deep Archive
+    - VEEEERY long-term storage
+    - minimum storage time 180 days
+    - cheaper than Glacier
+    - Takes significantly longer to retrieve data
+
+Encryption
+- A means of keeping data inaccessible to people who might have unauthorized access
+- Works off a cipher to scramble text
+- Ex. ABC -> DEF
+- The cipher is determined by the Encryption key
+- Two types of Encryption
+    1. Server-Side Encryption
+        - AWS Encrypts the data and amanges the Keys
+    2. Client-Side Encryption
+        - Client manually encrypts data and keeps the key before sending info to the cloud
+
+EC2 - Elastic Cloud Compute
+- Provides adaptible, resizable computing power
+- Based on what are called "Instances"
+- Upload a program to an EC2 instance, and the instance will run until you ask it to stop.
+- EC2 Consists of:
+    1. Virtual Machine
+    2. Storage data 
+    3. Auto-scaling
+- Pricing:
+    Spot Instance: 
+    - send a request for computing power, price, and availazibility zone
+    - Request is fulfilled by Amazon when the space becomes available
+    Reserved Instance:
+    - Pay a little more to reserve comuting capacity over a period of time
+    - Must pay for the capacity for as long as it is reserved
+    - last up to 3 years
+    Dedicated Host:
+    - Physical server that contains EC2 instance capacity completely uner your control
+    - make sure it addresses compliance with company/ local policy
+    - Save money on licensing costs
+    On-Demand Instance:
+    - EC2 is run on a private cloud for a single customer
+    - physically isolated to keep it safe from outsiders
+
+    Creating an EC2 Instance in Free Tier
+    1. Go to AWS Management Console
+    2. Search for EC2
+    3. Click on "Instances" on the left-hand side
+    4. Click the Orange "Launch Instance" button
+    5. It may prompt you to "Opt out to the old experience." If it does, do that.
+    6. Choose Amazon Linux 2 Kernel 5.10 AMI
+    7. Choose Instance type t2.micro
+    8. Click "Next: Configure Instance Details"
+    9. Click "Next: Add Storage"
+    10. Click "Next: Add tags"
+    11. Click "Add tag" to give your Instance a name
+    12. Click "Next: Configure Security Group"
+    13. Click on the box under "Source" and change "Custom" to "My IP"
+    14. Click "Add Rule", change Type to "HTTP", and Change source to "Anywhere"
+    15. Click "Review and Launch"
+    16. You will be prompted to download a private key file. DO NOT LOSE THIS FILE or you will never be able to access your EC2 Instance again.
+    17. Click "Launch"
+    18. Go back to Instances Page and refresh the page until you see Instance State: "Running"
+
+    Terminating an Instance
+    1. Go to AWS Management Console and go to EC2 Page
+    2. Click the Instance ID of the Instance you wish to terminate
+    3. Drop Down "Instance State" in the top right
+    4. Choose "Terminate Instance"
+    5. Click "Terminate"
+
+EMR - Elastic MapReduce

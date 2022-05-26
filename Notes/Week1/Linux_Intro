@@ -9,6 +9,7 @@ Bash was created 1989.
 
 Linux:
 Open-Source rebirth of Unix.
+Code is publicly available to use, modify, and distribute
 
 Two main directories:
 Home: ~
@@ -42,9 +43,9 @@ chmod 744 (give read privileges to all)
 chmod 253 owner = write, group = read, execute, other = write and execute
 chmod g-r (remove read privileges from group)
 
-File Editor
-2 main file editors:
-nano
-vim (vi)
+File Editors:
+- 2 main file editors:
+    nano
+    vim (vi)
 
 $ vi file_name
