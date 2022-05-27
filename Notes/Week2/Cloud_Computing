@@ -49,8 +49,8 @@ AWS - Amazon Web Services
         5. Adaptible to company needs
 - has over 200 general-purpose services
     S3 - Storage
-    EC2 - elastic computing
-    DBS - Cloud Databases
+    EC2 - Elastic Computing
+    RDS - Relational Database System
     EMR - Elastic Mapreduce
 
 AWS Structure
@@ -86,7 +86,7 @@ Amazon S3 - Simple Storage Service
 - Replication:
     Root user can configure data replication options.
     1. Cross Region Replication
-    2. Single Region Replication 
+    2. Single Region Replication
 
 S3 Storage Options:
 - S3 Standard
