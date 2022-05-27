@@ -1,0 +1,9 @@
+1. Go to https://dev.mysql.com/downloads/windows/installer/8.0.html
+2. Choose the first Download Option
+3. Open the Installer
+4. Check 'Developer Default'
+5. It may ask you to check requirements, if it does, download the proper software:
+	-Visual Studio Community Edition 2019
+	-Python
+6. Keep all other configurations as they are.
+7. Create a password for the root user and make sure you save/remember it.

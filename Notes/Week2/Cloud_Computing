@@ -83,6 +83,10 @@ Amazon S3 - Simple Storage Service
     Ex. my-bucket5
     s3://my-bucket5/my-object
     s3://my-bucket5/Subdirectory/my-object
+- Replication:
+    Root user can configure data replication options.
+    1. Cross Region Replication
+    2. Single Region Replication 
 
 S3 Storage Options:
 - S3 Standard
@@ -90,7 +94,7 @@ S3 Storage Options:
     - On-demand access
 - S3 Standard Infrequent Access
     - cheaper than Standard
-    - minimum storage time
+    - Retrieval cost when accessed too frequently
     - good for backup storage
 - S3 One-Zone IA
     - Only accessible from ONE availability zone
@@ -100,12 +104,12 @@ S3 Storage Options:
     - Very long-term storage
     - minimum storage time 90 days
     - cheaper than IA
-    - takes more time to retrieve data
+    - takes more time to retrieve data (up to ~12 hours)
 - S3 Glacier Deep Archive
     - VEEEERY long-term storage
     - minimum storage time 180 days
     - cheaper than Glacier
-    - Takes significantly longer to retrieve data
+    - Takes significantly longer to retrieve data (up to several days)
 
 Encryption
 - A means of keeping data inaccessible to people who might have unauthorized access
