@@ -4,23 +4,23 @@ Xml is structured very similar to HTML
 
 prolog: <?xml version="1.0" encoding = "UTF-8"?>
 root: <Root_name>
-            <element1>
-                <attribute1>asdw</attribute1>
-                <attribute2>fdadff</attribute2>
+            <element1 attribute="value">
+                <sub-element>asdw</sub-element>
+                <sub-element>fdadff</sub-element>
             </element1>
-            <element2>
-                <attribute1>asdw</attribute1>
-                <attribute2>fdadff</attribute2>
+            <element2 attribute="value">
+                <sub-element>asdw</sub-element>
+                <sub-element>fdadff</sub-element>
             </element2>
 namespace: <h: attribute_name xmlns:h="Location.url.com">
             <h:names1>
-                <h:attribute1>asdw</attribute1>
-                <h:attribute2>fdadff</attribute2>
+                <h:sub-element>asdw</sub-element>
+                <h:sub-element>fdadff</sub-element>
             </h:names1>
          <m: attribute_name xmlns:m="Location.url.com">
             <m:names1>
-                <m:attribute1>asdw</attribute1>
-                <m:attribute2>fdadff</attribute2>
+                <m:sub-element>asdw</sub-element>
+                <m:sub-element>fdadff</sub-element>
             </m:names1>
       </Root_name>
 comment: <!-- This is a comment --!>
