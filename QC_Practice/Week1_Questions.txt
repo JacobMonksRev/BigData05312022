@@ -40,7 +40,7 @@
 
 21. What is 'Open Source'?
 
-22. Know the following Linux commands and be expected to give examples of their usages:
+22. Know the following Linux commands and expect to give examples of their usages:
 - ls
 - cd
 - pwd
