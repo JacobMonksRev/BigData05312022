@@ -1,0 +1,91 @@
+SQL - Structured Query Language
+- Our means of interacting with databases
+- Made a standard language by the American National Standards Institute in 1986
+Other types of query languages such as postgres SQL, MS Access, oracle, etc.
+
+Documentation: https://dev.mysql.com/doc/
+
+SQL allows users to:
+1. access data in RDBMS.
+2. describe/define the data.
+3. manipulate data or create relationships.
+4. embed into other languages.
+
+SQL divided into 5 sublangauges
+1. DDL - Data Definition Language
+    - CREATE, ALTER, UPDATE, DROP
+
+2. DML - Data manipulation Language
+    - INSERT, UPDATE, DELETE
+
+3. DCL - Data Control Language
+    - GRANT, REVOKE
+
+4. DQL - Data Query Language
+    - SELECT
+
+5. TCL - Transaction Control Language
+    - COMMIT, ROLLBACK, SET TRANSACTION
+
+Key words in SQL
+USE db_name;
+CREATE TABLE table_name (col1 datatype1, col2 datatype2, ...);
+DROP table_name;
+TRUNCATE table_name; - leaves the table structure in tact as opposed to DROP
+
+INSERT INTO table_name (col1, col2, ...) VALUES (data)
+UPDATE table_name WHERE condition
+WHERE - creates a condition for the queried data to satisfy (<, >, LIKE, etc.)
+SELECT - how you access information
+    SELECT (column names) FROM table_name (* if you're taking all columns)
+GROUP BY - a means of organizing the information being queried based on 1 or more columns
+    HAVING - a way to further scrutinize the GROUP BY
+
+    Aggregates: Combining data together to analyze its grouping in some way.
+        SUM, MAX, MIN, LAST, FIRST, AVG
+        Only possible with GROUP BY clauses
+    Scalars: Changing each individual value.
+        LCASE, UCASE, LEN (length), ROUND, CIEL, FLOOR
+        FLOOR: 3.2 -> 3, 4.9 -> 4
+        CIEL: 3.2 -> 4, 4.9 -> 5
+ORDER BY - only changes the view of the ouput based on some designated order.
+    Default ASC (ascending), can also be DESC (descending)
+
+Order of Operations:
+A statement written like:
+    SELECT * FROM table_name WHERE condition GROUP BY column HAVING condition ORDER BY column
+Will execute in the following order:
+    1. FROM
+    2. WHERE
+    3. GROUP BY / HAVING
+    4. ORDER BY
+    5. SELECT
+
+LIKE - used in a WHERE clause for pattern matching
+... WHERE col LIKE ...
+Arguments can be passed into LIKE to search for many different patterns.
+LIKE 'A%' - Searches for every item that starts with 'A'
+    % indicates any number of characters
+LIKE '%A' - Searches for every item that ends with 'A'
+LIKE 'a%p' - Starts with 'a' ends with 'p'
+LIKE '_a%' - Second letter is 'a'
+LIKE '_____' - Any item with exactly 5 characters
+
+JOINS
+A way to perform analysis on multiple tables at a time
+Take columns from two (or more) different tables
+Tables need to have at least 1 column that are the same values.
+
+SELECT table_name1.col, ... FROM table_name1 JOIN table_name2 ON table_name1.col = table_name2.col
+
+Types of JOINS:
+    INNER JOIN - return all records that match in both tables
+    RIGHT/LEFT OUTER JOINS - return all records that match AND all records from the RIGHT/LEFT table
+    FULL OUTER JOIN - return all records in both tables IF there is a match in either left or right
+    SELF JOIN - When you want to compare multiple columns from the same table to each other
+
+AS - Alias
+Use AS when you want to rename a column in your output
+Also use it in a query to make writing the query much less cumbersome
+
+UNIONS
