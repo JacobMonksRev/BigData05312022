@@ -58,8 +58,8 @@ Will execute in the following order:
     1. FROM
     2. WHERE
     3. GROUP BY / HAVING
-    4. ORDER BY
-    5. SELECT
+    4. SELECT
+    5. ORDER BY
 
 LIKE - used in a WHERE clause for pattern matching
 ... WHERE col LIKE ...
