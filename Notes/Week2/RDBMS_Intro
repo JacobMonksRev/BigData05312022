@@ -13,9 +13,49 @@ Databases allow you to organize and structure your data.
 Use a predefined schema to insert the data properly.
 
 Multiplicity vs Cardinality
+    Multiplicity refers to the relationships between data in the tables
+    1:1 Two tables are associated with each other based on a single row
+        Ex. Each person only has one social security number, and that SSN only belongs to one person
+    1:n Two tables where a unique identifier in one table can be used multiple times in another
+        Ex. One student can take many tests, One person can have multiple bank accounts.
+    0:1 A table can refer to the data of another but doesn't not currently have the information.
+        Ex. A person can be a doctor but not be a surgeon.
+    n:n Two tables where many rows of one table cna have multiple matching rows in another.
+        Ex. A student can have multiple teachers, and a teacher can have many students.
+
+    Cardinality refers to the number of different data in the table(s)
+    High cardinality means that there are a lot of different values / little repitition
+    Low cardinality means that there are limited variety of values / a lot of repitition
 
 ACID Properties
+    The essential qualities that any RDBMS must have in order to function efficiently
+    A - Atomicity, All or Nothing approach
+        Ex. Transaction
+            first part: deducted funds from Person A's account
+            second part: increased funds in Person B's account
+            Atomicity means either BOTH of these occur or NEITHER of them do
+    C - Consistency
+            Ensures that the DB is properly updated with new information when a
+            transaction is completed
+    I - Isolation
+            Ensures that no transactions can overlap or otherwise impact any other transaction
+            Two transactions that utilize the same data cannot overlap or interfere with each other, they must occur sequentially
+    D - Durability
+            A committed transaction will persist in the database indefinitely
+            Ex. A system failure will not undo any completed transactions
 
 Problems and Isolation Levels
+Problems that can occur:
+    1. Dirty Read: A query reads data that has not yet been committed. Results in inconsistent data
+    2. Unrepeatable Read: transaction reads data once, then reads it again and gets a different value
+        The data has been modified / deleted since the first read.
+    3. Phantom Read: A transaction grabs a set of data two times, and the second time it finds a newly committed piece of data.
+
+    Isolation Levels:
+        4 Main levels:
+        Read uncommitted, allows Dirty Reads and phantom reads. The most insecure level.
+        Read Committed, you may only read data from committed transactions, avoids dirty reads.
+        Repeatable Reads, avoids unrepeatable reads by keeping data consistent.
+        Serializeble, the most secure level, avoids phantom reads by forcing transactions to be sequential.
 
 Normalization

@@ -90,15 +90,104 @@ Types of JOINS:
 AS - Alias
 Use AS when you want to rename a column in your output
 Also use it in a query to make writing the query much less cumbersome
-Can use AS to create a new table to save the output of a query:
-    CREATE TABLE examples AS (SELECT ...)
-
-
+AS when you create a table, this will save the output of a query as a new table.
+CREATE TABLE table_name AS (SELECT ...)
 
 Set Operations (Union, Intersect, Except):
+UNION:
+    (SELECT ...) UNION (SELECT ...)
+    Combines rows from multiple places to create new columns
+INTERSECT (IN in MySQL):
+    SELECT ... WHERE column_name IN (SELECT ...)
+    Grabs all records in the first select statement that match in the second
+EXCEPT: (NOT IN in MySQL):
+    SELECT ... WHERE columns_name NOT IN (values)
+    Grab all records in the first statement EXCEPT for those that appear in the second
 
-Constraints
-
+Constraints:
+    DISTINCT - seleting unique rows no duplicates
+        SELECT DISTINCT ...
+    Creating a table with constraints:
+        CREATE TABLE (
+            student_id int, 
+            name varchar(255), 
+            GPA float,
+            PRIMARY KEY(student_id)
+            );
+    PRIMARY KEY is a unique identifier for a record
+        AUTO INCREMENT - automatically gives new data in a column that is numerical.
+    FOREIGN KEY refers to a PRIMARY KEY in another table
+        CREATE TABLE (
+                student_id int, 
+                name varchar(255), 
+                GPA float,
+                FOREIGN KEY (student_id) references table_name(column)        
+                );
+    PRIMARY and FOREIGN KEYS are how to create referential integrity between tables
+        - This ensures that data is consistent across the database
+    UNIQUE - set this constraint on a column when creating a table
+        CREATE TABLE (
+                student_id int UNIQUE, 
+                name varchar(255), 
+                GPA float,    
+                );
+    DEFAULT - set a default value for a column when given no data
+        CREATE TABLE (
+                student_id int, 
+                name varchar(255), 
+                GPA float DEFAULT NULL,
+                FOREIGN KEY (student_id) references table_name(column)        
+                );
+    NOT - sets a restriction on what values can be in the data
+        CREATE TABLE (
+                student_id int, 
+                name varchar(255), 
+                GPA float NOT NULL,
+                FOREIGN KEY (student_id) references table_name(column)        
+                );
+    CHECK - sets a resictive check on data inserted into the table
+        CREATE TABLE (
+                student_id int, 
+                name varchar(255), 
+                GPA float,
+                CHECK (0 <= GPA <= 4)    
+                );
 VIEWS
+- A virtual table that is saved and can be accessed.
+    CREATE VIEW view_name AS (SELECT ...);
+    DROP View view_name;
+
+    UPDATE:
+    Some criteria to keep in mind when updating a View
+    1. Select statement used to to create the view should not contain GROUP BYs
+    2. There should be no DISTINCT constraint in the SELECT
+    3. View should not be made form multiple tables (through a JOIN clause or otherwise)
+    4. Views should not have NOT NULL values
+    5. Views hsould not be made from nested queries
+
+    CREATE OR REPLACE VIEW view_name
+
+    Reasons for using a VIEW
+    1. Have an additional layer of security on tables and data.
+    2. Giving different people different data to observe (ex. on a public website)
+    3. Store complex queries and save the output for ease of access and speed
+    4. Allow you to hide the complexity of your query
 
 INDEXING
+    A way to organize the information in tables to make them easier to access and read.
+    - Faster reads, but slower writes.
+    Takes a column in your table and organize the information virtually according to the data in that column.
+    Ex. Table full of cities and the countries that they are in. index on the Country name, 
+    that way the search knows ahead of time where to look, which means faster access.
+
+    CREATE INDEX index_name ON table_name (column1, column2, ...)
+    DROP INDEX index_name;
+
+    When to use an Index:
+        A column has a lot of variety (high cardinality) in the data sotred there.
+        A table has a large number of records
+        When you use JOINS to combine columns frequently.
+    
+    When NOT to use Indexes:
+        A column has little variety (low cardinality)
+        A table is very small
