@@ -93,6 +93,10 @@ Also use it in a query to make writing the query much less cumbersome
 AS when you create a table, this will save the output of a query as a new table.
 CREATE TABLE table_name AS (SELECT ...)
 
+Nested Queries:
+    You can make a SQL query more narrow and specific by performing a query inside of another:
+    SELECT ... FROM table_name WHERE column = (SELECT ...)
+
 Set Operations (Union, Intersect, Except):
 UNION:
     (SELECT ...) UNION (SELECT ...)
