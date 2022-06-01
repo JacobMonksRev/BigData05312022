@@ -27,56 +27,59 @@ SQL divided into 5 sublangauges
 5. TCL - Transaction Control Language
     - COMMIT, ROLLBACK, SET TRANSACTION
 
-Key words in SQL
-USE db_name;
-CREATE TABLE table_name (col1 datatype1, col2 datatype2, ...);
-DROP table_name;
-TRUNCATE table_name; - leaves the table structure in tact as opposed to DROP
 
-INSERT INTO table_name (col1, col2, ...) VALUES (data)
-UPDATE table_name WHERE condition
-WHERE - creates a condition for the queried data to satisfy (<, >, LIKE, etc.)
-SELECT - how you access information
-    SELECT (column names) FROM table_name (* if you're taking all columns)
-GROUP BY - a means of organizing the information being queried based on 1 or more columns
-    HAVING - a way to further scrutinize the GROUP BY
+Key words in SQL:
 
-    Aggregates: Combining data together to analyze its grouping in some way.
-        SUM, MAX, MIN, LAST, FIRST, AVG
-        Only possible with GROUP BY clauses
-    Scalars: Changing each individual value.
-        LCASE, UCASE, LEN (length), ROUND, CIEL, FLOOR
-        FLOOR: 3.2 -> 3, 4.9 -> 4
-        CIEL: 3.2 -> 4, 4.9 -> 5
-ORDER BY - only changes the view of the ouput based on some designated order.
-    Default ASC (ascending), can also be DESC (descending)
+    CREATE DATABASE db_name;
+    USE db_name;
+    CREATE TABLE table_name (col1 datatype1, col2 datatype2, ...);
+    DROP TABLE table_name;
+    TRUNCATE table_name; - leaves the table structure in tact as opposed to DROP
 
-Order of Operations:
-A statement written like:
-    SELECT * FROM table_name WHERE condition GROUP BY column HAVING condition ORDER BY column
-Will execute in the following order:
-    1. FROM
-    2. WHERE
-    3. GROUP BY / HAVING
-    4. SELECT
-    5. ORDER BY
+    INSERT INTO table_name (col1, col2, ...) VALUES (data)
+    UPDATE table_name SET col_name = "value" WHERE condition
+    WHERE - creates a condition for the queried data to satisfy (<, >, LIKE, etc.)
+    SELECT - how you access information
+        SELECT (column names) FROM table_name (* if you're taking all columns)
+    GROUP BY - a means of organizing the information being queried based on 1 or more columns
+        HAVING - a way to further scrutinize the GROUP BY
 
-LIKE - used in a WHERE clause for pattern matching
-... WHERE col LIKE ...
-Arguments can be passed into LIKE to search for many different patterns.
-LIKE 'A%' - Searches for every item that starts with 'A'
-    % indicates any number of characters
-LIKE '%A' - Searches for every item that ends with 'A'
-LIKE 'a%p' - Starts with 'a' ends with 'p'
-LIKE '_a%' - Second letter is 'a'
-LIKE '_____' - Any item with exactly 5 characters
+        Aggregates: Combining data together to analyze its grouping in some way.
+            SUM, MAX, MIN, LAST, FIRST, AVG
+            Only possible with GROUP BY clauses
+        Scalars: Changing each individual value.
+            LCASE, UCASE, LEN (length), ROUND, CIEL, FLOOR
+            FLOOR: 3.2 -> 3, 4.9 -> 4
+            CIEL: 3.2 -> 4, 4.9 -> 5
+    ORDER BY - only changes the view of the ouput based on some designated order.
+        Default ASC (ascending), can also be DESC (descending)
 
-JOINS
-A way to perform analysis on multiple tables at a time
-Take columns from two (or more) different tables
-Tables need to have at least 1 column that are the same values.
+    Order of Operations:
+    A statement written like:
+        SELECT * FROM table_name WHERE condition GROUP BY column HAVING condition ORDER BY column
+    Will execute in the following order:
+        1. FROM
+        2. WHERE
+        3. GROUP BY / HAVING
+        4. SELECT
+        5. ORDER BY
 
-SELECT table_name1.col, ... FROM table_name1 JOIN table_name2 ON table_name1.col = table_name2.col
+    LIKE - used in a WHERE clause for pattern matching
+    ... WHERE col LIKE ...
+    Arguments can be passed into LIKE to search for many different patterns.
+    LIKE 'A%' - Searches for every item that starts with 'A'
+        % indicates any number of characters
+    LIKE '%A' - Searches for every item that ends with 'A'
+    LIKE 'a%p' - Starts with 'a' ends with 'p'
+    LIKE '_a%' - Second letter is 'a'
+    LIKE '_____' - Any item with exactly 5 characters
+
+    JOINS
+    A way to perform analysis on multiple tables at a time
+    Take columns from two (or more) different tables
+    Tables need to have at least 1 column that are the same values.
+
+    SELECT ... FROM table_name1 JOIN table_name2 ON table_name1.col = table_name2.col
 
 Types of JOINS:
     INNER JOIN - return all records that match in both tables
@@ -87,5 +90,15 @@ Types of JOINS:
 AS - Alias
 Use AS when you want to rename a column in your output
 Also use it in a query to make writing the query much less cumbersome
+Can use AS to create a new table to save the output of a query:
+    CREATE TABLE examples AS (SELECT ...)
 
-UNIONS
+
+
+Set Operations (Union, Intersect, Except):
+
+Constraints
+
+VIEWS
+
+INDEXING
