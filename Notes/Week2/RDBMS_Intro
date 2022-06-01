@@ -29,6 +29,7 @@ Multiplicity vs Cardinality
 
 ACID Properties
     The essential qualities that any RDBMS must have in order to function efficiently
+    Describes how a transaction (a unit of work) functions in SQL
     A - Atomicity, All or Nothing approach
         Ex. Transaction
             first part: deducted funds from Person A's account
@@ -59,3 +60,27 @@ Problems that can occur:
         Serializeble, the most secure level, avoids phantom reads by forcing transactions to be sequential.
 
 Normalization
+- A way to describe the redundancy or integrity of data in your database.
+- The goal of normalization is to reduce redundancy and maximize integrity.
+
+Different Levels of Normalization:
+
+First Normal Form (1NF) - Each row must have a unique record (no duplicated rows), no single field in
+                          a record can have more than 1 value
+                        - EVERY column cannot be the same in any two records
+Second Normal Form (2NF) - Table must already be in 1NF, any non-key column must be dependent on the
+                           key column
+Third Normal Form (3NF) - Table must already be in 2NF, no transitive dependencies.
+        Transitive Dependency means that A -> B, B -> C    A -> C
+            Ex. Three tables for employees at a company
+                1. Employee personal records, SSN, DoB, etc.
+                2. Hours worked in total per employee
+                3. Accrued time off based on hours worked
+                A transitive dependency would mean that both Table 1 and Table 2 are required to obtain Table 3 info. With NO transitive dependency, Table 3 can be obtained directly using Table 1.
+Boyce-Codd Normal Form (BCNF) - Table is in 3NF, Primary Key is only single-column.
+Fourth Normal Form (4NF) - Table is BCNF, it cannot contain more than one multi-varied attribute.
+Fifth Normal Form (5NF) - Table is in 4NF, table cannot be broken down without loss of information.
+Sixth Normal Form (6NF) - Table is in 5NF, and provides any further level of normalization not yet
+                          included.
+
+    YOU WILL BE EXPECTED TO KNOW the first 3 Normal Forms.

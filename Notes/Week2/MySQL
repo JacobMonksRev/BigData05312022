@@ -45,12 +45,12 @@ Key words in SQL:
         HAVING - a way to further scrutinize the GROUP BY
 
         Aggregates: Combining data together to analyze its grouping in some way.
-            SUM, MAX, MIN, LAST, FIRST, AVG
+            SUM, MAX, MIN, LAST, FIRST, AVG, COUNT
             Only possible with GROUP BY clauses
         Scalars: Changing each individual value.
             LCASE, UCASE, LEN (length), ROUND, CIEL, FLOOR
-            FLOOR: 3.2 -> 3, 4.9 -> 4
-            CIEL: 3.2 -> 4, 4.9 -> 5
+            FLOOR: 3.2 -> 3, 4.9 -> 4 (if there is a decimal, round down)
+            CIEL: 3.2 -> 4, 4.9 -> 5 (if there is a decimal, round up)
     ORDER BY - only changes the view of the ouput based on some designated order.
         Default ASC (ascending), can also be DESC (descending)
 
@@ -76,16 +76,16 @@ Key words in SQL:
 
     JOINS
     A way to perform analysis on multiple tables at a time
-    Take columns from two (or more) different tables
+    Take columns from two (or more) different tables to create new rows.
     Tables need to have at least 1 column that are the same values.
 
     SELECT ... FROM table_name1 JOIN table_name2 ON table_name1.col = table_name2.col
 
-Types of JOINS:
-    INNER JOIN - return all records that match in both tables
-    RIGHT/LEFT OUTER JOINS - return all records that match AND all records from the RIGHT/LEFT table
-    FULL OUTER JOIN - return all records in both tables IF there is a match in either left or right
-    SELF JOIN - When you want to compare multiple columns from the same table to each other
+    Types of JOINS:
+        INNER JOIN - return all records that match in both tables
+        RIGHT/LEFT OUTER JOINS - return all records that match AND all records from the RIGHT/LEFT table
+        FULL OUTER JOIN - return all records in both tables IF there is a match in either left or right
+        SELF JOIN - When you want to compare multiple columns from the same table to each other
 
 AS - Alias
 Use AS when you want to rename a column in your output
@@ -95,7 +95,8 @@ CREATE TABLE table_name AS (SELECT ...)
 
 Nested Queries:
     You can make a SQL query more narrow and specific by performing a query inside of another:
-    SELECT ... FROM table_name WHERE column = (SELECT ...)
+    You can use a SELECT inside of a WHERE clause, FROM clause, or another SELECT clause.
+    Also possible when using IN and NOT IN (see Set Operations)
 
 Set Operations (Union, Intersect, Except):
 UNION:
@@ -103,13 +104,15 @@ UNION:
     Combines rows from multiple places to create new columns
 INTERSECT (IN in MySQL):
     SELECT ... WHERE column_name IN (SELECT ...)
+    SELECT ... WHERE column_name IN (set of values)
     Grabs all records in the first select statement that match in the second
 EXCEPT: (NOT IN in MySQL):
-    SELECT ... WHERE columns_name NOT IN (values)
+    SELECT ... WHERE columns_name NOT IN (SELECT ...) 
+    SELECT ... WHERE column_name NOT IN (set of values)
     Grab all records in the first statement EXCEPT for those that appear in the second
 
 Constraints:
-    DISTINCT - seleting unique rows no duplicates
+    DISTINCT - seleting unique rows with no duplicates
         SELECT DISTINCT ...
     Creating a table with constraints:
         CREATE TABLE (
@@ -119,7 +122,17 @@ Constraints:
             PRIMARY KEY(student_id)
             );
     PRIMARY KEY is a unique identifier for a record
-        AUTO INCREMENT - automatically gives new data in a column that is numerical.
+        unique identifier -> Primary Keys cannot be repeated in the column
+        AUTO INCREMENT - automatically creates new data according to the Primary Key.
+            Ex. Column student_id is a Primary Key that starts automatically at 1,
+                then increments to 2, 3, etc. 
+                for each new record inserted into the table.
+            CREATE TABLE (
+                student_id int AUTO_INCREMENT, 
+                name varchar(255), 
+                GPA float,
+                PRIMARY KEY (student_id)
+            );
     FOREIGN KEY refers to a PRIMARY KEY in another table
         CREATE TABLE (
                 student_id int, 
@@ -128,6 +141,9 @@ Constraints:
                 FOREIGN KEY (student_id) references table_name(column)        
                 );
     PRIMARY and FOREIGN KEYS are how to create referential integrity between tables
+        - "Referential Integrity" refers to the Foreign Key's dependence on the Primary Key.
+            - If a piece of data does not exist in the Primary Key, the Foreign Key cannot reference it.
+            - If data is referred to in the Foreign Key, it cannot be deleted from the Primary Key.
         - This ensures that data is consistent across the database
     UNIQUE - set this constraint on a column when creating a table
         CREATE TABLE (
@@ -157,15 +173,16 @@ Constraints:
                 CHECK (0 <= GPA <= 4)    
                 );
 VIEWS
-- A virtual table that is saved and can be accessed.
+- A virtual table that does not exist physically.
+- based on the result set of a SELECT statement.
     CREATE VIEW view_name AS (SELECT ...);
     DROP View view_name;
 
     UPDATE:
     Some criteria to keep in mind when updating a View
-    1. Select statement used to to create the view should not contain GROUP BYs
+    1. Select statement used to create the view should not contain GROUP BY clauses
     2. There should be no DISTINCT constraint in the SELECT
-    3. View should not be made form multiple tables (through a JOIN clause or otherwise)
+    3. View should not be made from multiple tables (through a JOIN clause or otherwise)
     4. Views should not have NOT NULL values
     5. Views hsould not be made from nested queries
 
