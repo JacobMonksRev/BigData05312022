@@ -79,7 +79,7 @@ Third Normal Form (3NF) - Table must already be in 2NF, no transitive dependenci
                 Table 1. Employee personal records, SSN, DoB, etc.
                 Table 2. Hours worked in total per employee
                 Table 3. Accrued paid time off based on hours worked
-                Employee info can be used to find how many hours they worked, but it is NOT true that you can use hours worked to find the employee info. But hours worked will obtain accrued PTO. This is a transitive dependency.
+                Employee info can be used to find how many hours they worked, but it is NOT true that you can use hours worked to find the employee info. But hours worked is needed to obtain accrued PTO. This is a transitive dependency.
         In other words, to avoid transitive dependency, a non-key attribute (hours worked) should not determine any other non-key attribute (PTO).
 Boyce-Codd Normal Form (BCNF) - Table is in 3NF, Primary Key is only single-column.
 Fourth Normal Form (4NF) - Table is BCNF, it cannot contain more than one multi-varied attribute.
