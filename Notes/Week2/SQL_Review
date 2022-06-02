@@ -46,7 +46,7 @@ ROUND() - round to the nearest value
         - Scalar
 COUNT() - counts all related data values based on the selected column
       - Aggregate
-LEN() - returns the number of characters (i.e. the length) of a string
+LENGTH() - returns the number of characters (i.e. the length) of a string
       - Scalar
 SUM() - sums the data selected
       - Aggregate
