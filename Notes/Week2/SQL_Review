@@ -1,0 +1,133 @@
+CREATE - create tables or database
+    CREATE DATABASE DB_name;
+    CREATE TABLE table_name (col1 dataype1, col2 datatype, ...);
+USE - selecting which database you are using
+ALTER TABLE - alter the table columns / schema
+    ALTER TABLE table_name ADD (column datatype);
+    ALTER TABLE table_name DROP (column);
+DROP TABLE - gets rid of the table;
+    DROP TABLE table_name;
+DROP DATABASE - gets rid of a database
+    DROP DATABASE DB_name;
+TRUNCATE - deletes the data from the table but not the table itself
+    TRUNCATE table_name;
+
+INSERT INTO table_name VALUES (val1, val2, ...)
+UPDATE table_name SET column = value WHERE column = value
+    - In the WHERE it is best practice to use the PRIMARY KEY column
+      to be sure you are selecting th ecorect record ot update
+
+SELECT - query information from a table
+FROM - choose the table that you query from
+    SELECT (columns) FROM table_name;
+WHERE - creates a query condition to select only certain records
+    SELECT (columns) FROM table_name WHERE column (condition);
+    SELECT * FROM Mytable WHERE ID = 7;
+ORDER BY - sort the results in a specific order
+    SELECT * FROM Mytable ORDER BY column ASC/DESC;
+GROUP BY - used to create aggregates and group by certain column(s).
+         - when you want to analyze all members of a certain group.
+    SELECT COUNT(ID) FROM Employee WHERE HireDate > 2020:10:10 GROUP BY Department;
+HAVING - a way to further scrutinize a GROUP BY
+       - Different from WHERE in that it creates a condition on the groups
+       - allow you to specify searches based on aggregates
+    SELECT COUNT(ID), Department FROM Employee GROUP BY Department HAVING SUM(Pay) > 30000
+
+Aggregates vs Scalars
+Aggregate - combines records to create some conclusion
+          - combines multiple records to get one result
+Scalars - performs a function on an individual record
+        - one record in, one record out
+
+MIN() - shows minimum value from a group of values
+      - Aggregate
+ROUND() - round to the nearest value   
+        - rounds up from .5
+        - Scalar
+COUNT() - counts all related data values based on the selected column
+      - Aggregate
+LEN() - returns the number of characters (i.e. the length) of a string
+      - Scalar
+SUM() - sums the data selected
+      - Aggregate
+NOW() - grabs current data and time
+      - Scalar
+UCASE/LCASE() - puts the data in upper/lower case (assuming the data is varchar)
+        - Scalar
+FIRST() - grabs the first value out of the data selected
+        - Aggregate
+AVG() - averages all data selected
+      - Aggregate
+
+JOIN clause allows you to combine columns from two (or more) different tables.
+INNER JOIN - takes the records from both tables that are matching
+FULL OUTER JOIN - puts all records from both tables together
+LEFT/RIGHT OUTER JOIN - grabs records from both tables that match and all records from the
+                        LEFT/RIGHT table
+SELF JOIN - compares multiple columns from the same table
+CROSS JOIN - join every record from one column to every record in another column
+    Ex. Two columns:
+        ID      name
+        1       Jacob
+        2       Rose
+        3       Drew
+        Output of a Cross Join is the number of records mulitplied together
+        1       Jacob
+        1       Rose
+        1       Drew
+        2       Jacob
+        2       Rose
+        2       Drew
+        3       Jacob
+        3       Rose
+        3       Drew
+
+JOIN statement:
+
+    SELECT ... FROM table1 JOIN table2 ON table1.col = table2.col
+
+SET OPERATIONS:
+    UNION - combines rows from multiple tables to create new columns
+        - The two SELECTS need to return the same number of columns
+        - Will not return duplicates
+        - Most useful when multiple tables contain similar information, but are separated
+                Ex. Two employee tables, one for recent hires, one for longtime employees
+                    Similar information in both tables, but separated on some criteria
+    Instead of INTERSECT it would be IN
+        - INTERSECT will grab records that exist only in both tables
+        - SELECT * FROM table WHERE column IN (SELECT ...)
+    Instead of EXCEPT it would be NOT IN
+        - EXCEPT will grab records that are in the first that ARE NOT in the second
+        - SELECT * FROM table WHERE column NOT IN (SELECT ...)
+
+Constraints - Limiting conditions on the data that goes into a field
+            - Used in the CREATE TABLE statement
+    PRIMARY KEY - Defines a column that contains only unique values
+                - value must be NOT NULL
+        CREATE TABLE table_name(
+            col1 datatype,
+            col2 datatype,
+            PRIMARY KEY(col1)
+        )
+    FOREIGN KEY - A key column that references the primary key of another table
+        CREATE TABLE table_name(
+            col1 datatype,
+            col2 datatype,
+            FOREIGN KEY (col1) references table_name(column_name)
+        )
+    NOT NULL - Value cannot be NULL when inserting data
+    UNIQUE - Ensures vlaues in a column are different
+    DEFAULT NULL - Value in this column will be NULL unless otherwise specified
+    CHECK - specifies a column value requirements
+        CREATE TABLE table_name(
+            age int ,
+            col2 datatype,
+            CHECK (age >= 18)
+        )
+
+ACID - Essential Properties for any RDBMS to function efficiently / effectively
+A - Atomicity - Either every part of a transaction occurs or the entire thing is abandoned
+              - No half-way done trasnactions
+C - Consistency - Data must be consistent across all tables in the database
+I - Isolation - Ensures that one transaction cannot impact or influence another occuring transaction
+D - Durability - Ensures that in the case of malfunctions / system failure, any committed transaction persists
