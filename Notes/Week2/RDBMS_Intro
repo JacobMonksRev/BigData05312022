@@ -68,15 +68,19 @@ Different Levels of Normalization:
 First Normal Form (1NF) - Each row must have a unique record (no duplicated rows), no single field in
                           a record can have more than 1 value
                         - EVERY column cannot be the same in any two records
-Second Normal Form (2NF) - Table must already be in 1NF, any non-key column must be dependent on the
-                           key column
+Second Normal Form (2NF) - Table must already be in 1NF, any non-key column must be functionally
+                           dependent on the key column
 Third Normal Form (3NF) - Table must already be in 2NF, no transitive dependencies.
-        Transitive Dependency means that A -> B, B -> C    A -> C
+        Transitive Dependency means that the following are true:
+                1. A -> B
+                2. It is not the case that B -> A
+                3. B -> C
             Ex. Three tables for employees at a company
                 Table 1. Employee personal records, SSN, DoB, etc.
                 Table 2. Hours worked in total per employee
-                Table 3. Accrued time off based on hours worked
-                A transitive dependency would mean that both Table 1 and Table 2 are required to obtain Table 3 info. With NO transitive dependency, Table 3 can be obtained directly using Table 1.
+                Table 3. Accrued paid time off based on hours worked
+                Employee info can be used to find how many hours they worked, but it is NOT true that you can use hours worked to find the employee info. But hours worked will obtain accrued PTO. This is a transitive dependency.
+        In other words, to avoid transitive dependency, a non-key attribute (hours worked) should not determine any other non-key attribute (PTO).
 Boyce-Codd Normal Form (BCNF) - Table is in 3NF, Primary Key is only single-column.
 Fourth Normal Form (4NF) - Table is BCNF, it cannot contain more than one multi-varied attribute.
 Fifth Normal Form (5NF) - Table is in 4NF, table cannot be broken down without loss of information.
