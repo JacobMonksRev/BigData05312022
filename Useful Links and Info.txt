@@ -1,2 +1,4 @@
+On Professionalism: https://www.mindtools.com/pages/article/professionalism.htm#:~:text=1%20Competence.%20As%20a%20professional%2C%20you%20get%20the,Intelligence.%20...%207%20Appropriateness.%20...%208%20Confidence.%20
+MySQL Documentation:    https://dev.mysql.com/doc/
 Practice Python:    https://exercism.org/tracks/python
 Scala Documentation:    https://docs.scala-lang.org

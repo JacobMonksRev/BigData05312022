@@ -39,8 +39,8 @@ ACID Properties
             Ensures that the DB is properly updated with new information when a
             transaction is completed
     I - Isolation
-            Ensures that no transactions can overlap or otherwise impact any other transaction
-            Two transactions that utilize the same data cannot overlap or interfere with each other, they must occur sequentially
+            Ensures that no transactions can overlap or otherwise impact the execution of any other transaction
+            Two transactions that utilize the same data cannot overlap or interfere with each other, they must occur sequentially, one after the other
     D - Durability
             A committed transaction will persist in the database indefinitely
             Ex. A system failure will not undo any completed transactions
@@ -73,9 +73,9 @@ Second Normal Form (2NF) - Table must already be in 1NF, any non-key column must
 Third Normal Form (3NF) - Table must already be in 2NF, no transitive dependencies.
         Transitive Dependency means that A -> B, B -> C    A -> C
             Ex. Three tables for employees at a company
-                1. Employee personal records, SSN, DoB, etc.
-                2. Hours worked in total per employee
-                3. Accrued time off based on hours worked
+                Table 1. Employee personal records, SSN, DoB, etc.
+                Table 2. Hours worked in total per employee
+                Table 3. Accrued time off based on hours worked
                 A transitive dependency would mean that both Table 1 and Table 2 are required to obtain Table 3 info. With NO transitive dependency, Table 3 can be obtained directly using Table 1.
 Boyce-Codd Normal Form (BCNF) - Table is in 3NF, Primary Key is only single-column.
 Fourth Normal Form (4NF) - Table is BCNF, it cannot contain more than one multi-varied attribute.
@@ -84,3 +84,10 @@ Sixth Normal Form (6NF) - Table is in 5NF, and provides any further level of nor
                           included.
 
     YOU WILL BE EXPECTED TO KNOW the first 3 Normal Forms.
+
+CRUD Operations: Create, Read, Update, Delete
+- Standard operations that a DBMS needs to interact with data.
+    Update: keyword in MySQL that allows you to edit a piece of data already inserted.
+    UPDATE table_name SET col1 = 'value' WHERE student_id = 4
+        - Best rule of thumb is to use the Primary Key in the WHERE clause
+        - That way the system will not be socnfused about what record you are changing.
