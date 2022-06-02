@@ -3,8 +3,8 @@ CREATE - create tables or database
     CREATE TABLE table_name (col1 dataype1, col2 datatype, ...);
 USE - selecting which database you are using
 ALTER TABLE - alter the table columns / schema
-    ALTER TABLE table_name ADD (column datatype);
-    ALTER TABLE table_name DROP (column);
+    ALTER TABLE table_name ADD col_name datatype;
+    ALTER TABLE table_name DROP COLUMN col_name;
 DROP TABLE - gets rid of the table;
     DROP TABLE table_name;
 DROP DATABASE - gets rid of a database
