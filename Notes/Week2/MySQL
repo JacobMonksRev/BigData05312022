@@ -40,7 +40,7 @@ Key words in SQL:
     UPDATE table_name SET col_name = "value" WHERE condition
     WHERE - creates a condition for the queried data to satisfy (<, >, LIKE, etc.)
     SELECT - how you access information
-        SELECT (column names) FROM table_name (* if you're taking all columns)
+        SELECT (column names) FROM table_name (use '*' after SELECT if taking all columns)
     GROUP BY - a means of organizing the information being queried based on 1 or more columns
         HAVING - a way to further scrutinize the GROUP BY
 
@@ -96,6 +96,9 @@ CREATE TABLE table_name AS (SELECT ...)
 Nested Queries:
     You can make a SQL query more narrow and specific by performing a query inside of another:
     You can use a SELECT inside of a WHERE clause, FROM clause, or another SELECT clause.
+        Ex. SELECT Names, gpa FROM Students WHERE gpa = (SELECT MAX(gpa) FROM Students)
+        - This will first find the maximum gpa among all records in the table 'Students' and then
+          find every record that contains that value for gpa.
     Also possible when using IN and NOT IN (see Set Operations)
 
 Set Operations (Union, Intersect, Except):
@@ -141,7 +144,7 @@ Constraints:
                 FOREIGN KEY (student_id) references table_name(column)        
                 );
     PRIMARY and FOREIGN KEYS are how to create referential integrity between tables
-        - "Referential Integrity" refers to the Foreign Key's dependence on the Primary Key.
+        - "Referential Integrity" refers to the Foreign Key dependency on the Primary Key.
             - If a piece of data does not exist in the Primary Key, the Foreign Key cannot reference it.
             - If data is referred to in the Foreign Key, it cannot be deleted from the Primary Key.
         - This ensures that data is consistent across the database
