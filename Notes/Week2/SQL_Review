@@ -134,7 +134,14 @@ D - Durability - Ensures that in the case of malfunctions / system failure, any 
 
 SQL Injection - security hazard
     - In a text box that a person can fill out, they can add a string of characters or values
-      that will give them unauthorized access to the database
-    - In a website that asks for your ID 
-        Ex. Enter: 1 OR 'FALSE'
+      that will give them unauthorized access to make changes to the database
+    - Ex. The SQL Statement:
+            SELECT * FROM orders WHERE Order_number = USER INPUT
+        If the USER INPUT was this:
+            5; DROP orders;
+        It would execute the following line:
+            SELECT * FROM orders WHERE Order_number = 5; DROP orders;
+        This is hazardous info that would destroy the data in the table.
+        It is designed to feed information into a query that can cause improper code execution.
     - You can prevent SQL Injection by writing queries to be more specific
+    - Check the size and datatype of the input information
