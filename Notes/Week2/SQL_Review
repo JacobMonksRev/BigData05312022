@@ -131,3 +131,10 @@ A - Atomicity - Either every part of a transaction occurs or the entire thing is
 C - Consistency - Data must be consistent across all tables in the database
 I - Isolation - Ensures that one transaction cannot impact or influence another occuring transaction
 D - Durability - Ensures that in the case of malfunctions / system failure, any committed transaction persists
+
+SQL Injection - security hazard
+    - In a text box that a person can fill out, they can add a string of characters or values
+      that will give them unauthorized access to the database
+    - In a website that asks for your ID 
+        Ex. Enter: 1 OR 'FALSE'
+    - You can prevent SQL Injection by writing queries to be more specific
