@@ -63,3 +63,5 @@
 32. What is CRUD?
 
 33. What does ACID stand for? What do they mean?
+
+34. What is SQL Injection?
