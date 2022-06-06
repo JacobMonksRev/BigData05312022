@@ -87,6 +87,11 @@ Python Operators:
             var /= 4
         Exponent Equals **=
         modulo equals %=
+    Comparison Operators:
+    Logical Operators:
+    Identity Operators:
+    Membership Operators:
+    Bitwise Operators:
 
 If statement
     Will execute if a condition is true
