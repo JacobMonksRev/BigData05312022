@@ -3,9 +3,9 @@
 2. Write a python function that creates the following list, and then prints each element of the list combined as a single string:
     ["Learning", "Python", "is", "fun."]
 
-3. Write a python function that first creates a dictionary with the structure shown below, then takes 5 user inputs (listed below), and lastly puts them into dictionary:
+3. Write a python function that first creates a dictionary with the structure shown below, then takes 5 user inputs (listed below), and lastly puts them into the dictionary:
 
-    input = "Bob", "Ross", "5-23-1949", "University of Pennsylvania", 1973
+    inputs = "Bob", "Ross", "5-23-1949", "University of Pennsylvania", 1973
 
     dict = {
         "First Name": ""
