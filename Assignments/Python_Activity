@@ -1,0 +1,24 @@
+1. Write a python function that will calculate the square root of a user input integer passed to it.
+
+2. Write a python function that creates the following list, and then prints each element of the list combined as a single string:
+    ["Learning", "Python", "is", "fun."]
+
+3. Write a python function that first creates a dictionary with the structure shown below, then takes 5 user inputs (listed below), and lastly puts them into dictionary:
+
+    input = "Bob", "Ross", "5-23-1949", "University of Pennsylvania", 1973
+
+    dict = {
+        "First Name": ""
+        "Last Name": ""
+        "Date Of Birth" : ""
+        "Secondary School": ""
+        "Graduation Year": ""
+    }
+
+4. Write a python function that takes a user input and determines if the information has already been stored into the dictionary above.
+
+5. Write a python function that takes a user input integer, and creates a list that is filled with all of those numbers multiplied by 2. (hint: use a for loop)
+    Ex. user_input = 5 --> list = [0, 2, 4, 6, 8, 10]
+        user_input = 9 --> list = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+6. Write a python function that takes 10 user input numbers, and finds the maximum value among them.

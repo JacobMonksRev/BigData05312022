@@ -112,10 +112,11 @@ Python Operators:
                 var2 = Animal('cat')
         IS NOT
     Membership Operators:
-        IN
+        IN 
+            listofAnimals = ['cat', 'dog', 'mouse', 'bird']
             var = 'cat'
             Ex. if var in listofAnimals:
-                    print("Cat is in the animal group")
+                    print("Cat is in the animal lsit")
         NOT IN
     Bitwise Operators:
         10011101
