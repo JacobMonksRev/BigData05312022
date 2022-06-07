@@ -107,9 +107,12 @@ Python Operators:
             Ex. if NOT sleep_status
                     print("person is awake")
     Identity Operators:
-        IS - return true if both variables are the same object
-            Ex. var1 = Animal('cat')
-                var2 = Animal('cat')
+        IS - return true if both variables are the same object and take the same space in memory
+            Ex. a = [1, 2]
+                b = [3, 4]
+                c = a
+                if c is a:
+                    print("A and C are the same.")
         IS NOT
     Membership Operators:
         IN 
