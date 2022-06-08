@@ -1,8 +1,28 @@
 """
 1. Write a python function that will calculate the square root of a user input integer passed to it.
+Ex1.
+import math
+x = int(input("Input number to find square root: "))
+result = math.sqrt(x)
+print("The sqare root of " ,x, "is: ", result)
+Ex2.
+number = int(input("enter a number: "))
+rt = number ** 0.5
+print(rt)
+
 
 2. Write a python function that creates the following list, and then prints each element of the list combined as a single string:
     ["Learning", "Python", "is", "fun."]
+Ex1.
+Numbah2 = ["Learning", "Python", "is", "fun"]
+print(Numbah2)
+' '.join(Numbah2)
+Ex2.
+mylist = ["Learning", "Python", "is", "fun."]
+a,b,c,d = mylist
+print(a,b,c,d)
+Ex3.
+print(mylist[0] + " " + mylist[1] + " " + mylist[2] + " " + mylist[3])
 
 3. Write a python function that first creates a dictionary with the structure shown below, then takes 5 user inputs (listed below), and lastly puts them into the dictionary:
 
@@ -15,13 +35,125 @@
         "Secondary School": ""
         "Graduation Year": ""
     }
+    Ex1.
+def person_dict():
+    thisdict = {
+        "First Name": "",
+        "Last Name": "",
+        "Date Of Birth": "",
+        "Secondary School": "",
+        "Graduation Year": ""
+    }
+    first = input("Enter your first name: ")
+    last = input("Enter your last name: ")
+    dob = input("Enter your date of birth: ")
+    hs = input("Enter your college: ")
+    grad_date = int(input("Enter the year you graduated from college: "))
+    thisdict["First Name"] = first
+    thisdict["Last Name"] = last
+    thisdict["Date of Birth"] = dob
+    thisdict["Secondary School"] = hs
+    thisdict["Graduation Year"] = grad_date
+    print(thisdict)
+person_dict()
+Ex2.
+thisdict.update({"First Name": first})
+Ex3.
+def myDict():
+    first_name = input("What's your first name: ")
+    last_name = input("What's your last name: ")
+    DoB = input("What's your date of birth: ")
+    school = input("What's your secondary school: ")
+    year = input("What's your graduation year: ")
+    global dict1
+    dict1 = {
+        "First Name": first_name,
+        "Last Name": last_name,
+        "Date Of Birth" : DoB,
+        "Secondary School": school,
+        "Graduation Year": year
+    }
+    return dict1, print(dict1)
+#myDict()
 
 4. Write a python function that takes a user input and determines if the information has already been stored into the dictionary above.
+Ex1.
+"Bob" in dict.values()
+Ex2.
+def checking(d):
+    x = input("Your dict value: ")
+    if x in dict1.values():
+        return print("Is already in the dict!") 
+    else:
+        y = input("Enter the dict key you want to replace: ")
+        dict1[y] = x
+        print(dict1)
+#checking(myDict())
+Ex3.
+QOLTest = input("Don't repeat the same information from before")
+if(QOLTest == firstName or QOLTest == LastName or QOLTest == Birthday or QOLTest == College or QOLTest == gradYear):
+    print("Success")
+else:
+    print("Failure")
 
 5. Write a python function that takes a user input integer, and creates a list that is filled with all of those numbers multiplied by 2. (hint: use a for loop)
     Ex. user_input = 5 --> list = [0, 2, 4, 6, 8, 10]
         user_input = 9 --> list = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+Ex1. 
+def twos():
+    x = int(input("How many 2's would you like "))
+    mylist = [i*2 for i in range(x+1)]
+    return mylist
+Ex2.
+def mult():
+    x = int(input("number: "))
+    y = []
+    for i in range(x + 1):
+        y.append(i * 2)
+    print(y)
+#mult()
 
 6. Write a python function that takes 10 user input numbers, and finds the maximum value among them.
+Ex1.
+def user_max():
+    u = []
+    c = 0
+    while (c < 10):
+        c += 1
+        u.append(int(input("number: ")))
+    print(max(u))
+# user_max()
+Ex2.
+def findMax():
+    inputList = []
+    for i in range(10):
+        num = int(input("Number: "))
+        inputList.append(num)
+    return max(inputList)
+
+print(findMax())
+Ex3.
+def maxNum():
+    return max([int(x) for x in input("Enter multiple value: ").split(",")])
+Ex4.
+maxvalue = -99999999999
+    for i in range(9):
+        newvalue = int(input("number: "))
+        if newvalue > maxvalue:
+            maxvalue = newvalue
+    return maxvalue
+Ex5.
+One = int(input("Give Me A 1st Number "))
+Two = int(input("Give Me A 2nd Number "))
+Three = int(input("Give Me A 3rd Number "))
+Four = int(input("Give Me A 4th Number "))
+Five = int(input("Give Me A 5th Number "))
+Six = int(input("Give Me A 6th Number "))
+Seven = int(input("Give Me A 7th Number "))
+Eight = int(input("Give Me A 8th Number "))
+Nine = int(input("Give Me A 9th Number "))
+Ten = int(input("Give Me A 10th Number "))
+
+print (max(One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten))
 
 """

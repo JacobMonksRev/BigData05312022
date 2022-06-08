@@ -148,9 +148,10 @@ Use to check for mlutiple conditions at a time
 TO execute a .py file in terminal you run the command: py file_name.py
 
 Collections:
-    List - ordered set of values, mutable
+    List - ordered set of values, mutable (changeable)
         Mutable means it can be changed
         They do not need to be the same datatype
+        Allows duplicate values
         Ex. newList = [3, 4.5, "Jacob", "Monks", complex(5,5)]
 
         You can access individual values from a list using []
@@ -195,6 +196,22 @@ Collections:
             }
         Keys cannot repeat in the same dictionary
         If a key were to be written twice, the first one is overwritten.
+    Tuple
+        Sorting multiple items in a single entity
+        declared using ()
+        Tuples are ordered, but they are immutable (unchangeable)
+
+        Ex. new_tuple = ('value1', 'value2', 'value3')
+    
+    Set
+        A collection that is unordered, immutable
+        A set cannot contain duplicates
+
+        newSet = {'apple', 'cherry', 'banana', 'banana', 'melon'}
+        Set Operations just like mySQL
+        - union to join sets
+        - intersection to get the similar items
+        - difference to get the different items
 
 Interpreter vs Compiler
     Interpreter convert code into something more comprehensible for the machine
@@ -306,6 +323,7 @@ Namespace:
     Python has some built-in namespaces, which you can see by calling
     dir(__builtins__)
 
+
 Object-Oriented Programming:
     A programming paradigm that revolves around classes and objects
     Encompasses a certain structure of programming
@@ -315,5 +333,75 @@ Object-Oriented Programming:
     Classes: A structure of blueprint for creating new objects
     Objects: An instance of a class, it may contain variations or
              adaptations of the class it is created from
+    Four pillars of OOP:
+        Inheritance - A child class will inherit the attributes and methods from a parent class.
+        Polymorphism - a child class(es) and parent class can contain the same functions that do different things.
+            Ex. Animal class with a 'move()' function
+                Snake will slither
+                Dog will run
+                Pengiun will waddle
+                Falcon will fly
+        Abstraction - the specific functions or attributes of a class can be abstracted away (or obscured) from the user
+            Ex. Everyone has and uses a coffee machine
+                Not everyone knows what a coffee machine actually 'does' on the inside.
+                You input the coffee beans and water
+                The coffee machine gives you coffee
+            When you call a class, the attributes and functions are not necessarily known to you
+            but if you know how the class works, then you can still use it.
 
+            Classes have different access modifiers:
+                1. Public, the default for a class
+                2. Private, if a module instantiates a private class, that module cannot see the class's methods or variables
+                3. Abstract, has defined methods (both abstract and non-abstract) but no implementation for those methods
+                    Relies on the child classes to create implementations.
+                    An abstract method is one that has defined parameters but no defined implementation
+            Python does not do abstraction by default, you must import abstract base classes
+                        import abc
+                        from abc import ABC
+            Abstract classes cannot be instantiated.
+            Ex. class Shapes:
+                    @abstractmethod
+                    def number_sides(self)
+                        pass
+
+                class Octagon(Shapes):
+                    def number_sides(self):
+                        print("Number of sides is 8.")
+                
+                class Square(Shapes):
+                    def number_sides(self):
+                        print("Number of sides of 4.")
+
+        Encapsulation - idea that the methods and attributes for a class can only be accessed under certain restrictions
+            Ex. People working in an office at a company.
+                You work in marketing, and you need sales data for your work.
+                Marketing team and sales team have their own responsibilities.
+                Marketer cannot get the sales data unless they go directly through sales first.
+
+            Protected members of a class:
+                Methods or attributes are protected when they cannot be accessed outside of the class,
+                but they can be accessed by child classes (use the underscore '_')
+
+                Ex. class Workers:
+                        def __init__(self):
+                            # protected attribute
+                            self._salesData = list[32.13, 65.89]
+                        
+                    class Marketer(Workers):
+                        Workers.__init__(self)
+                        print(self._salesData)
+
+            Private members of a class:
+                Methods or attributes that cannot be accessed anywhere
+                except in the class they are a part of (use double underscore '__')
+                Ex. class Workers:
+                        def __init__(self):
+                            # protected attribute
+                            self.__salesData = list[32.13, 65.89]
+
+            When to use encapsulation:
+                You want certain values to remain unchanged or difficult to change accidentally.
+                Adds a layer of security to all attributes and methods in your class.
+
+                    
 """
