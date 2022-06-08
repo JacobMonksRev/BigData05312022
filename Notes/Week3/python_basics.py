@@ -164,6 +164,13 @@ Collections:
 
         newList.append(5)
 
+        You can also put the contents of one list into another list using 'extend'
+        
+        newList = [0, 1, 2, 3, 4]
+        newList2 = [5, 6, 7, 8, 9]
+        newList.extend(newList2)
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
         len() - return the size of the list
 
         Create a list of other lists
@@ -253,3 +260,60 @@ user_var1 = int(input("Enter salary: "))
 user_var2 = int(input("Enter pay period in weeks: "))
 
 print("Paid", salary_per_period(user_var1, user_var2), "every pay period")
+
+"""
+lambda:
+
+    A small, anonymous function
+    Take any number of arguments
+    But can only have one expression
+"""
+
+cube = lambda n : n ** 3
+def expo(y):
+    return lambda n : n ** y
+
+myNumber = expo(3)
+print(myNumber(4))
+
+"""
+Namespace:
+
+    A collection of all variables and functions that are currently defined in a block of code
+    Contain info about the object names, parameters, etc.
+    If the scope of an object ends, it means its namespace ends as well.
+"""
+# def myfunction2():
+#     var3 = var + 5
+#     for i in range(10):
+#         vari = i + var2
+# def myfunction():
+#     global var
+#     var = 5 + 7
+#     var = var / 2
+#     if var > 10:
+#         var3 = var - 10
+#     else:
+#         pass
+#     var2 = 5 + 4
+#     var2 = var3 + var
+#     return var2
+
+# myNum = myfunction()
+# myNum2 = myfunction2()
+
+"""
+    Python has some built-in namespaces, which you can see by calling
+    dir(__builtins__)
+
+Object-Oriented Programming:
+    A programming paradigm that revolves around classes and objects
+    Encompasses a certain structure of programming
+    Python is considered to be an object-oriented language, but it can also perform functional.
+    Therefore, Python is multi-paradigmed
+
+    Classes: A structure of blueprint for creating new objects
+    Objects: An instance of a class, it may contain variations or
+             adaptations of the class it is created from
+
+"""
