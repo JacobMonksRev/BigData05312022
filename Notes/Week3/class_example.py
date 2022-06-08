@@ -1,7 +1,9 @@
 import employee                                     # must import the file that contains the classes
+
 listEmp = []                                        # create empty lists to save our information
 listMan = []
 listTrain = []
+
 def insert_emp():
     emp1 = employee.Employee                                # first indicate the file name, then the class name
     emp1.name = input("Enter the employee's first name: ")  # user input the information
@@ -9,6 +11,7 @@ def insert_emp():
     emp1.dept = input("Enter the employee's dept: ")
     listEmp.append((emp1.name, emp1.salary, emp1.dept))     # appends the user input into the list as a tuple
     print(listEmp)                                          # prints all contents of the list
+
 def insert_man():
     man1 = employee.Manager
     man1.name = input("Enter the manager's first name: ")
@@ -16,6 +19,7 @@ def insert_man():
     man1.dept = input("Enter the manager's dept: ")
     listMan.append((man1.name, man1.salary, man1.dept))
     print(listMan)
+
 def insert_trainee():
     train1 = employee.Trainee
     train1.name = input("Enter the trainee's first name: ")
