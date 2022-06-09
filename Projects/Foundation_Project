@@ -1,0 +1,23 @@
+Revature Big Data Next Gen Python / Scala Foundation Project Guidelines.
+
+Project:
+Create a Python application that connects to either a MySQL or MongoDB server,
+and performs CRUD operations on a database.
+    - The application must be able to create, read, update, and delete.
+    - Use at least 3 different tables.
+    - The tables must contain at minimum 50 records each.
+    - The tables must have a primary / foreign key relationship.
+
+Examples:
+    A banking application
+    Store transaction history
+    A video game
+    Insurance company records
+
+Presentation:
+    We will present our projects the morning of June 24th.
+    Short 5 - 10 minute demonstration of all the functionalities of your project.
+
+Other things of note:
+    This is an individual assignment, no groups.
+    You will be expected to back up your project using GitHub in case of any system crashes or data loss.
