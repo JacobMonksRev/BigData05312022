@@ -1,28 +1,40 @@
 """
 1. Write a python function that will calculate the square root of a user input integer passed to it.
+
+****************************************************************************************************
+
 Ex1.
 import math
 x = int(input("Input number to find square root: "))
 result = math.sqrt(x)
 print("The sqare root of " ,x, "is: ", result)
+
 Ex2.
 number = int(input("enter a number: "))
 rt = number ** 0.5
 print(rt)
 
+****************************************************************************************************
 
 2. Write a python function that creates the following list, and then prints each element of the list combined as a single string:
     ["Learning", "Python", "is", "fun."]
+
+****************************************************************************************************
+
 Ex1.
 Numbah2 = ["Learning", "Python", "is", "fun"]
 print(Numbah2)
 ' '.join(Numbah2)
+
 Ex2.
 mylist = ["Learning", "Python", "is", "fun."]
 a,b,c,d = mylist
 print(a,b,c,d)
+
 Ex3.
 print(mylist[0] + " " + mylist[1] + " " + mylist[2] + " " + mylist[3])
+
+****************************************************************************************************
 
 3. Write a python function that first creates a dictionary with the structure shown below, then takes 5 user inputs (listed below), and lastly puts them into the dictionary:
 
@@ -35,7 +47,10 @@ print(mylist[0] + " " + mylist[1] + " " + mylist[2] + " " + mylist[3])
         "Secondary School": ""
         "Graduation Year": ""
     }
-    Ex1.
+
+****************************************************************************************************
+
+Ex1.
 def person_dict():
     thisdict = {
         "First Name": "",
@@ -56,8 +71,10 @@ def person_dict():
     thisdict["Graduation Year"] = grad_date
     print(thisdict)
 person_dict()
+
 Ex2.
 thisdict.update({"First Name": first})
+
 Ex3.
 def myDict():
     first_name = input("What's your first name: ")
@@ -76,9 +93,15 @@ def myDict():
     return dict1, print(dict1)
 #myDict()
 
+****************************************************************************************************
+
 4. Write a python function that takes a user input and determines if the information has already been stored into the dictionary above.
+
+****************************************************************************************************
+
 Ex1.
 "Bob" in dict.values()
+
 Ex2.
 def checking(d):
     x = input("Your dict value: ")
@@ -89,6 +112,7 @@ def checking(d):
         dict1[y] = x
         print(dict1)
 #checking(myDict())
+
 Ex3.
 QOLTest = input("Don't repeat the same information from before")
 if(QOLTest == firstName or QOLTest == LastName or QOLTest == Birthday or QOLTest == College or QOLTest == gradYear):
@@ -96,14 +120,20 @@ if(QOLTest == firstName or QOLTest == LastName or QOLTest == Birthday or QOLTest
 else:
     print("Failure")
 
+****************************************************************************************************
+
 5. Write a python function that takes a user input integer, and creates a list that is filled with all of those numbers multiplied by 2. (hint: use a for loop)
     Ex. user_input = 5 --> list = [0, 2, 4, 6, 8, 10]
         user_input = 9 --> list = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+****************************************************************************************************
+
 Ex1. 
 def twos():
     x = int(input("How many 2's would you like "))
     mylist = [i*2 for i in range(x+1)]
     return mylist
+
 Ex2.
 def mult():
     x = int(input("number: "))
@@ -113,7 +143,12 @@ def mult():
     print(y)
 #mult()
 
+****************************************************************************************************
+
 6. Write a python function that takes 10 user input numbers, and finds the maximum value among them.
+
+****************************************************************************************************
+
 Ex1.
 def user_max():
     u = []
@@ -123,6 +158,7 @@ def user_max():
         u.append(int(input("number: ")))
     print(max(u))
 # user_max()
+
 Ex2.
 def findMax():
     inputList = []
@@ -132,9 +168,11 @@ def findMax():
     return max(inputList)
 
 print(findMax())
+
 Ex3.
 def maxNum():
     return max([int(x) for x in input("Enter multiple value: ").split(",")])
+
 Ex4.
 maxvalue = -99999999999
     for i in range(9):
@@ -142,6 +180,7 @@ maxvalue = -99999999999
         if newvalue > maxvalue:
             maxvalue = newvalue
     return maxvalue
+
 Ex5.
 One = int(input("Give Me A 1st Number "))
 Two = int(input("Give Me A 2nd Number "))

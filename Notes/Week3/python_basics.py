@@ -71,6 +71,8 @@ Python Operators:
         subtraction -
         multiplication *
         division /
+        floor division // (grab only the whole number)
+            Ex. 5 // 3 = 1
         modulo %
             Ex. 4 % 3 = 1
         exponent **
@@ -323,7 +325,6 @@ Namespace:
     Python has some built-in namespaces, which you can see by calling
     dir(__builtins__)
 
-
 Object-Oriented Programming:
     A programming paradigm that revolves around classes and objects
     Encompasses a certain structure of programming
@@ -334,22 +335,25 @@ Object-Oriented Programming:
     Objects: An instance of a class, it may contain variations or
              adaptations of the class it is created from
     Four pillars of OOP:
-        Inheritance - A child class will inherit the attributes and methods from a parent class.
-        Polymorphism - a child class(es) and parent class can contain the same functions that do different things.
+        1. Inheritance - A child class will inherit the attributes and methods from a parent class.
+        
+        2. Polymorphism - a child class(es) and parent class can contain the same functions that do different things.
             Ex. Animal class with a 'move()' function
                 Snake will slither
                 Dog will run
                 Pengiun will waddle
                 Falcon will fly
-        Abstraction - the specific functions or attributes of a class can be abstracted away (or obscured) from the user
+
+        3. Abstraction - the specific functions or attributes of a class can be abstracted away (or obscured) from the user
+                    - handles complexity by hiding unnecessary details from the user
             Ex. Everyone has and uses a coffee machine
                 Not everyone knows what a coffee machine actually 'does' on the inside.
                 You input the coffee beans and water
                 The coffee machine gives you coffee
-            When you call a class, the attributes and functions are not necessarily known to you
+            When you call a class, the attributes and functions are not necessarily known to you,
             but if you know how the class works, then you can still use it.
 
-            Classes have different access modifiers:
+            Classes can have different access modifiers:
                 1. Public, the default for a class
                 2. Private, if a module instantiates a private class, that module cannot see the class's methods or variables
                 3. Abstract, has defined methods (both abstract and non-abstract) but no implementation for those methods
@@ -358,7 +362,9 @@ Object-Oriented Programming:
             Python does not do abstraction by default, you must import abstract base classes
                         import abc
                         from abc import ABC
+
             Abstract classes cannot be instantiated.
+
             Ex. class Shapes:
                     @abstractmethod
                     def number_sides(self)
@@ -372,7 +378,7 @@ Object-Oriented Programming:
                     def number_sides(self):
                         print("Number of sides of 4.")
 
-        Encapsulation - idea that the methods and attributes for a class can only be accessed under certain restrictions
+        4. Encapsulation - the idea that the methods and attributes for a class can only be accessed under certain restrictions
             Ex. People working in an office at a company.
                 You work in marketing, and you need sales data for your work.
                 Marketing team and sales team have their own responsibilities.

@@ -1,0 +1,47 @@
+1. What is a REPL?
+
+2. What is the difference between an Interpreter and a Compiler?
+
+3. What does it mean for a language to be 'strongly typed' or 'loosely typed'? Which one descibes Python?
+
+4. What are the default data types in Python?
+
+5. Define Namespace
+
+6. What do we mean when we say the 'scope' of a variable?
+
+7. What are the different operators we have in Python?
+
+8. What are functions? How do you define a function?
+
+9. What is a lambda? How do you write a lambda?
+
+10. Know the different collections in Python (list, set, tuple, dictionary)
+
+11. Which collections are mutable/immutable?
+
+12. Which collections are order/not ordered?
+
+13. Which collections contain duplicates?
+
+14. What are the set operations in Python? What do they do?
+
+15. What is a module? How do we impotr a module?
+
+16. How can we open a file in Python?
+
+17. What are the different methods to open a file?
+
+18. What is a datetime object?
+
+19. What are regular expressions? How are they used?
+
+20. What are classes? What are objects?
+
+21. What are the pillars of object-oriented programming?
+
+22. Know how to read and write and if-else statement.
+
+23. Know how to read and write a for-loop and a while-loop.
+
+24. What are exceptions? How are they handled?
