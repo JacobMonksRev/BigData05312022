@@ -410,20 +410,96 @@ Object-Oriented Programming:
                 Adds a layer of security to all attributes and methods in your class.
 
 Strings:
-
+    A datatype that is a list of characters in quotes. 'My name is Jacob'
+    Python is strongly typed
+        It will not allow you to imply a change in datatype.
+        Ex. 5 + '8' Will not execute
+        You must indicate when you are changing datatypes of variables
+    str1 = 'cherry orange apple grape'
+    listFruits = str.split()
+    x = 5
+    print('We have', x, 'fruit in our basket.')
+    print('We have ' + str(x) + ' fruit in our basket.')
 
 Handling Files in Python:
+    
+    To open a file and refer to it later, you must save it in a variable:
+    myFile = open('newFile.txt')
+    
+    To open a file to read it:
+    myFile = open('newFile.txt', 'r')
+    myFile.read()               - reads the whole file
+    myFile.readline()           - reads starting from the pointer
+    myFile.seek(0)              - reset the pointer to the beginning of the file
+    myFile.seek(#)              - set the pointer at a specific line
+
+    To open a file to write to it:
+    myFile = open('newFile.txt', 'w')
+
+    To open a file to append to the end of it:
+    myFile = open('newFile.txt', 'a')
+
+    When you are done with a file, be sure to close it:
+    myFile.close()
 
 
-Imported Collections:
+Collection Modules:
+    import collections
 
+    These collections are not in the default namespace, but can be imported.
+
+    Counter:
+        from collections import Counter
+        A subclass of dictionaries
+        Keeps track of the number (count) of each value.
+
+        list = ['apple','cherry','cherry','apple','orange','lemon']
+        count_fruits = Counter(list)
+
+    OrderedDict
+        Another subclass of dictionary
+        A dictionary that is ordered
+        It remembers the order in which items are added to it
+        Just like any other ordered collection, you can search them with indexes [#]
+
+    DefaultDictionary
+        Another subclass of dictionary
+        Give a value to a key automatically if the key doesn't exist.
+
+        d1 = defaultdict(int)
+
+    ChainMap
+        Encapsulates any number of different dictionaries and contains all of their keys and values
+        Return a list of dictionaries
+    
+    Named Tuple
+        Tuple with names given to the indexes.
+        from collections import namedtuple
 
 Datetime:
-
+https://www.geeksforgeeks.org/python-strftime-function/
+    A datatype that contains the current time.
+        Timestamp data.
+    import datetime
+    x = datetime.datetime.now()
 
 Regular Expressions:
     Cheat Sheet
     https://www.geeksforgeeks.org/python-regex-cheat-sheet/
+        Similar to LIKE keyword in MySQL
+        Creates a pattern for matching its search
 
+    import re
+    x = 'Loraine sings in the rain in Spain'
+    check_regex = x.findall('ain')
+
+    Search for phone numbers:
+        Phone numbers can be in different forms:
+        1234568790
+        123-456-8790
+        (123) 456-7890
+
+    Create a RegEx that can find each one in the following string.
+        str = 'Johns phone number is 1234567890, but it used to be (532) 891-3123. Mary's is 432-435-5321'
 
 """

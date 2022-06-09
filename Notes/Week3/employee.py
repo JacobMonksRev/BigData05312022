@@ -1,5 +1,6 @@
 class Employee:
     isHuman = True
+    type_employee = 'Employee'
     def __init__(self, name, salary, dept):
         self.name = name
         self.salary = salary
@@ -8,10 +9,12 @@ class Employee:
         print(self.name, "is working.")
 
 class Trainee(Employee):
+    type_employee = 'Trainee'
     def work(self):
         print(self.name, "is watching a training video.")
             
 class Manager(Employee):
+    type_employee = 'Manager'
     def work(self):
         print(self.name, "is in a meeting.")
 
