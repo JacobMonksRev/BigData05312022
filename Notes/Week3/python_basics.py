@@ -337,7 +337,7 @@ Object-Oriented Programming:
     Four pillars of OOP:
         1. Inheritance - A child class will inherit the attributes and methods from a parent class.
         
-        2. Polymorphism - a child class(es) and parent class can contain the same functions that do different things.
+        2. Polymorphism - a child class(es) and parent class can contain the same methods that do different things.
             Ex. Animal class with a 'move()' function
                 Snake will slither
                 Dog will run
