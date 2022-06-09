@@ -409,5 +409,21 @@ Object-Oriented Programming:
                 You want certain values to remain unchanged or difficult to change accidentally.
                 Adds a layer of security to all attributes and methods in your class.
 
-                    
+Strings:
+
+
+Handling Files in Python:
+
+
+Imported Collections:
+
+
+Datetime:
+
+
+Regular Expressions:
+    Cheat Sheet
+    https://www.geeksforgeeks.org/python-regex-cheat-sheet/
+
+
 """

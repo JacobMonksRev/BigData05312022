@@ -14,6 +14,12 @@ Examples:
     A video game
     Insurance company records
 
+Tech Stack:
+    Python 3.x
+    VS Code
+    MySQL or MongoDB
+    Git
+
 Presentation:
     We will present our projects the morning of June 24th.
     Short 5 - 10 minute demonstration of all the functionalities of your project.
@@ -21,3 +27,10 @@ Presentation:
 Other things of note:
     This is an individual assignment, no groups.
     You will be expected to back up your project using GitHub in case of any system crashes or data loss.
+    
+    Use these Git commands frequently:
+
+    git status
+    git add .
+    git commit -m 'message'
+    git push
