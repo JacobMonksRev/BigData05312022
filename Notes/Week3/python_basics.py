@@ -415,11 +415,17 @@ Strings:
         It will not allow you to imply a change in datatype.
         Ex. 5 + '8' Will not execute
         You must indicate when you are changing datatypes of variables
-    str1 = 'cherry orange apple grape'
-    listFruits = str.split()
-    x = 5
-    print('We have', x, 'fruit in our basket.')
-    print('We have ' + str(x) + ' fruit in our basket.')
+    split() function splits apart a string based on a specific character, and can save each item in a list.
+        str1 = 'cherry orange apple grape'
+        listFruits = str.split()
+        x = 5
+        print('We have', x, 'fruit in our basket.')
+        print('We have ' + str(x) + ' fruit in our basket.')
+    strip() function removes whitespaces or newlines from the beginning and end of a string.
+        str = '   Hello!     \n'
+        print(str)
+        print(str.strip())
+
 
 Handling Files in Python:
     
@@ -478,6 +484,7 @@ Collection Modules:
 
 Datetime:
 https://www.geeksforgeeks.org/python-strftime-function/
+https://www.programiz.com/python-programming/datetime/strftime
     A datatype that contains the current time.
         Timestamp data.
     import datetime
@@ -491,7 +498,7 @@ Regular Expressions:
 
     import re
     x = 'Loraine sings in the rain in Spain'
-    check_regex = x.findall('ain')
+    check_regex = re.findall('ain')
 
     Search for phone numbers:
         Phone numbers can be in different forms:
@@ -501,5 +508,37 @@ Regular Expressions:
 
     Create a RegEx that can find each one in the following string.
         str = 'Johns phone number is 1234567890, but it used to be (532) 891-3123. Mary's is 432-435-5321'
+
+Errors and Exceptions:
+    An error is a problem in the code that the compiler / interpreter picks up
+        Ex. x = int(input("Please enter a number: "))
+        This will create a ValueError if the input is not information that can be converted into 'int'
+        Errors normally occur:
+            Syntax errors (incorrectly written code)
+            Runtime errors (errors that occur when the proram tries to execute a command that cannot work)
+        Exception is an error that occurs while the program is running.
+            The terminal usually tells you the type of error tht occured
+
+            ValueError
+            FileNotFoundError
+            TypeError
+            DivideByZeroError
+
+        You can create your own exceptions to occur when something happens that you do not want
+        raise keyword
+        
+
+    Exception handling
+        try-except block
+        The code you think may create an exception goe in the try: block
+
+        try:
+            Code that could create an error
+        except:
+            Code that executes when an error is found
+        else:
+            Code that will execute if there are no errors
+        finally:
+            Code that will run regardless of errors or no errors.
 
 """
