@@ -38,8 +38,8 @@ for i in newlist:
    that are found in that file. Be sure to use RegEx.
 """
 import re      # RegEx - Regular Expressions
-import os      # this is necessary to read and write to files.
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+import os                                               # This is necessary to read
+os.chdir(os.path.dirname(os.path.abspath(__file__)))    # and write to files.
 
 def emails():
     content = open('emails.txt', 'r')
