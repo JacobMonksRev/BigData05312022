@@ -52,7 +52,8 @@ Example:
     date:"01-01-2022"
 }
 
-    Generally called JSON Format, fields and values separated by colons.
+    This is generally called JSON Format, fields and values separated by colons.
+    
     Sharding:
         Storing data across multiple machines to meet the demands of big data.
         Increases the memory and processing capability of the server through horizontal scaling.
