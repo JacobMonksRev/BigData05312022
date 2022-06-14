@@ -36,7 +36,7 @@ Mongo
         Double
         Long
         Boolean
-    ObjectID
+        ObjectID
     Null
     Binary Data
     Symbol
@@ -53,7 +53,7 @@ Example:
 }
 
     This is generally called JSON Format, fields and values separated by colons.
-    
+
     Sharding:
         Storing data across multiple machines to meet the demands of big data.
         Increases the memory and processing capability of the server through horizontal scaling.
@@ -128,4 +128,25 @@ Embedding Documents:
         }
     ]
     date:"01-01-2022"
-    }  
+    }
+
+Primary Keys:
+    Mongo is not relational, Primary Keys are not necessary to create relations
+    Instead, Mongo just has the Embedded Documents.
+    Ensures documents are uniquely identified.
+    Makes querying much easier.
+
+    Primary Keys in Mongo are done using "_id" field.
+    Mongo will automatically create these if you do not declare them explicitly.
+    _id is 12 bytes of data"
+        4 - bytes timestamp data, to note the time of creation
+        5 - bytes are a random value
+        3 - bytes are a counter that ticks based on the random value
+    These random numbers mean the _id field is *most likely* unique.
+
+    If you don't want Mongo to create _id automatically, you must define it explicitly.
+    _id is an immutable field, it cannot be changed using updateOne() or updateMany()
+
+pyMongo:
+    Connecting your MongoDB server to a Python application.
+    https://pypi.org/project/pymongo/

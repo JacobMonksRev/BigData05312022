@@ -541,4 +541,6 @@ Errors and Exceptions:
         finally:
             Code that will run regardless of errors or no errors.
 
+MySQL Connector Python:
+https://dev.mysql.com/downloads/connector/python/
 """
