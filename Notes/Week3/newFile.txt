@@ -1,6 +1,0 @@
-Employee Bill 90000 sales
-Employee Bill 80000 HR
-Employee Bill 60000 sales
-Employee Ta'Nara 70000 HR
-Employee Harry Potter 20000 HR
-Employee Harry5 60000 sales

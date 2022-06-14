@@ -3,3 +3,4 @@ MySQL Documentation:    https://dev.mysql.com/doc/
 Python Basics:      https://pythonbasics.org/
 Practice Python:    https://exercism.org/tracks/python
 Scala Documentation:    https://docs.scala-lang.org
+Mongo Documentation:    https://www.mongodb.com/docs/
