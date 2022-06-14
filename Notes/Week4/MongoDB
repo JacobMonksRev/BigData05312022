@@ -1,1 +1,130 @@
 MongoDB Notes
+
+We talked about MySQL as Relational (RDBMS)
+Mongo is a NoSQL
+    - non SQL
+    - not only SQL
+    - not Relational
+    - Mongo allows us to organize unstructured data as well as structured.
+
+NoSQL allows us to organize wide variety of data.
+    - Distributed, servers don't have a single point of failure, data is kept in multiple locations
+    - Scalable, data storage can expand based on what is needed
+        - Horizontally scalable, which means that increasing capacity just means using more servers
+    - High performance querying
+    - Large throughput
+    - Allows for data clustering across multiple machines.
+    - Does not have ACID properties.
+
+Mongo
+    - document based NoSQL
+    Terminology:
+    MySQL           Mongo
+    Databse         Database
+    Table           Collection
+    Row/Record      Document
+    Column          Field
+    Join            Embedding Documents
+    Primary Key     Primary Key
+    - A dcoument consists of key-value pairs
+
+    Datatypes:
+    - Most important to remember
+        String
+        Int
+        Float
+        Double
+        Long
+        Boolean
+    ObjectID
+    Null
+    Binary Data
+    Symbol
+    JavaScript
+    Regular Expression
+
+Example:
+{
+    first_name:"John",
+    last_name:"Johnson",
+    cell:"1234567890",
+    city:"Los Angeles",
+    date:"01-01-2022"
+}
+
+    Generally called JSON Format, fields and values separated by colons.
+    Sharding:
+        Storing data across multiple machines to meet the demands of big data.
+        Increases the memory and processing capability of the server through horizontal scaling.
+        Mongo's approach to increasing data throughput and efficiency.
+
+CRUD Operations:
+
+C- Create
+    > show dbs
+    > use db_name (can also create a new database if the name doesn't yet exist)
+    > db.createCollection("CollectionName")
+    > show collections
+
+    >db.CollectionName.insertOne({})
+    >db.CollectionName.insertMany([{}])
+
+    The {} identify the info that goes into a document
+    When inserting multiple documents, be sure to use [] because it is a list of documents
+
+R - Read
+    > db.CollectionName.find()      - gives you object IDs with info
+    > db.CollectionName.find().pretty()     -prints out the info more cleanly
+    find() is Mongo's version of SELECT
+
+    In the find() you indicate what your search criteria is.
+    - query for multiple specific fields/values
+        db.CollectionName.find({first_name:"Name", last_name:"Name"})
+    - query with $or to search for documents that satisfy either condition
+        db.CollectionName.find({$or: [{first_name:"Name"},{last_name:"Name"}]})
+    - query for fields with vlaues greater/less than a value
+        db.CollectionName.find({age: {$lt: 30}})
+    - query for values that exist in a given list of values
+        db.CollectionName.find({field: {$in [value1, value2]}})
+
+U - Update
+    updateOne(), updateMany()
+    > db.CollectionName.updateOne({first_name:"Name"},{$set {last_name:"Name2"}})
+    - You can use update to insert new fields into documents that weren't there before.
+
+    updateOne() will only change the first document it finds.
+    updateMany() will change all documents that fit the criteria.
+
+D - Delete
+    deleteOne(), deleteMany()
+    > db.CollectionName.deleteOne({first_name:"Name"})
+
+    To delete everything from the collection:
+    > db.CollectionName.deleteMany({})
+
+Embedding Documents:
+    Functions in a similar way to MySQL Joins.
+    Taking information from one document and placing it directly into another.
+    Increases efficiency.
+    Use it when data that relates to each other frequently needs to be used together.
+    Embed a document just like you would create a list []
+
+    Example:
+    {
+    first_name:"John",
+    last_name:"Johnson",
+    cell:"1234567890",
+    city:"Los Angeles",
+    profession:["banking","finance","trader"],
+    cars: [
+        {
+            model:"Charger"
+            year:2007
+        }
+        {
+            model:"Mustang",
+            year:1970
+        }
+    ]
+    date:"01-01-2022"
+    }  
