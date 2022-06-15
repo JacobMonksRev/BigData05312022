@@ -1,2 +1,7 @@
 MongoDB:    https://www.mongodb.com/try/download/community
 pyMongo:    https://pypi.org/project/pymongo/
+
+To access Mongo in Powershell:
+1. cd /
+2. This should be the default location of mongo: C://Program Files/MongoDB/Server/5.0/bin
+3. ./mongo
