@@ -1,0 +1,78 @@
+Insert the following documents into a restaurants collection.
+
+name : Big Boy
+owner: Marriot Corp
+no_franchises: 56
+founded: 1936
+dishes : [
+  Big Boy Sandwich
+  Chicken Sandwich
+  French Fries
+]
+name: McDonald's
+owner: McDonald's Corp
+no_franchises: 750000
+founded: 1940
+dishes : [
+  Big Mac Sandwich
+  McChicken
+  French Fries
+]
+name: Panda Express
+owner: Panda Restaurant Group
+no_franchises: 2200
+founded: 1983
+dishes : [
+  Orange Chicken
+  Beef and Broccoli
+  Fried Rice
+]
+name: El Charro
+owner: Grossman Company Properties
+no_franchises: 147
+founded: 1922
+dishes : [
+  Puffy Taco
+  Mexican Rice
+  Chicken Burrito
+]
+name: Chipotle Mexican Grill
+owner: Grossman Company Properties
+no_franchises: 2000
+founded: 1993
+dishes : [
+  Carnitas Burrito
+  Barbacoa Tacos
+  Guacamole
+]
+
+
+-----------------------------------------------------------------------
+
+Query / Find Documents
+query the restaurants collection to
+
+get all documents
+get all restaurants that serve rice.
+get all restaurants where dishes include sandwiches.
+get all restaurants with at least 500 franchises.
+get all restaurants with either more than 10000 or less than 100 franchises.
+get all restaurants that were founded before 1950.
+get all restaurants that serve Burritos.
+get all restaurants that serve Chicken.
+
+------------------------------------------------------------------------------
+
+Update Documents
+
+add a dish to McDonald's: Egg McMuffin
+add a dish to Panda Express: Teriyaki Chicken
+add a new field to each record called "Location" and put in the country where these restaurants were founded (or the state if it's from the USA)
+ - you will need to look these up.
+
+-----------------------------------------------------------------------
+
+Delete Documents
+
+delete the movie "Fight Club"
+delete all the movies that are a part of "The Hobbit" franchise.

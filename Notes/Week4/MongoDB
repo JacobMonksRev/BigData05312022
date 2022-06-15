@@ -26,7 +26,7 @@ Mongo
     Column          Field
     Join            Embedding Documents
     Primary Key     Primary Key
-    - A dcoument consists of key-value pairs
+    - A document consists of key-value pairs
 
     Datatypes:
     - Most important to remember
@@ -87,6 +87,10 @@ R - Read
         db.CollectionName.find({age: {$lt: 30}})
     - query for values that exist in a given list of values
         db.CollectionName.find({field: {$in [value1, value2]}})
+    - query for documents using Regex
+        db.CollectionName.find({field: {$regex: 'pattern', $options 'option'}})
+    - query for documents that that DO NOT follow a condition
+        db.CollectionName.find({first_name: {$not: "Name"}})
 
 U - Update
     updateOne(), updateMany()
@@ -121,19 +125,19 @@ Embedding Documents:
         {
             model:"Charger"
             year:2007
-        }
+        },
         {
             model:"Mustang",
             year:1970
         }
-    ]
+    ],
     date:"01-01-2022"
     }
 
 Primary Keys:
     Mongo is not relational, Primary Keys are not necessary to create relations
     Instead, Mongo just has the Embedded Documents.
-    Ensures documents are uniquely identified.
+    However, Primary Keys still ensure that documents are uniquely identified.
     Makes querying much easier.
 
     Primary Keys in Mongo are done using "_id" field.
@@ -150,3 +154,75 @@ Primary Keys:
 pyMongo:
     Connecting your MongoDB server to a Python application.
     https://pypi.org/project/pymongo/
+
+Regex:
+- Works similar to MySQL.
+- Pattern matching in the documents.
+- Create a Regular Expression for fields in the document to match.
+
+db.CollectionName.find( { field: {$regex: 'e', $options: 'o'} } )
+
+- Four options:
+    1. 'i' - ignore case sensitivity
+    2. 'm' - match strings with multi-line values (\n)
+    3. 'x' - ignores whitespace or any characters enclosed in comments (#)
+    4. 's' - allows the dot character '.' to match all characters including newlines.
+
+Ex.
+db.CollectionName.find( { field: {$regex: 'string', $options: 'i'} } ) #contains this string
+db.CollectionName.find( { field: {$regex: '^[ABC]', $options: 'i'} } ) #start with these letters
+db.CollectionName.find( { field: {$regex: '[ABC]$', $options: 'i'} } ) #ends with these letters
+
+Dropping Collections:
+- Delete is the keyword for documents
+- Drop is the keyword for collections
+
+db.CollectionName.drop()
+
+Dropping Fields:
+- Like dropping a column in MySQL
+
+db.CollectionName.updateOne({field:value}, {$unset: {field:1}})
+
+- You cannot unset an _id field
+
+Limit:
+- limit the number of records / documents that are returned.
+
+db.CollectionName.find().limit(# of documents returned).pretty()
+
+Sort:
+- works like ORDER BY in MySQL
+- order the records by the value of a field in either ascending or descending order.
+
+db.CollectionName.find().sort({field:(1/-1)}).pretty()
+- use 1 for ascending order
+- use -1 for descending order
+
+If a document doesn't have the field you sort by:
+    - They get thrown on the bottom of the order if descending order.
+    - They get thrown on the top of the order if ascending order.
+
+Aggregates:
+- Aggregates are harder to use and less practical in Mongo compared to MySQL
+- This is because of the flexible structure of documents
+
+db.CollectionName.aggregate({$group: {_id: '', field:{$agg: "$field"}}})
+- Functions:
+    $sum
+    $avg
+    $max
+    $min
+    $first  #equally achieved by ascending/descending and then limit 1
+    $last
+
+- if a document doesn't have the field being aggregated, it will not be accounted for in the aggregation.
+
+Index:
+- Makes searching for records faster and easier.
+- Put an index on a column / field in order to create binary tree diagram to more easily get queries.
+- takes up more space, slower writing.
+
+db.CollectionName.createIndex({field:1}, {name: "Name of Index"})
+
+- use indexing on larger collections with documents that have a lot of similar data.
