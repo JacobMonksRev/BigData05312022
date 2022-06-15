@@ -86,7 +86,7 @@ R - Read
     - query for fields with vlaues greater/less than a value
         db.CollectionName.find({age: {$lt: 30}})
     - query for values that exist in a given list of values
-        db.CollectionName.find({field: {$in [value1, value2]}})
+        db.CollectionName.find({field: {$in: [value1, value2]}})
     - query for documents using Regex
         db.CollectionName.find({field: {$regex: 'pattern', $options 'option'}})
     - query for documents that that DO NOT follow a condition
@@ -94,7 +94,7 @@ R - Read
 
 U - Update
     updateOne(), updateMany()
-    > db.CollectionName.updateOne({first_name:"Name"},{$set {last_name:"Name2"}})
+    > db.CollectionName.updateOne({first_name:"Name"},{$set: {last_name:"Name2"}})
     - You can use update to insert new fields into documents that weren't there before.
 
     updateOne() will only change the first document it finds.

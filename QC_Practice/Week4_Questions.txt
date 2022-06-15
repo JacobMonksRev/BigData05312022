@@ -1,0 +1,41 @@
+1. What does BASE stand for?
+
+2. What is a database in Mongo?
+
+3. What is a collection?
+
+4. What is a document?
+
+5. What rules does Mongo enforce about the structure of documents inside a collection?
+
+6. What is a distributed application? A distributed data store?
+
+7. What is High Availability? How is it achieved in Mongo?
+
+8. What is Scalability? How is it achieved in Mongo?
+
+9. Explain replica sets and sharding
+
+10. What are NoSQL databases? What are the different types of NoSQL databases?
+
+11. What kind of NoSQL database MongoDB is?
+
+12. Which are the most important features of MongoDB?
+
+13. What is a Namespace in MongoDB?
+
+14. Which all languages can be used with MongoDB?
+
+15. Compare SQL databases and MongoDB at a high level.
+
+16. How is MongoDB better than other SQL databases?
+
+17. Does MongoDB support foreign key constraints?
+
+18. Does MongoDB support ACID transaction management and locking functionalities?
+
+19. How can you achieve primary key - foreign key relationships in MongoDB?
+
+20. When should we embed one document within another in MongoDB?
+
+21. Mention what is Objecld composed of?
