@@ -74,5 +74,5 @@ add a new field to each record called "Location" and put in the country where th
 
 Delete Documents
 
-delete the movie "Fight Club"
-delete all the movies that are a part of "The Hobbit" franchise.
+delete the restaurant "El Charro"
+Imagine there is a recall on Chicken: delete all food items from the menus that contain Chicken.
