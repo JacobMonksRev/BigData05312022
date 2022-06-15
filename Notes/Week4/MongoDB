@@ -160,7 +160,7 @@ Regex:
 - Pattern matching in the documents.
 - Create a Regular Expression for fields in the document to match.
 
-db.CollectionName.find( { field: {$regex: 'e', $options: 'o'} } )
+db.CollectionName.find( { field: {$regex: 'expression', $options: 'option'} } )
 
 - Four options:
     1. 'i' - ignore case sensitivity
