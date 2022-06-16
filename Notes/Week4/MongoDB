@@ -155,6 +155,8 @@ pyMongo:
     Connecting your MongoDB server to a Python application.
     https://pypi.org/project/pymongo/
 
+    from pymongo import MongoClient
+
 Regex:
 - Works similar to MySQL.
 - Pattern matching in the documents.
@@ -226,3 +228,18 @@ Index:
 db.CollectionName.createIndex({field:1}, {name: "Name of Index"})
 
 - use indexing on larger collections with documents that have a lot of similar data.
+
+BASE:
+    Basically Available - anyone can obtain the data if they request it.
+    Soft state - describes the interval where changes are to be made to the data.
+    Eventually consistent - after all necessry have been made, the data becomes consistent.
+
+    Alternative approach to data systems design from ACID.
+    ACID values the consistency and integrity of data, BASE prioritizes Availability.
+
+    Mongo uses sharding and replication to obtain High Availability
+    - Sharding is splitting the data into shards and distributing it across servers
+    - Replication is taking the data in a server and making replica sets.
+    - Any client on the server who requests the data will receive it.
+
+    The idea is that the data can be resolved or fixed at a later time due to Mongo's flexibility.

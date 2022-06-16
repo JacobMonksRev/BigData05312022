@@ -543,4 +543,84 @@ Errors and Exceptions:
 
 MySQL Connector Python:
 https://dev.mysql.com/downloads/connector/python/
+
+Unit Testing:
+- framework that is built off of Java JUnit
+- testing each individual unit of a program.
+    an individual function
+    a class
+
+- Validates each smallest portion of your program in order to ensure that they can all work as a whole.
+- Python Unit Testing supports automation, set up and shutdown codes, and aggregation of test results.
+
+import unittest
+
+- Test Case:
+    individual unit of testing
+    setting a value for the test input and ensuring it gives the correct output
+- Test Suite:
+    multiple test cases done at once.
+- Test Fixture:
+    refers to any other resources needed for a test
+        - extra servers for storage, a database connection, etc.
+- Test Runner:
+    Actual executor for the tests, provides the outcome to the user.
+
+- A function can only be tested if it has a return value.
+
+def printing(input):
+    print(input)                # by itself, this cannot be tested.
+    return str(input) + "newstring"   # adding this allows it to be tested
+
+class MyTest(unittest.TestCase):
+    def my_test(self):
+        self.assertEqual()
+        self.assertNotEqual()
+        self.assertTrue()
+        self.assertFalse()
+        self.assertIs()
+        self.assertIsNot()
+        self.assertIsInstance()
+        self.assertIsNotInstance()
+
+Collection Comprehension:
+- a short and concise way to create a new collection from one that already exists.
+Ex. you want to take in a list of numbers, and create a list that has the even numbers among them.
+
+- List Comprehension:
+    list1 = [1,2,3,4,5,6,7,8,9]
+    list2 = []
+    list2 = [el for el in list1 if el % 2 == 0]
+
+- Dictionary Comprehension
+    dict2 = {key:value for (key,value) in dict2 if (key, value satisfies this)}
+Ex. use a list of numbers to create a dictionary where keys and vlaues are the numbers followed bythe numbers squared.
+    list1 = [1,2,3,4,5,6,7,8,9]
+    dict1 = {}
+    dict1 = {el:el**2 for el in list1}
+    print(dict1)
+
+- Set Comprehension
+    Identical to lists except it can't have duplicates, and it uses {} instead of []
+- Generator Comprehension
+    This is also similar to lists, except it uses () instead of []
+    Doesn't save the collection as a whole, instead it saves each individual value in memory.
+    More memory efficient.
+
+PyPI
+- Python Package Index
+- python's dedicated repository for importing modules and packages.
+- Allows developers to create their own modules and then dliver them remotely so that other developers can easily access them.
+- Developers can import the previously created libraries for their own purposes.
+- Packages are just collecitons of modules.
+
+pip
+- Python package installer.
+- can install packages from PyPI and elsewhere.
+- pip commands
+    pip search - searches for all PyPI packages
+    pip install - install package
+    pip uninstall - uninstall a previously installed package
+    pip list - create a list of all currently installed packages
 """
+
