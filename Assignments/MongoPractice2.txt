@@ -58,8 +58,6 @@ get all restaurants where dishes include sandwiches.
 get all restaurants with at least 500 franchises.
 get all restaurants with either more than 10000 or less than 100 franchises.
 get all restaurants that were founded before 1950.
-get all restaurants that serve Burritos.
-get all restaurants that serve Chicken.
 
 ------------------------------------------------------------------------------
 
