@@ -17,12 +17,12 @@ Examples:
 Tech Stack:
     Python 3.x
     VS Code / IntelliJ
-    MySQL or MongoDB
+    MySQL / MongoDB
     Git
 
 Presentation:
     We will present our projects the morning of June 24th.
-    Short 5 - 10 minute demonstration of all the functionalities of your project.
+    Short ~5 minute demonstration of all the functionalities of your project.
 
 Other things of note:
     This is an individual assignment, no groups.
@@ -36,4 +36,4 @@ Other things of note:
     git push
 
     Proposal:
-        I want you to email me a short description of what your project is, and waht kinds of data will be handled. Try to get these to me by the end of the day Thursday June 9.
+        I want you to email me a short description of what your project is, and what kinds of data will be handled. Try to get these to me by the end of the day Thursday June 9.
