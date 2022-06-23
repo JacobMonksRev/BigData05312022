@@ -523,6 +523,7 @@ Errors and Exceptions:
             FileNotFoundError
             TypeError
             DivideByZeroError
+            BaseError (parent class of all errors)
 
         You can create your own exceptions to occur when something happens that you do not want
         raise keyword
