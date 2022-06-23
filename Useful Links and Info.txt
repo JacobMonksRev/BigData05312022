@@ -1,6 +1,19 @@
-On Professionalism: https://www.mindtools.com/pages/article/professionalism.htm#:~:text=1%20Competence.%20As%20a%20professional%2C%20you%20get%20the,Intelligence.%20...%207%20Appropriateness.%20...%208%20Confidence.%20
-MySQL Documentation:    https://dev.mysql.com/doc/
-Python Basics:      https://pythonbasics.org/
-Practice Python:    https://exercism.org/tracks/python
-Scala Documentation:    https://docs.scala-lang.org
-Mongo Documentation:    https://www.mongodb.com/docs/
+On Professionalism:
+    https://www.mindtools.com/pages/article/professionalism.htm#:~:text=1%20Competence.%20As%20a%20professional%2C%20you%20get%20the,Intelligence.%20...%207%20Appropriateness.%20...%208%20Confidence.%20
+
+MySQL:   
+    Documentation:  https://dev.mysql.com/doc/
+    Practice:       https://www.mysqltutorial.org/
+
+Python:
+    Documentation:  https://www.python.org/doc/
+                    https://pythonbasics.org/
+    Practice:       https://exercism.org/tracks/python
+                    https://www.w3schools.com/python/
+
+MongoDB:
+    Documentation:  https://www.mongodb.com/docs/
+    Tutorials:      https://studio3t.com/academy/?keyword=learn%20mongodb&msclkid=1642bd2de15c1625a780df9ea40df59e&utm_source=bing&utm_medium=cpc&utm_campaign=GS%20%7C%20Generic%20%7C%20US&utm_term=learn%20mongodb&utm_content=Learn%20MongoDB%20(exact)
+
+Scala:
+    Documentation:    https://docs.scala-lang.org
