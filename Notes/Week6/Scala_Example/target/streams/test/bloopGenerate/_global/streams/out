@@ -1,0 +1,4 @@
+[debug] [scala_example-test] Classpath dependencies List()
+[debug] [scala_example-test] Dependencies from configurations List(scala_example)
+[debug] Bloop wrote the configuration of project 'scala_example-test' to 'C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\.bloop\scala_example-test.json'
+[success] Generated .bloop\scala_example-test.json

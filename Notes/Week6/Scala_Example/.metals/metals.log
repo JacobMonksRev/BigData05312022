@@ -1,0 +1,54 @@
+2022.06.27 12:32:02 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\.metals\lsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.06.27 12:32:07 INFO  logging to file C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\.metals\metals.log
+2022.06.27 12:32:07 INFO  Started: Metals version 0.11.6 in workspace 'C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example' for client Visual Studio Code 1.68.1.
+2022.06.27 12:32:12 INFO  time: initialize in 5.3s
+2022.06.27 12:32:15 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.27 12:32:15 WARN  Build server is not auto-connectable.
+2022.06.27 12:32:15 WARN  no build tool detected in workspace 'C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.27 12:32:18 WARN  no build target for: C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\HelloWorld.scala
+2022.06.27 12:32:26 INFO  no build target found for C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\HelloWorld.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.27 12:32:36 INFO  time: code lens generation in 2.16s
+2022.06.27 12:32:36 INFO  time: code lens generation in 8.46s
+2022.06.27 12:32:36 INFO  time: code lens generation in 3.13s
+2022.06.27 12:32:36 INFO  time: code lens generation in 8.61s
+2022.06.27 12:32:36 INFO  time: code lens generation in 8.63s
+2022.06.27 12:32:36 INFO  time: code lens generation in 18s
+Jun 27, 2022 12:32:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 51
+2022.06.27 12:33:03 WARN  no build target for: C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\HelloWorld.scala
+2022.06.27 12:33:18 WARN  no build target for: C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\build.sbt
+2022.06.27 12:33:52 WARN  no build target for: C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\build.sbt
+2022.06.27 12:34:01 INFO  running 'C:\Program Files\Java\jdk1.8.0_321\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -Dsbt.version=1.6.2 -jar C:\Users\JACOBM~1\AppData\Local\Temp\metals5830299009438489998\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2022.06.27 12:34:06 INFO  [info] Updated file C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\project\build.properties: set sbt.version to 1.6.2
+2022.06.27 12:34:06 INFO  [info] welcome to sbt 1.6.2 (Oracle Corporation Java 1.8.0_321)
+2022.06.27 12:34:20 INFO  [info] loading settings for project scala_example-build-build from metals.sbt ...
+2022.06.27 12:34:25 INFO  [info] loading project definition from C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\project\project
+2022.06.27 12:34:39 INFO  [info] loading settings for project scala_example-build from metals.sbt ...
+2022.06.27 12:34:39 INFO  [info] loading project definition from C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\project
+2022.06.27 12:34:52 INFO  [success] Generated .bloop\scala_example-build.json
+2022.06.27 12:34:52 INFO  [success] Total time: 12 s, completed Jun 27, 2022 12:34:53 PM
+2022.06.27 12:34:57 INFO  [info] loading settings for project scala_example from build.sbt ...
+2022.06.27 12:34:57 INFO  [info] set current project to Hello World (in build file:/C:/Users/JacobMonks/Documents/GitHub/BigData05312022/Notes/Week6/Scala_Example/)
+2022.06.27 12:35:00 INFO  [success] Generated .bloop\scala_example-test.json
+2022.06.27 12:35:00 INFO  [success] Generated .bloop\scala_example.json
+2022.06.27 12:35:00 INFO  [success] Total time: 1 s, completed Jun 27, 2022 12:35:00 PM
+2022.06.27 12:35:00 INFO  time: ran 'sbt bloopInstall' in 58s
+2022.06.27 12:35:00 INFO  Attempting to connect to the build server...
+2022.06.27 12:35:00 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\.metals\bsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.06.27 12:35:00 INFO  Attempting to connect to the build server...
+2022.06.27 12:35:00 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\project\.metals\bsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.06.27 12:35:00 INFO  time: Connected to build server in 0.79s
+2022.06.27 12:35:00 INFO  Connected to Build server: Bloop v1.5.0-18-003e6c7b
+2022.06.27 12:35:01 INFO  time: Imported build in 0.25s
+2022.06.27 12:35:11 INFO  time: indexed workspace in 10s
+2022.06.27 12:35:12 INFO  compiling scala_example (1 scala source)
+2022.06.27 12:35:16 INFO  time: compiled scala_example in 4.02s
+2022.06.27 12:35:16 INFO  compiling scala_example-test (1 scala source)
+2022.06.27 12:35:19 INFO  time: compiled scala_example-test in 3.79s
+2022.06.27 12:35:26 INFO  time: code lens generation in 13s
+2022.06.27 12:35:26 INFO  time: code lens generation in 11s
+Jun 27, 2022 12:42:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 209
+2022.06.27 12:43:26 INFO  shutting down Metals
+2022.06.27 12:43:26 INFO  Shut down connection with build server.
+2022.06.27 12:43:26 INFO  Shut down connection with build server.

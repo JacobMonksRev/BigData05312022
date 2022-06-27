@@ -1,0 +1,243 @@
+SCALA
+
+Scala is scalable language.
+
+Three key things to remember about how Scala operates:
+
+1. JDK - Java Development Kit
+    The whole package that contains the resources for running Java programs.
+    Contains the JRE, interpreter, and compiler (javac)
+2. JRE - Java Runtime Environment
+    Provides the minimum required resources for a Java program to run.
+    Contains the JVM and all defaults packages necessary for creating programs. (core classes and other supporting files)
+3. JVM - Java Virtual Machine
+    The accumulation of resoures that will compile and run Java code
+    A virtual machine that can run on basically any machine.
+
+Scala is a language written heavily based on Java code.
+- runs in the JRE.
+- compiled to Bytecode just like Java.
+- Basically any machine can run Scala applications.
+- High level language like Java.
+- Statically Typed.
+    The datatype of all objects must be consistent and cannot change unless explicitly declared.
+- the goal of Scala is to condense code to write less of it and perform the same functions.
+- Version 2.11.12 is the preferred release of Scala for the technologies that we will be using
+    Hadoop
+    Spark
+    Kafka
+    Hive
+
+Scala Fundamentals
+
+- Two types of objects in Scala:
+    Val (Value) - cannot change its value unless it is redeclared. (immutable)
+    Var (Variable) - can change their value without needing to be re-declaed. (mutable)
+
+- Key data types to remember:
+    Int
+    String
+    Float
+    Double (bigger float, take on higher precision decimals)
+    Long (bigger Int)
+    Boolean
+
+    You can enforce datatypes.
+    var myvar: Int = 0
+
+    Keywords cannot be used as identifiers
+    - You can't name a value "val" or "for"
+    - These are keywords: the system compile these as though they are actions or commands.
+
+- Control flow statements
+    if-statements (if-else statements)
+        An if statements checks a condition, and will execute if the condition is True.
+        If the condition is not True, it will instead run the "else" if there is an "else"
+
+        Scala does not compile white space / indents at all.
+
+        if (x > 10) {
+            print("X is greater than 10")
+        }
+
+        Every block of code is separated using {}, instead of indents like Python.
+
+    You can also write it like if only using one line: if (x > 10) print("X is greater than 10")
+
+    print and println both print the data that you need them to, but println adds a newline.
+
+        if (x > 10) {
+            print("x is greater than 10")
+        } else if (x < 10) {
+            print("x is less than 10")
+        } else {
+            print("x is 10")
+        }
+    
+    Curly braces are necessary when a block has more than 1 expression.
+
+    for-loops
+    - loop for as many iterations as possible.
+    
+        for (i <- 0 to 10) {
+            println(i)
+        }
+
+        Use the arrow (<-) to indiciate assignment of the iterated values.
+
+    while-loops
+    - loop for as long as a condition holds true.
+    - useful when you want to check a value against a counter.
+
+        while (x < 10) {
+            println(x*2)
+            x += 1
+        }
+
+    do-while loop
+    - execute a block of code, and then check if the lock will loop based on the condition.
+    - The difference between while and do-while is when they check the condition.
+    - A do-while loop will always execute at least once.
+
+        do {
+            println(x*2)
+            x += 1
+        } while (x < 10)
+
+- Take a user input.
+    
+    import scala.io.StdIn.{readLine, readInt}
+
+    val myinput = readLine("Input a number: ")
+
+- Scala Collections:
+
+    Lists:
+        val lst1 = List(1,2,3,4,5,6)
+
+        Lists are indexed, ordered, and IMmutable. (even when declared as var)
+            - immutabe size
+            - immutable values
+        Lists allow duplicate values.
+        Lists can only hold a single datatype
+
+    Arrays:
+        var arr1 = Array(1,2,3,4,5)
+
+        Arrays are mutable in values, but immutable in size.
+        To print every value in the array, use 'foreach'
+
+        arr1.foreach(println)   # This is also possible with Lists, but not necessary, it IS necessary for arrays.
+
+        Because the size is immutable, it may be helpful to declare arrays as such:
+        var arr1 = new Array[datatype](size of the array)
+
+        Arrays can hold different datatypes, it will be called type "Any"
+
+        "Any" is the superclass of all datatypes.
+
+        for (i <- 0 to 10) arr2 = i
+            - be careful when using indexes, indexes start at 0.
+            - Creating an array of size 10, will create indexes from 0 to 9.
+
+    Tuples:
+        var tup1 = (1, "Jacob", 4323)
+        Tuples like Arrays can take multiple types.
+        Tuples allow you to enforce datatypes to each specific index.
+        Tuples, like Lists, are immutable in both value and size.
+
+        Tuples are not indexed starting at 0, and the index is declared completely differently.
+
+        arr2(0) # for an array
+        tup1._1 # for the tuple.
+
+        Tuples can be used as returns from a function, due to the explicit typing of each index.
+
+        def return_tup(): (Int, Int, String) = {
+            return (45, 80, "math")
+        }
+
+        This is useful when a function needs to return multiple items.
+
+    Sets:
+        More or less exactly as they were in Python.
+        - unordered, unindexed
+        - immutbale in size and values
+        - cannot contain duplicates
+
+        val s1 = Set(1,2,3,4,5))
+
+        Set operations:
+        s1.union(s2) # returns all items in the sets excluding duplicates
+        s1.intersect(s2) # return all items that exist in both sets
+        s1.--(s2) # except, returns all elements that are only in s1, excluding those from s2.
+
+    Maps:
+        Are like Python dictionary.
+        Map is a collection of key-value pairs.
+        Immutable in both size and values.
+
+        m1 = Map("name"->"Jacob", "job"->"trainer")
+        m1.get(key name) # This will not create an error if the key doesn't exist.
+        m1("Name")       # Will return the value alone, but will give an error if the key doesn't exist.
+
+    ArrayBuffer:
+
+        import scala.collection.mutable.ArrayBuffer
+
+        An array with changeable size.
+
+        var ab1 = ArrayBuffer(1,2,3,4)
+
+        ab1 += 5
+        ab1 += (6,7,8)      #both of these will add new values to the Array Buffer
+
+    Mutable Map:
+
+        import scala.collection.mutable.Map
+
+        A Map where the values are allowed to change.
+
+        var mm1 = Map[Int, String]()
+        use mm1.put(key,value) to put in new data.
+
+
+- Creating Functions
+
+    Scala does not indicate a function starting using ':', instead uses {}.
+    Scala requires that you indicate the datatype of all arguments and returns.
+
+    Ex. create a function that adds two numbers.
+
+    def my_adder(a: Int, b: Int): Int = {
+        return a + b
+    }
+
+    White space / indentation DOES NOT MATTER in Scala like in Python.
+
+    Return the type 'Unit' when a function does not return anything.
+
+    def print_name(a:String): Unit = {
+        print(a)
+    }
+
+    Functions are considered 'first class citizens'
+    - Functions can be passed into other functions as arguments.
+    - Functions can be saved as variables.
+    - Functions can return the output of other functions.
+
+
+Exercise: Want to create a function that will take a user input for Name, and print out "This person's name is {Name}."
+
+Creating Scala files in VS Code:
+
+    First create your file
+    - name with '.scala' extension
+    - Create an object of the same name as filename in your new file.
+    - Create the main function as such:
+
+        object HelloWorld {
+        def main(args:Array[String]): Unit = {
+            println("Hello World!")
+        }
+}

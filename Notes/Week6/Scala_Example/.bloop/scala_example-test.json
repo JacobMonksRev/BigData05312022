@@ -1,0 +1,155 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "scala_example-test",
+        "directory": "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example",
+        "workspaceDir": "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example",
+        "sources": [
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\src\\test\\scala",
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\src\\test\\scala-2.11",
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\src\\test\\scala-2",
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\src\\test\\java",
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\target\\scala-2.11\\src_managed\\test",
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\HelloWorld.scala"
+        ],
+        "dependencies": [
+            "scala_example"
+        ],
+        "classpath": [
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\.bloop\\scala_example\\scala-2.11\\classes",
+            "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.11.12\\scala-library-2.11.12.jar"
+        ],
+        "out": "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\.bloop\\scala_example",
+        "classesDir": "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\.bloop\\scala_example\\scala-2.11\\test-classes",
+        "resources": [
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\src\\test\\resources",
+            "C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example\\target\\scala-2.11\\resource_managed\\test"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.11.12",
+            "options": [
+                
+            ],
+            "jars": [
+                "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.11.12\\scala-library-2.11.12.jar",
+                "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-compiler\\2.11.12\\scala-compiler-2.11.12.jar",
+                "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.11.12\\scala-reflect-2.11.12.jar",
+                "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-xml_2.11\\1.0.5\\scala-xml_2.11-1.0.5.jar",
+                "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-parser-combinators_2.11\\1.0.4\\scala-parser-combinators_2.11-1.0.4.jar",
+                "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\jline\\jline\\2.14.3\\jline-2.14.3.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "C:\\Program Files\\Java\\jdk1.8.0_321\\jre",
+                "options": [
+                    "-Duser.dir=C:\\Users\\JacobMonks\\Documents\\GitHub\\BigData05312022\\Notes\\Week6\\Scala_Example"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.11.12",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.11.12\\scala-library-2.11.12.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.11.12\\scala-library-2.11.12-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.11.12",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.11.12\\scala-library-2.11.12.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\JacobMonks\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.11.12\\scala-library-2.11.12-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}
