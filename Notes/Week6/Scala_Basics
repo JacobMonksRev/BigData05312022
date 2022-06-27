@@ -232,12 +232,26 @@ Exercise: Want to create a function that will take a user input for Name, and pr
 Creating Scala files in VS Code:
 
     First create your file
-    - name with '.scala' extension
+    - file name with '.scala' extension
     - Create an object of the same name as filename in your new file.
     - Create the main function as such:
 
         object HelloWorld {
-        def main(args:Array[String]): Unit = {
-            println("Hello World!")
+            def main(args:Array[String]): Unit = {
+                println("Hello World!")
+            }
         }
-}
+
+    Then create a new file in the same folder called 'build.sbt'
+    - Insert these lines into the build.sbt file:
+
+        name := "Hello World"
+        version := "1.0"
+        scalaVersion := "2.11.12"   # The scala version we are using for the training
+
+    When you save the build.sbt file a prompt should appear asking if you want to import the build. Click 'Import Build'.
+
+    When that is done, open a terminal, maneuver to the folder with the scala and build files, and enter 'sbt'
+    When that finishes, you should be able to enter 'run' and it should work.
+
+    Alternatively, instead of 'sbt' then 'run', you can type 'scalac' and 'scala filename'
