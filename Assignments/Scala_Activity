@@ -1,0 +1,36 @@
+1. Write a scala function that will take a user input number and print out every number that is less than it.
+
+******************************************************************************************************
+
+2. Write a scala function that will take two Integer inputs, a and b, and return the following four results: a+b, a-b, a*b, a/b
+
+******************************************************************************************************
+
+3. Write a scala function that will take two Integer inputs, a and b, and return the result of their division, identifying the integer result and the remainder like this: 11 / 3 = '3R2'
+
+******************************************************************************************************
+
+4. Write a scala function that takes two Sets and returns both the intersection and difference between them.
+
+******************************************************************************************************
+
+5. Write a scala function that takes a user input, and prints each individual character of the input separated by a newline.
+
+******************************************************************************************************
+
+6. Write a function that creates a Map of the following structure, using user inputs for each value:
+
+Map("Name"-> ,
+    "Age"-> ,
+    "DoB"-> ,
+    "Job"-> ,
+    "Company"-> )
+
+******************************************************************************************************
+
+7. Write a function that takes a user input Integer, and prints out a statement on its value.
+    Ex. if x is less than 10, print "X is less than 20", then if it's greater than or equal to 20 print out something else.
+
+******************************************************************************************************
+
+8. Write a function that takes a user input String, and adds it to an ArrayBuffer.
