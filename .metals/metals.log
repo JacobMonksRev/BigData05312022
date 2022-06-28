@@ -8,3 +8,5 @@
 2022.06.27 12:57:59 WARN  no build target for: C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\build.sbt
 2022.06.27 12:58:06 INFO  no build target found for C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\build.sbt. Using presentation compiler with project's scala-library version: 3.1.2
 2022.06.27 12:58:12 INFO  time: code lens generation in 12s
+2022.06.28 08:38:59 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\JacobMonks\Documents\GitHub\BigData05312022\.metals\lsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.06.28 08:39:01 INFO  logging to file C:\Users\JacobMonks\Documents\GitHub\BigData05312022\.metals\metals.log

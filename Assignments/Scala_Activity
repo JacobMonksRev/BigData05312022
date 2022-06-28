@@ -1,26 +1,66 @@
 1. Write a scala function that will take a user input number and print out every number that is less than it.
 
 ******************************************************************************************************
+
+def num1(): Unit = {
+    import scala.io.StdIn.readInt
+    println("Enter an integer: ")
+    var mynum = readInt()
+    for (i <- 0 to mynum-1) {
+        println(i)
+    }
+}
+
 ******************************************************************************************************
 
 2. Write a scala function that will take two Integer inputs, a and b, and return the following four results: a+b, a-b, a*b, a/b
 
 ******************************************************************************************************
+
+def num2(): (Int, Int, Int, Float) = {
+    import scala.io.StdIn.readInt
+    println("Please enter two numbers: ")
+    var a = readInt()
+    var b = readInt()
+    return (a+b, a-b, a*b, a.toFloat/b.toFloat)
+}
+
 ******************************************************************************************************
 
 3. Write a scala function that will take two Integer inputs, a and b, and return the result of their division, identifying the integer result and the remainder like this: 11 / 3 = '3R2'
 
 ******************************************************************************************************
+
+def num3(): String = {
+    import scala.io.StdIn.readInt
+    println("Please enter two numbers: ")
+    var a = readInt()
+    var b = readInt()
+    return (a/b).toString + "R" + (a%b).toString
+}
+
 ******************************************************************************************************
 
 4. Write a scala function that takes two Sets and returns both the intersection and difference between them.
 
 ******************************************************************************************************
+
+def num4(s1:Set[Any], s2:Set[Any]): (Set[Any], Set[Any]) = {
+    return (s1.&(s2), s1.--(s2))
+}
+
 ******************************************************************************************************
 
-5. Write a scala function that takes a user input, and prints each individual character of the input separated by a newline.
+5. Write a scala function that takes a user input string, and prints each individual character of the input separated by a newline.
 
 ******************************************************************************************************
+
+def num5(a:String): Unit = {
+    for (i <- 0 to a.length-1) {
+        println(a(i))
+    }
+}
+
 ******************************************************************************************************
 
 6. Write a function that creates a Map of the following structure, using user inputs for each value:
@@ -32,12 +72,33 @@ Map("Name"-> ,
     "Company"-> )
 
 ******************************************************************************************************
+
+def num6(): Unit = {
+    import scala.io.StdIn.readLine
+    var name = readLine("Enter your name: ")
+    var age = readLine("Enter your age: ")
+    var DoB = readLine("Enter your date of birth: ")
+    var job = readLine("Enter your job: ")
+    var employer = readLine("Enter your employer: ")
+    val myMap = Map("Name"->name,"Age"->age,"DoB"->DoB,"Job"->job,"Company"->employer)
+    println(myMap)
+}
+
 ******************************************************************************************************
 
 7. Write a function that takes a user input Integer, and prints out a statement on its value.
     Ex. if x is less than 10, print "X is less than 20", then if it is greater than or equal to 20 print out something else.
 
 ******************************************************************************************************
+
+def num7(a:Int): Unit = {
+    if (a > 10) {
+        println("Your number is greater than 10.")
+    } else if (a < 10) {
+        println("Your number is less than 10.")
+    } else println("Your number is 10.")
+}
+
 ******************************************************************************************************
 
 8. Write a function that takes a user input String, and adds it to an ArrayBuffer.
