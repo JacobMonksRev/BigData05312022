@@ -127,12 +127,12 @@ Scala Fundamentals
         Arrays are mutable in values, but immutable in size.
         To print every value in the array, use 'foreach'
 
-        arr1.foreach(println)   # This is also possible with Lists, but not necessary, it IS necessary for arrays.
+        arr1.foreach(println)   # This is also possible with Lists, Sets, Maps, etc.
 
         Because the size is immutable, it may be helpful to declare arrays as such:
-        var arr1 = new Array[datatype](size of the array)
+        var arr2 = new Array[datatype](size of the array)
 
-        Arrays can hold different datatypes, it will be called type "Any"
+        Arrays can hold different datatypes, but it will be called type "Any"
 
         "Any" is the superclass of all datatypes.
 
