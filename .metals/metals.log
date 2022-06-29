@@ -43,3 +43,11 @@ WARNING: Unmatched cancel notification for request id 901
 2022.06.28 09:12:24 INFO  shutting down Metals
 2022.06.28 10:28:43 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\JacobMonks\Documents\GitHub\BigData05312022\.metals\lsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\lsp.trace.json
 2022.06.28 10:28:45 INFO  logging to file C:\Users\JacobMonks\Documents\GitHub\BigData05312022\.metals\metals.log
+2022.06.28 10:28:45 INFO  Started: Metals version 0.11.6 in workspace 'C:\Users\JacobMonks\Documents\GitHub\BigData05312022' for client Visual Studio Code 1.68.1.
+2022.06.28 10:28:46 INFO  time: initialize in 1.52s
+2022.06.28 10:28:47 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.28 10:28:47 WARN  Build server is not auto-connectable.
+2022.06.28 10:28:47 WARN  no build tool detected in workspace 'C:\Users\JacobMonks\Documents\GitHub\BigData05312022'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+Jun 28, 2022 10:28:52 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+2022.06.28 10:31:44 INFO  shutting down Metals
