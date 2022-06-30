@@ -245,7 +245,7 @@ Creating Scala files in VS Code:
             }
         }
 
-    Then create a new file in the same folder called 'build.sbt'
+    Then create a new file in the main project folder called 'build.sbt'
     - Insert these lines into the build.sbt file:
 
         name := "Hello World"
@@ -254,10 +254,10 @@ Creating Scala files in VS Code:
 
     When you save the build.sbt file a prompt should appear asking if you want to import the build. Click 'Import Build'.
 
-    When that is done, open a terminal, maneuver to the folder with the scala and build files, and enter 'sbt'
+    When that is done, open a terminal, maneuver to the project folder, and enter 'sbt'
     When that finishes, you should be able to enter 'run' and it should work.
 
-    Alternatively, instead of 'sbt' then 'run', you can type 'scalac' and 'scala filename'
+    Alternatively, instead of 'sbt' then 'run', you can type 'scalac filename.scala' and 'scala filename'
 
 Filter
 - A function done on collections.
