@@ -11,7 +11,7 @@ Starting next week, expect questions in QC that are more for interview prep.
 	Think of an answer to when someone asks you about your Project 1.
 		STAR method
 		- Situation - project requirements / guidelines
-		- Task - what was the project and what specifically did you want to implement.
+		- Task - what was the project that you came up with and what did you want to implement.
 		- Action - go into a little more detail about specific things you wanted the project to handle.
 		- Result - How successful was your approach, what was the outcome?
 
