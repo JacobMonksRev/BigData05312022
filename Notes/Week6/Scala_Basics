@@ -231,8 +231,11 @@ Exercise: Want to create a function that will take a user input for Name, and pr
 
 Creating Scala files in VS Code:
 
-    First create your file
-    - file name with '.scala' extension
+    First create a new folder.
+    - Inside the main project folder, you will create a folder called 'src',
+        - Inside 'src' you will create a folder called 'main'
+            - Inside 'main' you will create a folder called 'scala'
+    - Create a new file with '.scala' extension in the 'scala' folder.
     - Create an object of the same name as filename in your new file.
     - Create the main function as such:
 
@@ -255,3 +258,146 @@ Creating Scala files in VS Code:
     When that finishes, you should be able to enter 'run' and it should work.
 
     Alternatively, instead of 'sbt' then 'run', you can type 'scalac' and 'scala filename'
+
+Filter
+- A function done on collections.
+- Creates a new collection with elements from an input collection that satisfy a certain condition.
+
+    val lst2 = List(1,2,3,4,5)
+
+    val result = lst2.filetr(x=>x>2)
+    val result = lst2.filetr(_>2)
+
+    val m1 = Map("Jacob"->3,"Bob"->8)
+    val result2 = m1.filter(x=> x._1 == "Jacob" && x._2 == 3)
+
+String Interpolation:
+- a way to process variables / values as strings.
+
+val name = "Jacob"
+
+println(s"The trainer's name is $name.")
+
+    's' - takes a string input and processes it into the string.
+    'f' - treats it as a formatted string, useful for putting numbers into a string.
+    'raw' - process the escape sequences such as \n or \t as parts of the string.
+
+Currying:
+- the process of transforming a function that takes multiple inputs into a higher-order function that takes in a function as an input.
+
+    *No currying
+    def add(x:Int, y:Int, z:Int) = x + y + z
+
+    add(1,2,3)
+
+    *Currying
+    def add2(x:Int) = (y:Int) => (z:Int) => x + y + z
+
+    add(1)(2)(3)
+
+    Partial Application - When calling a Curry, you initialize one of its variables and save that specific application of the function into a new variable.
+
+    val result3 = add(3)(4)
+    println(result3(5))
+
+    Why use Currying?
+    - Keeps functions pure.
+    - Less error prone.
+    - Makes functions more modifiable.
+    - Less code to write.
+    - Useful when using funcitons multiple times.
+
+    import scala.math.pow
+
+    def calc(x:Int, y:Int) = (x*y, pow(x,y), x+y)
+
+    def calcCurry(x:Int) = (y:Int) => (x*y, pow(x,y), x+y)
+
+Concurrent Programming:
+- A way to make multiple tasks occur simultaneously
+- Optimizes computer performance.
+
+- Thread: A (simple) task that a computer does.
+- When something is multi-threaded, it takes on and performs multiple tasks at the same time.
+
+Create new threads:
+
+class MyThread extends Thread
+{
+    override def run()
+    {
+        println("Thread " Thread.currentThread().getName() + " is running.")
+    }
+}
+
+object test
+{
+    def main(args:Array[String])
+    {
+        for (i <- 1 to 5)
+        {
+            var th = new MyThread()
+            th.setName("Thread" + i.toString)
+            th.start()
+        }
+    }
+}
+
+- Scala has something called a 'Future' class.
+    - Represents information that may or may not currently be available, but will in due time.
+    - In the case that a Future never gets executed, it will throw an Exception
+    - use case in Big Data: It will take time to retrieve data requested from a server.
+
+    import scala.concurrent.Future
+    import scala.concurrent.ExecutionContext.Implicits.global
+    import scala.util.{Success,Failure}
+
+    def ShortTask(): Int = 40
+    val x = ShortTask()
+        - In this funciton, 40 is immiedately assigned to x
+    def LongTask(): Future[Int] = ???
+    val x = LongTask()
+        - In this function, there is nothing immediately assigned
+        - x will be given an assignment if the function is ever implemented/executed
+
+    def LongRunningTask() = {
+        Thread.sleep(10000)     //Delays the execution of the program for 10000 ms
+        40
+    }
+
+Case Classes:
+    - A special kind of class that can do all the same things a regular class can
+    - But it has a few unique methods and implementations.
+    - The goal of a case class is making classe seasier to write and instantiate.
+    - When a case class is instantiated it has a constructor with some builtin methods.
+        apply - makes a default constructor, so you do not need to declare 'new'
+        unapply - allows you to do match expressions.
+        copy - create a temporary copy of an object. Modify the consutrctor with new arguments.
+        equal - lets you compare objects and their data fields.
+        hashCode - lets you compare objects based on their spot in memory
+        toString - useful for printing messages and debugging.
+
+    case class Person(name: String, age:Int)
+
+    val person1 = Person("Bob",34)
+
+    Fields are 'val' by default
+
+    Unapply use for matching
+
+    trait Person {
+        def name: String
+    }
+    
+    case class Student(name: String, grade:Int) extends Person
+    case class Teacher(name: String, subject:String) extends Person
+
+    def getPrintableString(arg: Person): String = arg match {
+        case Student(name, grade) => s"$name is a student in grade $grade."
+        case Teacher(name, subject) => s"$name is a teacher who teaches $subect."
+    }
+
+    val s = Student("Bob",5)
+    val t = Teacher("Mike","Calculus")
+    getPrintableString(s)
+    getPintableString(t)

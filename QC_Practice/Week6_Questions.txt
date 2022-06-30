@@ -1,0 +1,103 @@
+Starting next week, expect questions in QC that are more for interview prep.
+	- personal professional history
+	- What other technologies you are familiar with
+	- Tell us about your contribution in Project 2
+	- Small coding questions:
+		if you can reverse the characters of a given string.
+		iterate over a list of numbers to get all prime numbers.
+	- Tell us about a time you disgreed with a coworker and how you solved it.
+	- Tell us about a project that challenged you in a certain way.
+
+	Think of an answer to when someone asks you about your Project 1.
+		STAR method
+		- Situation - project requirements / guidelines
+		- Task - what was the project and what specifically did you want to implement.
+		- Action - go into a little more detail about specific things you wanted the project to handle.
+		- Result - How successful was your approach, what was the outcome?
+
+
+1. What is the JDK and what does it let us do?
+
+2. What is the JRE and what does it let us do?
+
+3. What's the name for the code written in .class files?
+
+4. How does Scala relate to Java?
+
+5. What is sbt?
+
+6. How does Scala relate to the JRE and JVM?
+
+7. Is Scala dynamically or statically typed? And what does that mean?
+
+8. Do we always need to declare type for our variables in Scala?
+
+9. What are integer types in Scala?
+
+10. What are decimal types in Scala?
+
+11. What is the size of an Int? Long? Double? Float? For decimal types, how many bits of decimal precision do they have?
+
+12. What is the difference between val and var?
+
+13. What is lazy evaluation?
+
+14. Why do we make use of programming paradigms like Funcitonal Programming and Object-Oriented Programming?
+
+15. What are the 4 pillars of OOP?
+
+16. What are classes / objects?
+
+17. What is a constructor?
+
+18. How do we define an auxiliary constructor?
+
+19. What is the significance of the 'Any' class in Scala?
+
+20. What does it mean when we say functions are first-class citizens.
+
+21. What is a pure/impure functions? What is a side effect (give examples)?
+
+22. What's the difference between an expression and a statement?
+
+23. What's the difference between while loops and do-while loops?
+
+24. How does String interpolation work in Scala?
+
+25. How do operators in Scala work? Where is '+' defined?
+
+26. How does the Scala REPL store the results of evaluated expressions?
+
+27. Why might we want to write an application using pure functions instead of impure functions?
+
+28. Why might we want mutable state (OOP) in our application? Why might we want immutable state (FP)?
+
+29. What is a lambda?
+
+30. How can we write lambdas in Scala?
+
+31. What does map do?
+
+32. Know the basics of the following Scala collections:
+	-List
+	-Set
+	-Array
+	-Arraybuffer
+	-Map
+	-Vector
+
+33. What are Exceptions?
+
+34. What are Errors?
+
+35. What does 'throw' do?
+
+36. How would we write code that handles a thrown Exception?
+
+37. What is a case class?
+
+38. What methods get generated when we declare a case class?
+
+39. What is a thread?
+
+40. In what situations might we want to use multiple threads?
