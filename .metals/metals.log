@@ -51,3 +51,5 @@ WARNING: Unmatched cancel notification for request id 901
 Jun 28, 2022 10:28:52 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 7
 2022.06.28 10:31:44 INFO  shutting down Metals
+2022.06.30 12:13:00 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\JacobMonks\Documents\GitHub\BigData05312022\.metals\lsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.06.30 12:13:02 INFO  logging to file C:\Users\JacobMonks\Documents\GitHub\BigData05312022\.metals\metals.log

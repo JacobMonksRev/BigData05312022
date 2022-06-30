@@ -295,7 +295,7 @@ Currying:
 
     add(1)(2)(3)
 
-    Partial Application - When calling a Curry, you initialize one of its variables and save that specific application of the function into a new variable.
+    Partial Application - When calling a Curry, you initialize one of its arguments and save that specific application of the function into a new variable.
 
     val result3 = add(3)(4)
     println(result3(5))
@@ -305,7 +305,7 @@ Currying:
     - Less error prone.
     - Makes functions more modifiable.
     - Less code to write.
-    - Useful when using funcitons multiple times.
+    - Useful when using functions multiple times.
 
     import scala.math.pow
 
