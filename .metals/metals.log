@@ -58,3 +58,4 @@ WARNING: Unmatched cancel notification for request id 7
 2022.06.30 12:13:04 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
 2022.06.30 12:13:04 WARN  Build server is not auto-connectable.
 2022.06.30 12:13:04 WARN  no build tool detected in workspace 'C:\Users\JacobMonks\Documents\GitHub\BigData05312022'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.30 17:29:45 INFO  shutting down Metals

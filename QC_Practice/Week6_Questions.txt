@@ -14,7 +14,7 @@ Starting next week, expect questions in QC that are more for interview prep.
 		- Task - what was the project that you came up with and what did you want to implement.
 		- Action - go into a little more detail about specific things you wanted the project to handle.
 		- Result - How successful was your approach, what was the outcome?
-		- This answer should be about 3 minutes or less.
+		- This answer should be about 3 minutes long, or longer depending on how complex the project is.
 
 
 1. What is the JDK and what does it let us do?
