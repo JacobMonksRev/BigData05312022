@@ -1,0 +1,9 @@
+The Technology Project is to be created using the following technologies:
+- Python 3.x
+- Apache Spark
+- PySpark
+- A visualization tool such as pandas or Zeppelin.
+- Git/GitHub for version control.
+
+Use the Trello board below to see a more detailed timeline and list of items to complete:
+https://trello.com/b/Yi8lFWgo/e-commerce-big-data
