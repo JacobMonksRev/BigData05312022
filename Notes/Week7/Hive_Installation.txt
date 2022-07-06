@@ -1,0 +1,140 @@
+#### Download + install Hive
+- cd to your home directory
+- ```wget https://mirrors.sonic.net/apache/hive/hive-2.3.9/apache-hive-2.3.9-bin.tar.gz```
+- wait for this complete
+- ```tar -xvzf apache-hive-2.3.9-bin.tar.gz```
+
+#### Add exports to .bashrc
+--> cd to work on .bashrc file
+cd
+sudo  vi .bashrc
+
+--> Add the lines below to the .bashrc that opens, replacing username with your username
+export HIVE_HOME=/home/username/apache-hive-2.3.9-bin
+export PATH=$PATH:$HIVE_HOME/bin
+
+--> save and quit from the file
+:wq
+
+--> Run the following command to source the variables:
+source ~/.bashrc
+
+
+//Verify the environment variables:
+echo $HIVE_HOME
+
+Result:
+/home/maria/apache-hive-2.3.9-bin
+
+//It's likely that ssh would be active and running but sshd would not. To enable them:
+sudo service ssh start
+//then
+ssh localhost
+
+
+//Start your Hadoop services (if you have not done that) by running the following command:
+cd ~/hadoop/hadoop-3.3.0/
+sbin/start-dfs.sh
+sbin/start-yarn.sh
+jps
+
+Result:
+945 DataNode
+1249 SecondaryNameNode
+2084 Jps
+759 NameNode
+1711 NodeManager
+1519 ResourceManager
+
+
+//As you can see, all the services are running successfully in WSL.
+
+- Close and restart your Ubuntu shell.
+
+#### Run HDFS commands necessary for Hive setup
+- start hdfs + yarn if not already running (you can check with ```jps```)
+- ```startdfs``` (makes use of the alias above)
+- ```startyarn```
+- ```hadoop fs -mkdir /tmp```
+- ```hadoop fs -mkdir /user/hive```
+- ```hadoop fs -mkdir /user/hive/warehouse```
+- ```hadoop fs -chmod g+w /tmp```
+- ```hadoop fs -chmod g+w /user/hive```
+- ```hadoop fs -chmod g+w /user/hive/warehouse```
+
+#### Initialize Hive
+- ```schematool -dbType derby -initSchema```
+- This should say 'schemaTool completed' at the end.  It will create a derby.log file and
+- a metastore_db directory in our ~.  If you ever need to destructive restart hive, delete those files and run this command again.
+
+------------------------------------------------------------------
+--> [Error 1] Initialization script hive-schema-2.3.0.derby.sql
+Error: FUNCTION 'NUCLEUS_ASCII' already exists. (state=X0Y68,code=30000)
+org.apache.hadoop.hive.metastore.HiveMetaException: Schema initialization FAILED! Metastore state would be inconsistent !!
+Underlying cause: java.io.IOException : Schema script failed, errorcode 2
+Use --verbose for detailed stacktrace.
+*** schemaTool failed ***
+
+[Error 2]
+FAILED: SemanticException org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient
+
+Solution:
+--> If you already ran hive and then tried to initSchema and it's failing, run the below command:
+mv metastore_db metastore_db2.tmp  [maria@DFLY36P2:~/apache-hive-2.3.9-bin$ mv metastore_db metastore_db2.tmp]
+
+--> Re run
+schematool -initSchema -dbType derby
+
+Result:
+Starting metastore schema initialization to 2.3.0
+Initialization script hive-schema-2.3.0.derby.sql
+Initialization script completed
+schemaTool completed
+------------------------------------------------------------------
+
+Next 
+------------------------------------------------------------------
+OPTION1: hive2
+--> We can now connect on the command line using:
+beeline -u jdbc:hive2://    [maria@DFLY36P2:~/apache-hive-2.3.9-bin$ beeline -u jdbc:hive2://]
+
+Result:
+Connected to: Apache Hive (version 2.3.9)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+Beeline version 2.3.8 by Apache Hive
+0: jdbc:hive2://>
+
+--> run a create database command to make sure it's working:
+CREATE DATABASE testdb;
+------------------------------------------------------------------
+OR
+------------------------------------------------------------------
+OPTION2: hive
+--> Connect hive
+hive           [maria@DFLY36P2:~/apache-hive-2.3.9-bin$ hive]
+
+hive> show tables;
+
+--> run a create database command to make sure it's working:
+CREATE DATABASE testdb;
+
+------------------------------------------------------------------
+
+--> Use Ctrl+D to exit beeline
+
+
+#### Final notes
+- Hive runs using Hadoop, so you'll need to have HDFS + YARN running.
+- You'll also need to remember to start the ssh daemon (sshd) when you boot up Ubuntu after a restart
+
+------------------
+Additional Info, the below can be configured in the .bashrc file to use the shortcut key:
+- ```#Additional shortcuts```
+- ```alias startdfs='$HADOOP_HOME/sbin/start-dfs.sh'```
+- ```alias startyarn='$HADOOP_HOME/sbin/start-yarn.sh'```
+- ```alias stopdfs='$HADOOP_HOME/sbin/stop-dfs.sh'```
+- ```alias stopyarn='$HADOOP_HOME/sbin/stop-yarn.sh'```
+
+
+

@@ -1,0 +1,90 @@
+HIVE COMPONENTS:
+
+Hive metastore:
+- respository that holds all Hive tables.
+- located in the HDFS (Hadoop Distributed File System)
+- contains metadata
+    data location
+    table schema
+    partitions
+- keeps track of the replication of data.
+
+Hive Warehouse:
+- default directory that all tables are stored unless otherwise specified.
+- /user/hive/warehouse
+
+External vs Managed Tables:
+- Managed Table:
+    Internally stored into warehouse upon creation.
+    Hive contains data and metadata of the table.
+    A table controller by Hive
+- External Table:
+    A table that is stored in any other location.
+    Hive only keeps track of the metadata of these tables, not any of the data inside them.
+
+- Hive will create managed tables by default
+
+CREATE EXTERNAL TABLE table4 LOCATION '/user/jacob'
+
+Hive Tables:
+- Works very similarly to SQL
+
+  DDL: (DATA DEFINITION LANGUAGE)
+      CREATE TABLE table_name (col1 datatype, col2, datatype, ...);
+      DROP TABLE table_name;
+
+      *Use semicolons when working with Hive in CLI.
+
+      CREATE DATABASE db_name;
+      DROP DATABASE db_name;
+
+      ALTER TABLE table_name RENAME TO table2;
+
+      SHOW databases;
+      SHOW tables;
+      USE db_name;
+
+  DQL: (DATA QUERYING LANGUAGE)
+      SELECT * FROM table2;
+      SELECT * FROM table2 WHERE id = 34;
+      SELECT * FROM table2 WHERE salary>50000;
+
+- Views:
+      A stored query
+      It doesn't store the data result physically
+      Instead it saves the wuery in memory so that more complicated queries can be re-queried very quickly.
+
+Partitions and Buckets:
+    Partitioning is a way to break down tables into smaller tables.
+    - partition on a column (or multiple columns) in order to speed up the query.
+    - Ex. Table that contained all the cities of the United States.
+          Partition them based on the State to get 50 partitions.
+    - The partitions are stored as subdirectories inside the main table directory.
+    - used for the same reasons that Indexing is used in SQL.
+
+    Bucketing is a way to split the data to be more manageable.
+    - also called clustering.
+    - Specify a number of buckets you want to split.
+    - Can bucket on a Partition to further split the data.
+    - Splitting works on hashing
+    - Bucketing stores the buckets as files.
+
+    Both Partitioning and Bucketing make querying more efficient when used properly.
+    You want to make sure that a table is only partitioned when necessary.
+      - Very large sets of data.
+      - Partitions give a sufficient number of subdirectories but not an unmanageable amount.
+      - Since bucketing works on hashing instead of partitions, the buckets might be of unequal number of rows.
+          - Could cause performance issues.
+
+    CREATE TABLE table_name (col1 datatype, col2 datatype, ...) PARTITIONED BY (col1)
+    CREATE TABLE table_name (col1 datatype, col2 datatype, ...) CLUSTERED BY (col1) into 5 buckets
+    
+Loading data into a Hive table:
+    Take data from csv/parquet/txt files
+    Store that data into new tables
+
+    CREATE TABLE table3 ROW format delimited fields terminated by ",";
+    LOAD DATA LOCAL INPATH '/files/sameple.csv' INTO table3;
+
+    Be sure that the file is of the specific format.
+    If the table has pre-defined columns, the file you're loading in must have equivalent columns.
