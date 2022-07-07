@@ -1,0 +1,29 @@
+For Hive Practice:
+
+Starting Hive:
+1. shh localhost.
+2. start the hadoop daemons.
+3. run 'hive'
+
+Hive Practice:
+
+> show databases;
+> Create database test_db;
+> use test_db;
+> create table example1 (id Int, name String);
+> Insert into example1 (1, 'Robert');
+> SELECT * FROM example1
+
+Loading data from files:
+1. Move the CSV file from your local into HDFS (hdfs dfs -put filename.csv)
+2. Open hive and run the following commands:
+
+> create table sample1_data(name String, team String, position String, height String, weight String, age Double) row format delimited fields terminated by ',' stored as textfile;
+> ALTER TABLE sample1_data SET TBLPROPERTIES("skip.header.lin.count"="1");
+> LOAD DATA INPATH 'filename.csv' INTO TABLE sample1_data;
+
+Performing Queries on tables:
+> SELECT * FROM sample1_data WHERE age > 30;
+> SELECT MAX(age) FROM sample1_data;
+> SELECT COUNT(*) FROM sample1_data GROUP BY position;
+> SELECT AVG(age) FROM sample1_data GROUP BY team;

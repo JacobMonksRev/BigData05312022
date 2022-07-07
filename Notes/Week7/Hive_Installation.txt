@@ -62,6 +62,16 @@ Result:
 - ```hadoop fs -chmod g+w /user/hive```
 - ```hadoop fs -chmod g+w /user/hive/warehouse```
 
+### Update Guava
+- both Hive and Hadoop have a guava jar file, they must be the same version.
+- ```ls $HIVE_HOME/lib```
+- look for the guava jar file and note its version number.
+- ```ls $HADOOP_HOME/share/hadoop/hdfs/lib
+- look for the guava jar file and notes its version number.
+- If they are different, do the following:
+- ```rm $HIVE_HOME/lib/guava-#####.jar```
+- ```cp $HADOOP_HOME/share/hadoop/hdfs/lib/guava-#####.jar $HIVE_HOME/lib
+
 #### Initialize Hive
 - ```schematool -dbType derby -initSchema```
 - This should say 'schemaTool completed' at the end.  It will create a derby.log file and
