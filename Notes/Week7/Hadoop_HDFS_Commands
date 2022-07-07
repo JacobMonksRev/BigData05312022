@@ -1,0 +1,19 @@
+Start hadoop daemons    :   sbin/start-dfs.sh (while in the $HADOOP_HOME)
+-----------------------------------------------------------------------------
+Start Yarn daemons      :     sbin/start-yarn.sh (while in the $HADOOP_HOME)
+-----------------------------------------------------------------------------
+hdfs dfs                :   identifier for interacting with the file system
+-----------------------------------------------------------------------------
+hdfs dfs -ls            :   list all files in a hadoop directory
+-----------------------------------------------------------------------------
+hdfs dfs -put           :   moves file from Local to hdfs
+OR
+hdfs dfs -copyFromLocal
+-----------------------------------------------------------------------------
+hdfs dfs -get           :   moves file from hdfs to Local system
+OR
+hdfs dfs -copyToLocal
+-----------------------------------------------------------------------------
+hdfs fsck               :   checks status of a directory
+-----------------------------------------------------------------------------
+hdfs dfs -touchz        :   creates an empty file
