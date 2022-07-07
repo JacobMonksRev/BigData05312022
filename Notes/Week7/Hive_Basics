@@ -90,4 +90,46 @@ Loading data into a Hive table:
     LOAD DATA LOCAL INPATH '/files/sample.csv' OVERWRITE INTO TABLE table3;
 
     Be sure that the file is of the specific format.
-    If the table has pre-defined columns, the file you're loading in must have equivalent columns.
+    If the table has pre-defined columns, the file you are loading in must have equivalent columns.
+
+Hive Datatypes:
+    int
+    string
+    double
+    date
+    union
+        - create a collection of heterogeeous datatypes.
+        - insert values that could be of one type or another.
+
+Insert Data:
+    INSERT INTO TABLE table_name VALUES (col1, col2, col3 ....)
+
+JOINS:
+    - A way to combine fields from multiple tables to create new records.
+    Ex. two tables, one with the schema (ID, name) another with schema (ID, SSN)
+        You can join them on the ID to make a new table with fields (ID, name, SSN)
+
+    INNER JOIN
+    LEFT/RIGHT JOIN
+    FULL OUTER JOIN
+        - When hive does a FULL OUTER JOIN when not all records match, Hive will auto-fill fields with NULL
+
+TBLPROPERTIES:
+    - allow you to tag a key/value pair to the definition of the table.
+    - creates new metadata on the table.
+    - Hive has pre-defined table properties:
+        "comment"
+        "Last_user_modified"
+        "immutable"
+
+    ALTER TABLE table_name SET TBLPROPERTIES("comment"="Hello this is a comment")
+
+INDEX:
+    - adds an index on a column.
+    - creates a pointer/ reference on the column which allows Hive to query that column faster.
+    - Hive only has indexes for ORC files.
+    - An index is stored in disk.
+    - makes querying faster.
+    - tradeoff is slower writes and disk space.
+
+    CREATE INDEX index_name ON TABLE tbale_name (col1) AS index_type STORED AS...

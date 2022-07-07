@@ -1,3 +1,6 @@
+For Reference: https://www.geeksforgeeks.org/hdfs-commands/
+
+
 Start hadoop daemons    :   sbin/start-dfs.sh (while in the $HADOOP_HOME)
 -----------------------------------------------------------------------------
 Start Yarn daemons      :     sbin/start-yarn.sh (while in the $HADOOP_HOME)
@@ -17,3 +20,11 @@ hdfs dfs -copyToLocal
 hdfs fsck               :   checks status of a directory
 -----------------------------------------------------------------------------
 hdfs dfs -touchz        :   creates an empty file
+-----------------------------------------------------------------------------
+hdfs dfs -rm            :   removes a file
+-----------------------------------------------------------------------------
+hdfs dfs -rmr           :   removes a directory (empty or full)
+-----------------------------------------------------------------------------
+hdfs dfs -mv            :   move a file from one place in hdfs to another place in hdfs
+-----------------------------------------------------------------------------
+hdfs dfs -cp            :   copies a file from one place in hdfs to another place in hdfs
