@@ -85,8 +85,8 @@ Loading data into a Hive table:
     Take data from csv/parquet/txt files
     Store that data into new tables
 
-    CREATE TABLE table3 (col1 datatype, col2 datatype, ...) ROW format delimited fields terminated by ','';
-    LOAD DATA LOCAL INPATH '/files/sameple.csv' OVERWRITE INTO TABLE table3;
+    CREATE TABLE table3 (col1 datatype, col2 datatype, ...) ROW format delimited fields terminated by ',';
+    LOAD DATA LOCAL INPATH '/files/sample.csv' OVERWRITE INTO TABLE table3;
 
     Be sure that the file is of the specific format.
     If the table has pre-defined columns, the file you're loading in must have equivalent columns.
