@@ -1,30 +1,31 @@
 HIVE COMPONENTS:
 
-Hive metastore:
-- respository that holds all Hive tables.
-- located in the HDFS (Hadoop Distributed File System)
-- contains metadata
-    data location
-    table schema
-    partitions
-- keeps track of the replication of data.
+    Hive metastore:
+    - respository that holds all Hive tables.
+    - located in the HDFS (Hadoop Distributed File System)
+    - contains metadata
+        data location
+        table schema
+        partitions
+    - keeps track of the replication of data.
 
-Hive Warehouse:
-- default directory that all tables are stored unless otherwise specified.
-- /user/hive/warehouse
+    Hive Warehouse:
+    - default directory that all tables are stored unless otherwise specified.
+    - /user/hive/warehouse
 
-External vs Managed Tables:
-- Managed Table:
-    Internally stored into warehouse upon creation.
-    Hive contains data and metadata of the table.
-    A table controller by Hive
-- External Table:
-    A table that is stored in any other location.
-    Hive only keeps track of the metadata of these tables, not any of the data inside them.
+    External vs Managed Tables:
+    - Managed Table:
+        Internally stored into warehouse upon creation.
+        Hive contains data and metadata of the table.
+        A table controller by Hive
+    - External Table:
+        A table that is stored in any other location.
+        Hive only keeps track of the metadata of these tables, not any of the data inside them.
 
-- Hive will create managed tables by default
-
-CREATE EXTERNAL TABLE table4 LOCATION '/user/jacob'
+    - Hive will create managed tables by default
+    - The following command will allow you to make an external table
+    
+        CREATE EXTERNAL TABLE table4 LOCATION '/user/jacob'
 
 Hive Tables:
 - Works very similarly to SQL
