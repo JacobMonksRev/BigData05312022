@@ -1,0 +1,22 @@
+WHAT IS SPARK?
+
+Spark is an open-source data processing engine.
+It is a software utility of Hadoop.
+It splits tasks acoss multiple nodes ina Cluster to perform parallel processing.
+Spark uses RAM to process and cache data instead of the file system.
+- this allows for faster access.
+- memory is voltaile and not saved when the application stops.
+
+RDD - Resilient Distributed Dataset
+- if the system crashes, the RDD will be maintained.
+- RDD itself does not store any data.
+    - the RDD has the information that is necssary for recreating the data.
+    - an RDD Lineage refers to the steps taken in order to create the specific RDD.
+    - lineage can be found using method .toDebugString
+
+- Creating an RDD:
+    1. parallelize an existing collection.
+    2. transform another rdd.
+    3. use a textfile (of format csv).
+        rdd3 = sc.textFile('/path/textfile.txt')
+    4. Use an existing dataframe or dataset.
