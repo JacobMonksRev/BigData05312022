@@ -4,77 +4,77 @@
 
 3. What is HDFS?
 
-3. How many blocks will a 200MB file be stored in HDFS? (assume block size of 128MB)
+4. How many blocks will a 200MB file be stored in HDFS? (assume block size of 128MB)
 
-4. What is the default number of replications for each block?
+5. What is the default number of replications for each block?
 
-5. How are replications typically distributed across the cluster?
+6. How are replications typically distributed across the cluster?
 
-6. What is the job of the NameNode?
+7. What is the job of the NameNode?
 
-7. What is the job of the DataNode?
+8. What is the job of the DataNode?
 
-8. How many NameNodes exist on a cluster?
+9. How many NameNodes exist on a cluster?
 
-9. How does the NameNode create fault tolerance?
+10. How does the NameNode create fault tolerance?
 
-10. What is the purpose of the Standby Namenode?
+11. What is the purpose of the Standby Namenode?
 
-11. What is the purpose of the Secondary NameNode?
+12. What is the purpose of the Secondary NameNode?
 
-12. What is YARN?
+13. What is YARN?
 
-13. What is the relationship between YARN Node Managers and HDFS DataNodes?
+14. What is the relationship between YARN Node Managers and HDFS DataNodes?
 
-14. What is Hadoop MapReduce?
+15. What is Hadoop MapReduce?
 
-15. What are the phases of MapReduce, and what happens in each phase?
+16. What are the phases of MapReduce, and what happens in each phase?
 
-16. What is the input/output of the Shuffle + Sort phase?
+17. What is the input/output of the Shuffle + Sort phase?
 
-17. What does the NodeManager do?
+18. What does the NodeManager do?
 
-18. What does the Resource Manager do?
+19. What does the Resource Manager do?
 
-19. What does the Scheduler do?
+20. What does the Scheduler do?
 
-20. What does the Applications Manager do?
+21. What does the Applications Manager do?
 
-21. What does the Application Master do?
+22. What does the Application Master do?
 
-22. What is a container in YARN?
+23. What is a container in YARN?
 
-23. How do we interact with the distributed filesystem?
+24. How do we interact with the distributed filesystem?
 
-24. What do the following commands do?
+25. What do the following commands do?
 - hdfs dfs -get /user/jacob/myfile.txt ~
 - hdfs dfs -put ~/myfile.txt /user/jacob
 
-25. 'get' and 'put' are the equivalent of two other HDFS commands, what are thay?
+26. 'get' and 'put' are the equivalent of two other HDFS commands, what are thay?
 
-25. What is Hive?
+27. What is Hive?
 
-26. What is the default location of Hive's data in HDFS?
+28. What is the default location of Hive's data in HDFS?
 
-27. External Table vs Managed Table?
+29. External Table vs Managed Table?
 
-28. What is a Hive partition? What is a good example of a column to partition on?
+30. What is a Hive partition? What is a good example of a column to partition on?
 
-29. What's the benefit of partitioning?
+31. What's the benefit of partitioning?
 
-30. What is the "many small files" problem?
+32. What is the "many small files" problem?
 
-30. What does a partitioned table look like in HDFS? What does a bucketed table look like?
+33. What does a partitioned table look like in HDFS? What does a bucketed table look like?
 
-31. What is a Hive bucket?
+34. What is a Hive bucket?
 
-32. What is the Hive metastore?
+35. What is the Hive metastore?
 
-33. What is data skew, and how does it affect bucketing?
+36. What is data skew, and how does it affect bucketing?
 
-34. What is beeline?
+37. What is beeline?
 
-35. Know the following HiveQL Syntax:
+38. Know the following HiveQL Syntax:
     - Create a table
     - Load data into table (locally or from HDFS)
     - query data in a table
@@ -84,10 +84,10 @@
     - create a partitioned table
     - create a bucketed table
 
-36. Why do we say MapReduce has an acyclic data flow?
+39. Why do we say MapReduce has an acyclic data flow?
 
-37. What is the deficiency in Hive for interactive analysis? How does Spark fix this?
+40. What is the deficiency in Hive for interactive analysis? How does Spark fix this?
 
-38. What is a daemon?
+41. What is a daemon?
 
-39. Where are the commands that start our hadoop daemons located?
+42. Where are the commands that start our hadoop daemons located?
