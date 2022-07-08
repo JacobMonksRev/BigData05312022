@@ -28,7 +28,7 @@
 
 14. What is Hadoop MapReduce?
 
-15. What are the phases of MapReduce, and what happens in each phsae?
+15. What are the phases of MapReduce, and what happens in each phase?
 
 16. What is the input/output of the Shuffle + Sort phase?
 
@@ -62,6 +62,8 @@
 
 29. What's the benefit of partitioning?
 
+30. What is the "many small files" problem?
+
 30. What does a partitioned table look like in HDFS? What does a bucketed table look like?
 
 31. What is a Hive bucket?
@@ -78,6 +80,9 @@
     - query data in a table
     - filter records in a query
     - group records
+    - average, count, max 
+    - create a partitioned table
+    - create a bucketed table
 
 36. Why do we say MapReduce has an acyclic data flow?
 
@@ -85,4 +90,4 @@
 
 38. What is a daemon?
 
-39. Where are the commands that start our daemons located?
+39. Where are the commands that start our hadoop daemons located?
