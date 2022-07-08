@@ -62,7 +62,7 @@
 
 29. What's the benefit of partitioning?
 
-30. What does a partitioned table look like in HDFS?
+30. What does a partitioned table look like in HDFS? What does a bucketed table look like?
 
 31. What is a Hive bucket?
 

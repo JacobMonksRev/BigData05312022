@@ -1,0 +1,57 @@
+### Get the needed dependencies
+```sudo apt update -y```
+```sudo apt install default-jdk scala git -y```
+
+Verify the installed dependencies:
+```java -version```
+```javac -version```
+```scala -version```
+```git --version```
+
+### Spark Download
+https://www.apache.org/dym/closer.lua/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz
+
+```wget https://dlcdn.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz```
+//Extract the saved archive:
+```tar xvzf spark-3.2.1-bin-hadoop3.2.tgz```
+```sudo mv spark-3.2.1-bin-hadoop3.2 /opt```
+```cd /opt
+```sudo mv spark-3.2.1-bin-hadoop3.2 spark```
+
+### Configure Spark environment
+```vi ~/.profile```
+
+//Add these lines:
+export SPARK_HOME=/opt/spark
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+export PYSPARK_PYTHON=/usr/bin/python3
+
+```:wq``` to save and quit
+
+```source ~/.profile```
+
+### Start Standalone Spark Master Server
+
+```start-master.sh```
+
+//Access the Spark Web Interface:
+
+//logout of Spark:
+```logout```
+```ssh -L 8080:localhost:8080 [user]@[systemname]
+
+//Open in browser:
+http://localhost:8080
+
+//Copy the URL from the web interface
+//Should look something like this:
+spark://DFLY36P2.localdomain:7077
+
+//Start the Worker Node:
+
+```start-worker.sh [paste the URL here]```
+
+//Test the Spark shell
+```pyspark```       // This is for coding Python
+OR
+```spark-shell```   // This is for coding Scala
