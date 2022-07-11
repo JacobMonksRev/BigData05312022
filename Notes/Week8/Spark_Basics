@@ -7,12 +7,23 @@ Spark uses RAM to process and cache data instead of the file system.
 - this allows for faster access.
 - memory is voltaile and not saved when the application stops.
 
+Cluster Manager can be run in two different modes: Cluster Mode and Client Mode
+- Client Mode: 
+    Driver Program runs separate from the Cluster.
+    This is what we use for single-node clusters.
+- Cluster Mode: 
+    Driver Program runs inside of a YARN container.
+
 RDD - Resilient Distributed Dataset
+- Primary API of Spark
 - if the system crashes, the RDD will be maintained.
 - RDD itself does not store any data.
     - the RDD has the information that is necssary for recreating the data.
     - an RDD Lineage refers to the steps taken in order to create the specific RDD.
-    - lineage can be found using method .toDebugString
+- RDDs are lazy and ephemeral.
+    - Lazy: An RDD will not actually be evaluated until it is needed for some operation.
+    - Ephemeral: RDDs are discarded from memory if not needed anymore.
+        - It is possible to alter the persistence level.
 
 - Creating an RDD:
     1. parallelize an existing collection.
@@ -20,3 +31,74 @@ RDD - Resilient Distributed Dataset
     3. use a textfile (of format csv).
         rdd3 = sc.textFile('/path/textfile.txt')
     4. Use an existing dataframe or dataset.
+
+- The LINEAGE of an RDD refers to all the transformations that were made to obtain the RDD.
+    - lineage can be found using method .toDebugString
+
+- Why do we use RDDs:
+    - handle unstructured data.
+    - they are schema-less.
+    - Good for manipulating data in functional programming.
+    - Memory efficient.
+
+- DataFrames:
+    - immutable, distributed collections of data.
+    - unlike an RDD, dataFrames have schema.
+    - DataFrames can be queried with Spark SQL.
+    - Allows users to organize and structure very large sets of data.
+
+- DataSets:
+    - immutable, distributed collections of data.
+    - just like DataFrames they can be queried.
+    - DataSets are Strongly Typed.
+    - any errors that come about as a result of dataset operations occur during Compilation, not runtime.
+
+    As of Spark 2.0 dataSets and DataFrames are unified types.
+    - DataFrame = DataSet[rows]
+
+- Transformations vs Actions
+    - Transformations:
+        Operations on RDDs that return another RDD, DataFrame, or DataSet.
+        Transformations are lazily evaluated.
+    - Actions:
+        Operations that do not return another RDD, DataFrame, or DataSet.
+        Returning a value, printing to the console, writing to a file.
+        Actions are not lazily evaluated, they are performed as soon as the Spark job calls it.
+
+- Paired RDDs
+    - These are RDDs that contain key-value pairs.
+    - Transformations:
+        groupByKey()
+        groupByKey().mapValues()
+        reduceByKey()
+        join()
+        filter()
+    - Actions:
+        countByKey()
+        collectAsMap()
+        lookup('key')
+
+- Good for storing information from files.
+    rdd = sc.textFile('path')
+
+- Shared Variables
+    - Spark copies the variables to each node of the cluster in order for the executor to do it's job
+    - This gives Spark the abililty to perform parallel processing.
+    - There are 2 main types of Shared Variables
+
+    - Shared Variables have an attribute 'value' that allows you to grab specific information
+
+    1. Broadcast Variables
+        - used to save a copy of data across all nodes.
+        - that data is then cached on every machine.
+        Ex.
+        words = sc.broadcast(["Jacob","Hello","World"])
+        print(words.value)
+        print(words.value[1])
+
+    2. Accumulators
+        - used for aggregating the information of the variable.
+        - useful for finding counters or sums.
+        Ex.
+        num = sc.accumulator(10)
+        
