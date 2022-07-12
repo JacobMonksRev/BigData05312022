@@ -151,3 +151,54 @@ DataFrames:
 
     - Joins:
     dfemp.join(dfdept, dfemp.Dept == dfdept.Dept, "inner").show()
+
+    Example of Group By Aggregation:
+        dfbank.select("TX_Amount","Receiver").groupby("Receiver").agg({"TX_Amount":"sum"}).show()
+
+- DataSets
+    It is a collection of data that shares some of the advantages of RDDS, but can be queried like DataFrames.
+    - It is strongly typed.
+    A DataSet is a DataFrame organized into columns.
+
+    In Scala, a DataFrame is a type alias of DataSet
+    - DataFrame = DataSet[rows]
+
+    pyspark does not support DataSets, but instead offers many DataSet capabilities in DataFrames.
+    .toDS()
+
+RDDs vs DataFrames vs DataSets
+
+Quality:                RDD                 DF                  DS
+
+Representation         distributed          distributed         same as DF,
+of Data:               collection           collection,         but strongly typed
+                                            organized into      
+                                            columns
+
+Optimization:          no built-in          Catalyst            Catalyst
+                       optimization         Optimizer           Optimizer
+
+Schema:                no schema            Automatically       Automatically
+                                            finds schema        finds schema
+
+Aggregation:           slower processing    Very quick,         Quicker than RDD,
+                       than DF or DS        Faster than RDDs    Slower than DF
+                                            and DS
+
+Pyspark Support?       yes                  yes                 no
+
+Mutable/Immutable      Immutable            Immutable           Immutable
+
+
+
+Contexts:
+- An entry point to Spark functionalities.
+    1. SparkContext - has all functionalities of Apache Spark and its APIs
+    2. SQLContext - has the functionalities to query and process APIS
+    3. HiveContext - is SQLContext, but allows for interfacing with Hive tables
+    4. StreamingContext - Entry point into Streaming Functionalities
+            - Streamed data is saved as DStreams, collections of RDDs
+
+    SparkSession: Is a single runtime of a SparkContext.
+    Creating a new SparkSession will instantiate a new SparkContext.
+    As of Spark 2.0, SparkSession is the entry point for SparkContext.

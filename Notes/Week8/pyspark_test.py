@@ -1,4 +1,4 @@
-from pyspark import SparkContext, sql, SparkConf
+from pyspark import SparkContext as sc, sql, SparkConf
 from pyspark.sql import SparkSession, Row
 import pyspark
 
@@ -10,3 +10,5 @@ spark = SparkSession\
     .getOrCreate()
 
 df1 = spark.createDataFrame()
+
+rdd = sc.parallelize([1,2,3,4])
