@@ -162,9 +162,10 @@ DataFrames:
 
     In Scala, a DataFrame is a type alias of DataSet
     - DataFrame = DataSet[rows]
+    - usually created with '.toDS()' method
 
     pyspark does not support DataSets, but instead offers many DataSet capabilities in DataFrames.
-    .toDS()
+
 
 RDDs vs DataFrames vs DataSets
 
