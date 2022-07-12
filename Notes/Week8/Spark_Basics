@@ -168,26 +168,26 @@ DataFrames:
 
 RDDs vs DataFrames vs DataSets
 
-Quality:                RDD                 DF                  DS
-
-Representation         distributed          distributed         same as DF,
-of Data:               collection           collection,         but strongly typed
-                                            organized into      
-                                            columns
-
-Optimization:          no built-in          Catalyst            Catalyst
-                       optimization         Optimizer           Optimizer
-
-Schema:                no schema            Automatically       Automatically
-                                            finds schema        finds schema
-
-Aggregation:           slower processing    Very quick,         Quicker than RDD,
-                       than DF or DS        Faster than RDDs    Slower than DF
-                                            and DS
-
-Pyspark Support?       yes                  yes                 no
-
-Mutable/Immutable      Immutable            Immutable           Immutable
+Quality:           |    RDD              |   DataFrame        |  DataSet
+-------------------+---------------------+--------------------+---------------------
+Representation     |   distributed       |  distributed       | same as DF,
+of Data:           |   collection        |  collection,       | but strongly typed
+                   |                     |  organized into    | 
+                   |                     |  columns           |
+-------------------+---------------------+--------------------+---------------------
+Optimization:      |   no built-in       |  Catalyst          | Catalyst
+                   |   optimization      |  Optimizer         | Optimizer
+-------------------+---------------------+--------------------+---------------------
+Schema:            |   no schema         |  Automatically     | Automatically
+                   |                     |  finds schema      | finds schema
+-------------------+---------------------+--------------------+---------------------
+Aggregation:       |   slower processing |  Very quick,       | Quicker than RDD,
+                   |   than DF or DS     |  Faster than RDDs  | Slower than DF
+                   |                     |  and DS            |
+-------------------+---------------------+--------------------+---------------------
+Pyspark Support?   |   yes               |  yes               | no
+-------------------+---------------------+--------------------+---------------------
+Mutable/Immutable  |   Immutable         |  Immutable         | Immutable
 
 
 
