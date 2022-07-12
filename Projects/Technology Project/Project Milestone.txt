@@ -1,0 +1,15 @@
+Technology Project Milestone:
+
+This is a sort of checkpoint for your project.
+The goal is to review your progress up to this point and determine how far you have come in achieving the project goals.
+
+Short 5-minute presentation:
+	- Briefly go over the project requirements.
+	- Introduce what your project is (not too much detail).
+	- Break down the items that have been completed.
+	- Discuss items that are being worked on.
+	- Discuss items that need to be started.
+	- Go over every team member's contribution and PLANNED contribution.
+
+The purpose of this is to do a brief retrospective on how well you have been following the guidelines set by this project.
+If you find you have not been meeting the guidelines, this is your chance to fix it.
