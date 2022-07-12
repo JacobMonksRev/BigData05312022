@@ -102,3 +102,52 @@ RDD - Resilient Distributed Dataset
         Ex.
         num = sc.accumulator(10)
         
+DataFrames:
+- They are another core API of Spark.
+- DataFrames act like tables that can be queried like RDBMS.
+- Unlike RDDs, DataFrames have a schema.
+- Allows you to transform semi- and quasi-structured data into structured data.
+- Create DataFrame:
+    1. df = spark.createDataFrame()
+    2. df = rdd.toDF()
+    3. df = spark.read.csv('')
+
+- StructType
+    from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+    data = [("James","Smith","",23456,"M",30000),
+            ("Michael","","Rose", 44342,"M",40000),
+            ("Maria","Anne","Jones",44665,"F",40000),
+            ("Jen","Mary","Brown",85723,"F",-1)]
+
+    schema = StructType([ \
+        StructField("firstname",StringType(),True), \
+        StructField("middlename",StringType(),True), \
+        StructField("lastname",StringType(),True), \
+        StructField("emp_ID",IntegerType(),True), \
+        StructField("gender",StringType(),True), \
+        StructField("salary",IntegerType(),True)])
+
+    - StructTypes allow you to create nested schema.
+
+    nesteddata = [(("James","Smith",""),23456,"M",30000),
+            (("Michael","","Rose"), 44342,"M",40000),
+            (("Maria","Anne","Jones"),44665,"F",40000),
+            (("Jen","Mary","Brown"),85723,"F",-1)]
+
+    nestedschema = StructType([ \
+        StructField("name",StructType([ \
+            StructField("firstname",StringType(),True), \
+            StructField("middlename",StringType(),True), \
+            StructField("lastname",StringType(),True)])), \
+        StructField("emp_ID",IntegerType(),True), \
+        StructField("gender",StringType(),True), \
+        StructField("salary",IntegerType(),True)])
+
+    - Querying DataFrames:
+    .select()
+    .where()
+    .orderBy()
+    .groupBy()
+
+    - Joins:
+    dfemp.join(dfdept, dfemp.Dept == dfdept.Dept, "inner").show()
