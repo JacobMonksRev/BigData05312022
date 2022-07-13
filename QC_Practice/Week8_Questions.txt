@@ -1,0 +1,51 @@
+1. What does Cluster Computing mean?
+
+2. What does RDD stand for?
+
+3. What does it mean when we say an RDD is a collection of objects distributed across machines?
+
+4. SparkSession vs SparkContext?
+
+5. What is the lineage of an RDD?
+
+6. RDDs are lazy and ephemeral, what does this mean?
+
+7. What are the 4 ways to create an RDD?
+
+8. What does it mean to transform an RDD?
+
+9. What does it mean to cache an RDD?
+
+10. What does it mean to perform a parallel operation on an RDD?
+
+11. Why does Spark need Shared Variables?
+
+12. What is a broadcast Variable?
+
+13. What are Persistence Storage Levels in Spark?
+
+14. What is the storage level for the .cache() method?
+
+15. What are the different ways to repartition?
+
+16. What does it mean to run an EMR Step Execution?
+
+17. What are some benefits to using the Cloud?
+
+18. What is the Spark History Server?
+
+19. What does it mean to "spill to disk" when executing spark tasks?
+
+20. What is a Spark application? Job? Stage? Task?
+
+21. How many partitions does a single task work on?
+
+22. What is the logical plan? The pysical plan?
+
+23. What is the difference between Cluster Mode and Client Mode on YARN?
+
+24. What is an executor?
+
+25. What is the difference between a DataFrame and a DataSet?
+
+26. What do we mean when we say the DataFrame and DataSet APIs are unified as of Spark 2.x?

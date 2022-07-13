@@ -60,6 +60,16 @@ RDD - Resilient Distributed Dataset
     - Transformations:
         Operations on RDDs that return another RDD, DataFrame, or DataSet.
         Transformations are lazily evaluated.
+        Transformations can be 'Narrow' or 'Wide'
+            - Narrow:
+                The transformation does not require every partition of the RDD to operate.
+                .filter, .map
+                These operate on each partition of an RDD individually.
+            - Wide:
+                The transformation requires all partitions of the RDD.
+                .groupByKey(), reduceByKey()
+                These are also "shuffle" transformations
+                All Tuples with the same key must be in the same place
     - Actions:
         Operations that do not return another RDD, DataFrame, or DataSet.
         Returning a value, printing to the console, writing to a file.
@@ -113,6 +123,7 @@ DataFrames:
     3. df = spark.read.csv('')
 
 - StructType
+    - Allows you to create custom schema for DataFrames
     from pyspark.sql.types import StructType, StructField, StringType, IntegerType
     data = [("James","Smith","",23456,"M",30000),
             ("Michael","","Rose", 44342,"M",40000),
@@ -143,33 +154,35 @@ DataFrames:
         StructField("gender",StringType(),True), \
         StructField("salary",IntegerType(),True)])
 
-    - Querying DataFrames:
+- Querying DataFrames:
     .select()
     .where()
     .orderBy()
     .groupBy()
 
-    - Joins:
+- Joins:
     dfemp.join(dfdept, dfemp.Dept == dfdept.Dept, "inner").show()
 
     Example of Group By Aggregation:
-        dfbank.select("TX_Amount","Receiver").groupby("Receiver").agg({"TX_Amount":"sum"}).show()
+    dfbank.select("TX_Amount","Receiver").groupby("Receiver").agg({"TX_Amount":"sum"}).show()
 
-- DataSets
-    It is a collection of data that shares some of the advantages of RDDS, but can be queried like DataFrames.
-    - It is strongly typed.
-    A DataSet is a DataFrame organized into columns.
+DataSets
+- It is a collection of data that shares some of the advantages of RDDS, but can be queried like DataFrames.
+- It is strongly typed.
+- A DataSet is a DataFrame organized into columns.
 
     In Scala, a DataFrame is a type alias of DataSet
     - DataFrame = DataSet[rows]
+    - This means most of the same methods apply to both APIs
     - usually created with '.toDS()' method
+    - also created with '.as[class]' where 'class' is a Case Class.
 
     pyspark does not support DataSets, but instead offers many DataSet capabilities in DataFrames.
 
 
 RDDs vs DataFrames vs DataSets
 
-Quality:           |    RDD              |   DataFrame        |  DataSet
+                   |    RDD              |   DataFrame        |  DataSet
 -------------------+---------------------+--------------------+---------------------
 Representation     |   distributed       |  distributed       | same as DF,
 of Data:           |   collection        |  collection,       | but strongly typed
@@ -202,4 +215,37 @@ Contexts:
 
     SparkSession: Is a single runtime of a SparkContext.
     Creating a new SparkSession will instantiate a new SparkContext.
-    As of Spark 2.0, SparkSession is the entry point for SparkContext.
+    As of Spark 2.x, SparkSession is the entry point for SparkContext.
+
+Spark SQL Documentation:
+https://spark.apache.org/docs/latest/sql-programming-guide.html
+
+Spark also supports Partitioning / Bucketing
+- Partitioning means splitting a table into separate tables based on a column's value.
+- Bucketing splits the table information into roughly equal size files.
+- These only work on data that persists.
+
+df.write.option('path','/the/path').saveAsTable()
+
+df.write.partitionBy('column name').format("parquet").save("")
+df.write.bucketBy(10,'columnName').sortBy('position').save("")
+
+.repartition()
+    - increase or decrease the number of partitions.
+.coalesce()
+    - decrease the number of partitions.
+    - does repartition's job faster and more efficiently. (if you decreasing)
+
+Hive vs Spark?
+- Spark has in-memory computation, everything is loaded in RAM
+- Spark has the lazy eveluation of RDDs, meaning it's memory efficient
+- Spark has real-time analytics on Streamed data
+- Hive is better for long-term storage
+- Hive is overall faster at accessing very large sets of data (tens/hundreds of thousands of records)
+
+Spark-submit
+- a command that allows you to submit Spark jobs without needing to re-compile them
+- In Scala you would spark-submit a .jar file, with pyspark, you can submit a .py file
+
+- Options:
+    ./bin/spark-submit --master <master-url> --conf <key>=<value> --py-files file1.py, file.egg, pyspark_test.py

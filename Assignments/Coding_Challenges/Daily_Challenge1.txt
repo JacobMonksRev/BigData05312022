@@ -1,0 +1,14 @@
+I have a List of integers in Python.
+How would I create a new list with all of those integers multiplied by 5?
+
+for loop
+
+newlst = [1,2,3,4,5]
+lst2 = []
+for el in newlst:
+	lst2.append(el*5)
+
+list comprehension
+
+newlst = [1,2,3,4,5]
+lst2 = [el*5 for el in newlst]
