@@ -1,0 +1,62 @@
+1. Create a new file 'emr_bootstrap.sh' (already done in this folder)
+        #!/bin/bash
+        sudo pip install -U \
+            matplotlib \
+            pandas \
+            spark-nlp
+
+2. We will upload this file to an S3 bucket and run it so that all nodes on the cluster have useful packages.
+3. Search 'S3'
+4. Click "Create Bucket" and fill in the "Bucket name"
+5. Click "Upload", "Add Files", then oprn up the 'emr_bootstrap.sh'
+6. Search 'EC2'
+7. Select 'Key Pairs'
+8. Click 'Create Key Pair' then fill in the name.
+9. A file emr-key.pem should download automatically. Store it in a directory you will remember, privately.
+10. Search 'EMR'
+11. Click 'Create Cluster'
+12. Go to 'Advanced Options'
+13. Choose the newest option under 'Release'
+14. Check the box that says 'Spark'
+15. Click 'Next'
+16. Change Instance Type to 'm5.xlarge'
+17. Click 'Next'
+18. Name your Cluster, then click 'Bootstrap action'
+19. Choose 'Custom action' in the dropdown menu, then click 'Configure and add' to add our 'emr_bootstrap.sh'
+20. Click 'Next'
+21. Enter the EC2 key-pair we created earlier and click 'Create Cluster'
+22. Navigate to 'Notebooks' in the Left Panel and click 'Create Notebook'
+23. Name your notebook and choose the cluster we just created.
+24. Once your notebook is 'Ready', click 'Open'
+
+In Notebook:
+from pyspark.sql import functions as F
+
+input_bucket = 's3://amazon-reviews-pds'
+input_path = '/parquet/product_category=Books/*parquet'
+df = spark.read.parquet(input_bucket + input_path)
+
+df.show()
+
+******REMEMBER TO TERMINATE AN EMR CLUSTER AND DELETE S3 BUCKETS SO YOU DON'T GET CHARGED******
+
+We can also submit Spark applications to a cluster using CLI.
+
+1. Upload pyspark_job.py to an S3 bucket.
+2. Copy/Paste the command below into a command line:
+
+aws emr create-cluster --name "Spark cluster with step" \
+    --release-label emr-5.24.1 \
+    --applications Name=Spark \
+    --log-uri s3://INSERT BUCKET NAME HERE/logs/ \
+    --ec2-attributes KeyName=your-key-pair \
+    --instance-type m5.xlarge \
+    --instance-count 3 \
+    --bootstrap-actions Path=s3://INSERT BUCKET NAME HERE/emr_bootstrap.sh \
+    --steps Type=Spark,Name="Spark job",ActionOnFailure=CONTINUE,Args=[--deploy-mode,cluster,--master,yarn,s3://INSERT BUCKET NAME HERE/pyspark_job.py] \
+    --use-default-roles \
+    --auto-terminate
+
+3. Check your AWS EMR page to see that your cluster is "Starting".
+
+******REMEMBER TO TERMINATE AN EMR CLUSTER AND DELETE S3 BUCKETS SO YOU DON'T GET CHARGED******

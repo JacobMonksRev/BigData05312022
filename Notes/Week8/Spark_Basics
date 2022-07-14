@@ -225,16 +225,16 @@ Spark also supports Partitioning / Bucketing
 - Bucketing splits the table information into roughly equal size files.
 - These only work on data that persists.
 
-df.write.option('path','/the/path').saveAsTable()
+    df.write.option('path','/the/path').saveAsTable()
 
-df.write.partitionBy('column name').format("parquet").save("")
-df.write.bucketBy(10,'columnName').sortBy('position').save("")
+    df.write.partitionBy('column name').format("parquet").save("")
+    df.write.bucketBy(10,'columnName').sortBy('position').saveAsTable("")
 
-.repartition()
-    - increase or decrease the number of partitions.
-.coalesce()
-    - decrease the number of partitions.
-    - does repartition's job faster and more efficiently. (if you decreasing)
+    .repartition()
+        - increase or decrease the number of partitions.
+    .coalesce()
+        - decrease the number of partitions.
+        - does repartition's job faster and more efficiently. (if you are decreasing)
 
 Hive vs Spark?
 - Spark has in-memory computation, everything is loaded in RAM
@@ -243,9 +243,22 @@ Hive vs Spark?
 - Hive is better for long-term storage
 - Hive is overall faster at accessing very large sets of data (tens/hundreds of thousands of records)
 
-Spark-submit
+Spark-Submit
 - a command that allows you to submit Spark jobs without needing to re-compile them
 - In Scala you would spark-submit a .jar file, with pyspark, you can submit a .py file
 
-- Options:
-    ./bin/spark-submit --master <master-url> --conf <key>=<value> --py-files file1.py, file.egg, pyspark_test.py
+- Spark-Submit Options:
+
+    ./bin/spark-submit \
+        --master <master-url> \
+        --deploy-mode <deploy-mode> \
+        --conf <key<=<value> \
+        --driver-memory <value>g \
+        --executor-memory <value>g \
+        --executor-cores <number of cores>  \
+        --py-files file1.py,file2.py,file3.zip, file4.egg \
+        wordByExample.py [application-arguments]
+
+    - Spark-Submit Options Guide:
+        https://sparkbyexamples.com/pyspark/spark-submit-python-file/#:~:text=1.%20Spark%20Submit%20Python%20File%20%20%20,binary%20executable%20to%20use%20for%20PySp%20...%20
+

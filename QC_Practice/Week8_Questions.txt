@@ -6,7 +6,7 @@
 
 4. SparkSession vs SparkContext?
 
-5. What is the lineage of an RDD?
+5. What is the lineage of an RDD? How can we see the lineage?
 
 6. RDDs are lazy and ephemeral, what does this mean?
 
