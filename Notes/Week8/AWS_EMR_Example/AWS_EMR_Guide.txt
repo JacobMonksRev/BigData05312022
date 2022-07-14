@@ -16,8 +16,8 @@
 10. Search 'EMR'
 11. Click 'Create Cluster'
 12. Go to 'Advanced Options'
-13. Choose the newest option under 'Release'
-14. Check the box that says 'Spark'
+13. Choose the 'emr-5.25.0' option under 'Release'
+14. Make sure the boxes 'Hadoop', 'Hive', 'Spark', and 'Livy' are checked and NO OTHERS.
 15. Click 'Next'
 16. Change Instance Type to 'm5.xlarge'
 17. Click 'Next'
