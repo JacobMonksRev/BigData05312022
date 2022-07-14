@@ -34,7 +34,7 @@ df = rdd.toDF(["ID","Name","Dept"])
 #df.select("*").where(col("ID")=="1").show()
 
 ## Query using Spark SQL
-# Spark SQL cannot query DataFrames directly
+# Spark SQL cannot query DataFrames directly, we must create a Temporary View
 #df2.createOrReplaceTempView("NamesDF")
 df.createOrReplaceTempView("Employees")
 # Creates a temporary view that gets saved in Hive Metastore

@@ -246,6 +246,7 @@ Hive vs Spark?
 Spark-Submit
 - a command that allows you to submit Spark jobs without needing to re-compile them
 - In Scala you would spark-submit a .jar file, with pyspark, you can submit a .py file
+- Spark Submit should be an executable in your $SPARK_HOME/bin directory.
 
 - Spark-Submit Options:
 
@@ -262,3 +263,72 @@ Spark-Submit
     - Spark-Submit Options Guide:
         https://sparkbyexamples.com/pyspark/spark-submit-python-file/#:~:text=1.%20Spark%20Submit%20Python%20File%20%20%20,binary%20executable%20to%20use%20for%20PySp%20...%20
 
+Persisting, Caching, Checkpointing
+- The goal is to save RDDs / DataFrames, etc. in memory so that if a failure occurs, nothing is lost.
+- RDDs are ephemeral, which means by default, when they are done being used, they are discarded from memory.
+- Persisting, Caching, and Checkpointing make it so re-computation of RDDs is not necessary.
+- Save CPU time, which can save money.
+
+- Persisting
+    - Persist means keeping the computed RDD in memory and reuse it when needed.
+    - Persist Levels:
+    MEMORY_ONLY (Caching)
+        - objects are stored entirely in RAM
+        - use this option when you know the size of your RDDs/DFs
+        - do not use if the RDD is too much for memory and partitions need to be recalculated.
+        .cache()
+    MEMORY_AND_DISK
+        - objects are stored in memory until there is not enogh RAM, then it's stored on Disk.
+        - "spill to disk"
+        - use when the cost of re-computation outweighs the cost of the time it takes to access.
+    MEMORY_ONLY_SER
+        - Memory Only, Serialized
+        - Just like MEMORY_ONLY except data is serialized.
+        - Serialized means the data is converted into Bytes.
+        - Computers store Bytes more efficiently.
+        - When the memory needs to be accessed, it must be re-converted back to its original form.
+        - Saves RAM, but uses more CPU time.
+    MEMORY_AND_DISK_SER
+        - Memory and disk, with serialization.
+        - use when you are seriously lacking in memory space.
+    DISK_ONLY
+        - data is stored entirely on Disk.
+    OFF_HEAP
+        - partitions may be sotred off heap memory
+        - faster access than Disk, but slower than RAM
+        - this setting has to be enabled.
+
+    - Change Persistence Level:
+        df.persist(StorageLevel.MEMORY_ONLY)
+
+- Checkpointing
+    - reusing RDD partitions when failure occurs during job execution.
+    - Checkpointing breaks the lineage, and creates a freezeframe image of the RDD.
+    - useful in large clusters where failure is common.
+    - Breaks the lineage and saves the RDD/DF on Disk.
+        - If an RDD/DF is lost due to some failure, it can recalculated from some intermediate step
+        - RDDs are not recomputed from the beginning.
+    - Checkpointing needs to be enabled:
+        SparkContext.setCheckpointDir('given directory')
+        df.checkpoint()
+
+DAG - Directed Acyclic Graph
+- DAG is a visual representation of the operations(transformation and actions) performed on RDDs.
+- When you do some operation on an RDD, the Driver Program divides a graph into stages.
+
+CAP Theorem
+- Also callde brewer's Theorem
+- A description of what functionalities should be inside a distributed system.
+    C - Consistency
+    A - Availability
+    P - Partition Tolerance.
+- A system can only maintain two of these at once.
+- ALWAYS have P
+- Choice then becomes between CP and AP
+    - CP
+        - If a system is Consistent, that means that the data being accessed is the same data accessed anywhere on the system
+        - Because the system is Partition Tolerant, the consistency is maintained by shutting off any failed node.
+    - AP
+        - A system being Available means that the data can be accessed from anywhere.
+        - Partition Tolerance will cut the rest of the system off from the failed node.
+        - The failed node will still be able to access the information, but the data will be inconsistent due to it being cut off.
