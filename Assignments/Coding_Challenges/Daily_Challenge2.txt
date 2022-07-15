@@ -1,0 +1,21 @@
+We have 2 tables with the following schema:
+
+    Employees                       Departments
+Fields     | DataTypes          Fields  | DataTypes
+-----------+-----------        ---------+-----------
+Emp_ID     | INT                Dept_ID | INT
+FirstName  | VARCHAR(255)       Name    | VARCHAR(255)
+LastName   | VARCHAR(255)
+Dept_ID    | INT
+
+Using SQL, how do we output each person's first and last name and the department they work for?
+The output should be displayed in alphabetical order by first name, then by last name.
+
+email the answer to jacob.monks@revature.com
+
+Solution:
+
+SELECT Employees.Firstname, Employees.Lastname, Departments.Name
+FROM Employees JOIN Departments
+ON Employees.Dept_ID = Departments.Dept_ID
+ORDER BY Firstname, Lastname
