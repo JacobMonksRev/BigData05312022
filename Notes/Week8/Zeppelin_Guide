@@ -2,8 +2,8 @@ Installing Zeppelin:
 
 ```cd ~/hadoop
 ```wget https://dlcdn.apache.org/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-netinst.tgz```
-```tar zeppelin-0.10.1-bin-netinst.tgz```
-```cd ~/hadoop/zeppelin-0.10.1-bin-netinst/
+```tar -xvzf zeppelin-0.10.1-bin-netinst.tgz```
+```cd ~/hadoop/zeppelin-0.10.1-bin-netinst/```
 ```bin/zeppelin-daemon.sh start```
 Go to browser and search "localhost:8080"
 
