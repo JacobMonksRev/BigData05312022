@@ -1,9 +1,8 @@
 1. Create a new file 'emr_bootstrap.sh' (already done in this folder)
         #!/bin/bash
-        sudo pip install -U \
-            matplotlib \
-            pandas \
-            spark-nlp
+        sudo pip install -U pandas
+        sudo pip install -U pyspark
+        sudo pip install -U spark-nlp
 
 2. We will upload this file to an S3 bucket and run it so that all nodes on the cluster have useful packages.
 3. Search 'S3'
