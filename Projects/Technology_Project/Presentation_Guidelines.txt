@@ -2,11 +2,14 @@ Technology Project Presentation Guidelines:
 
 - Be sure that every member introduces themselves.
 - Have a slideshow to briefly cover some project info:
-    1. What is your project?
-    2. Tech stack
-    3. Mention if / where you obtained any public data.
-    4. How you answered the marketing questions.
+    1. What is your project? Give your project a name.
+    2. What is the goal of your project?
+    3. Tech stack
+    4. Mention if / where you obtained any public data.
+    5. How you answered the marketing questions.
+    6. Are there any other interesting features of your project?
+    7. Any changes / improvements you would make if given more time.
 
-- Make sure to have visuals ready.
+- Make sure to have visuals ready, in the slideshow or separately.
 - Each person in the group should speak for a roughly equal amount of time.
 - Presentations should be no longer than 20 minutes per group (aim for 15).
