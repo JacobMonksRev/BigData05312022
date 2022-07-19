@@ -1,0 +1,22 @@
+Write a Python function that takes an input integer 'n' and does the following:
+- Determine if 'n' is a prime number (only divisible by itself and 1)
+- If 'n' is a prime number, print "Prime".
+- If 'n' is a composite number, print "Composite"
+
+Ex1. n = 23
+23 is divisible by 1 and 23 only => 23 is prime.
+
+Ex2. n = 24
+24 is divisible by 1,2,3,4,6,8,12, and 24 => 24 is composite.
+
+email the correct code to jacob.monks@revature.com
+
+def isPrime(n):
+...     if n == 1:
+...             print("Your number is neither prime nor ecomposite.")
+...     elif n > 1:
+...             for i in range(2, n):
+...                     if n%i == 0:
+...                             print("This number is composite")
+...                             return
+...             print("This number is Prime.")
