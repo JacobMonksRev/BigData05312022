@@ -1,0 +1,39 @@
+Thus far we've worked with csv files.
+
+CSV:
+
+df = spark.read.option('header','true').csv('path/to/file')
+
+JSON:
+
+dfj = spark.read.json('path/to/json',multiLine = 'true')
+Use multiline when the json has multiple properties put into individual lines.
+
+We can explode arrays inside of a Json file to get each element of the array individually:
+
+import pyspark.sql.functions
+
+dfjexploded = dfj.select("col1",explode("column of arrays").alias("new column name"))
+
+PARQUET:
+
+dfp = spark.read.parquet('path/to/parquet')
+
+We can read from multiple parquets using the 'mergeSchema' option.
+
+dfparquet = spark.read.option('mergeSchema','true').parquet('path/to/parquets')
+
+The 'path/to/parquets' directory has multiple parquet files in it.
+
+Ex.
+
+from pyspark.sql import Row
+
+df1 = spark.createDataFrame(sc.parallelize(range(1,6)).map(lambda i: single=i, double=i**2))
+df2 = spark.createDataFrame(sc.parallelize(range(1,6)).map(lambda i: single=i, triple=i**3))
+
+df1.write.parquet('test_table/key=1')
+df2.write.parquet('test_table/key=2')
+
+dfmerged = spark.read.option(mergeSchemaparquet('test_table')
+dfmerged.show()
