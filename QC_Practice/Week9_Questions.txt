@@ -1,0 +1,43 @@
+1. What is Spark Streaming?
+
+2. What is Spark SQL?
+
+3. What is Structured Streaming?
+
+4. How does new data arriving in a stream get represented in Spark Streaming?
+
+5. In Structured Streaming?
+
+6. What is Apache Kafka?
+
+7. What is Pub Sub?
+
+8. Client Server?
+
+9. Messaging queues?
+
+10. What are some advantages of pub sub?  Why are those advantages especially relevant in large distributed applications?
+
+11. What are events in Kafka?
+
+12. What is a topic?  A log?
+
+13. Where do events come from in Kafka?  Where do they go?
+
+14. What are the machines in a Kafka cluster called?
+
+15. What are partitions in Kafka?
+
+16. How do partitions achieve HA and fault tolerance?
+
+17. What happens on machine failures in a Kafka cluster?
+
+18. What is Apache Zookeeper?
+
+19. What’s the difference between pulling and pushing messages/events in a pub sub architecture?  Which does Kafka use?
+
+20. How long does Kafka store messages by default?  What are our configuration options?
+
+21. Does Kafka guarantee that it will preserve the order of produced events?  What are the caveats?
+
+22. How can we make sure that Kafka preserves the order of events where it matters?
