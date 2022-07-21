@@ -9,14 +9,12 @@ Ex1. n = 23
 Ex2. n = 24
 24 is divisible by 1,2,3,4,6,8,12, and 24 => 24 is composite.
 
-email the correct code to jacob.monks@revature.com
-
 def isPrime(n):
 ...     if n == 1:
-...             print("Your number is neither prime nor ecomposite.")
+...             print("Your number is neither prime nor composite.")
 ...     elif n > 1:
 ...             for i in range(2, n):
 ...                     if n%i == 0:
-...                             print("This number is composite")
+...                             print("This number is composite.")
 ...                             return
-...             print("This number is Prime.")
+...             print("This number is prime.")

@@ -11,8 +11,6 @@ Dept_ID    | INT
 Using SQL, how do we output each person's first and last name and the department they work for?
 The output should be displayed in alphabetical order by first name, then by last name.
 
-email the answer to jacob.monks@revature.com
-
 Solution:
 
 SELECT Employees.Firstname, Employees.Lastname, Departments.Name

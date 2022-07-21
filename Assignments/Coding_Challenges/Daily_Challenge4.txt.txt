@@ -1,31 +1,31 @@
 We have a table in MySQL with the following schema:
 
 Employees:
-=================================
-Name		| VARCHAR(255)	|
-Emp_ID		| INT		|
-Dept		| VARCHAR(255)	|
-No_of_years	| INT		|
-Salary		| INT		|
----------------------------------
+==========================
+Name		| VARCHAR(255)	
+Emp_ID		| INT		
+Dept		| VARCHAR(255)	
+No_of_years	| INT		
+Salary		| INT		
 
 Using SQL, find the average salary of the employees
 per department and per how many years they worked.
 
-email the answer to jacob.monks@revature.com
 
 Solution:
 
-SELECT Dept, No_of_years, AVG(Salary)  FROM Employees GROUP BY Dept, No_of_years;
+SELECT Dept, No_of_years, AVG(Salary)
+FROM Employees
+GROUP BY Dept, No_of_years;
 
 Output:
 
 Dept:	| No_of_years:	| AVG(Salary):
-----------------------------------------------------
-Sales	| 1		| 55000
-Sales	| 2		| 70000
-Sales	| 3		| 80000
-Sales	| 4		| 85000
-HR	| 1		| 60000
-HR	| 2		| 75000
-HR	| 3		| 80000
+---------------------------------------
+Sales	| 1		        | 55000
+Sales	| 2		        | 70000
+Sales	| 3		        | 80000
+Sales	| 4		        | 85000
+HR	    | 1		        | 60000
+HR	    | 2		        | 75000
+HR	    | 3		        | 80000

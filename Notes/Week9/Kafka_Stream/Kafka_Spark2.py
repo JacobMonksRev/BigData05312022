@@ -1,5 +1,5 @@
 # run this code from CLI using spark-submit:
-# spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 file_name.py
+# $SPARK_HOME/bin/spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 Kafka_Spark2.py
 
 from os import truncate
 from pyspark.sql import SparkSession
@@ -10,11 +10,11 @@ from pyspark.sql.types import *
 if __name__ == '__main__':
     spark = SparkSession\
         .builder\
-        .appName("Kafka-Pyspark-Example")\
+        .appName("Pyspark-Kafka-Example")\
         .master("local[*]")\
         .getOrCreate()
 
-    KAFKA_TOPIC_NAME = "pyspark-kafka-demo"
+    KAFKA_TOPIC_NAME = "testTopic"
     KAFKA_BOOTSTRAP_SERVER = "localhost:9092"
     sampleDataframe = (
         spark.readStream.format("kafka")
