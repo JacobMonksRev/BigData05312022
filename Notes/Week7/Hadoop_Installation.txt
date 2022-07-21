@@ -109,8 +109,8 @@ Starting secondary namenodes
 2829 Jps
 
         // IF DATANODE DOES NOT APPEAR AFTER 'jps' //
-        ```cat /hadoop-(insert your linux name here)/dfs/data/current/VERSION```
-        ```cat /hadoop-(insert your linux name here)/dfs/name/current/VERSION```
+        ```cat /tmp/hadoop-(insert your linux name here)/dfs/data/current/VERSION```
+        ```cat /tmp/hadoop-(insert your linux name here)/dfs/name/current/VERSION```
 
         // Make note of the two ClusterID fields in these files.
         // If they are different, copy the Namenode ClusterID and put it into the DataNode ClusterID.
