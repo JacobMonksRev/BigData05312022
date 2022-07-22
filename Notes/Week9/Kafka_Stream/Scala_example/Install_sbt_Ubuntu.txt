@@ -1,0 +1,21 @@
+#### RECONFIGURE YOUR KAFKA 
+// Go to your Kafka directory:
+
+```cd ~/kafka_2.13-2.6.0```
+
+// We need to un-comment a line in a configuration file.
+
+```vi ./config/server.properties```
+
+// Un-comment the following line:
+
+listeners=PLAINTEXT://localhost:9092
+
+### Download SBT for Ubuntu:
+```sudo apt update```
+```sudo apt install zip```
+```curl -s "https://get.sdkman.io" | bash```
+```sdk install sbt```
+
+// If you run into error 'command sbt not found' try closing the terminal and
+// opening a new one and running the command again.

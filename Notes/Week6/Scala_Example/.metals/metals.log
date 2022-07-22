@@ -52,3 +52,20 @@ WARNING: Unmatched cancel notification for request id 209
 2022.06.27 12:43:26 INFO  shutting down Metals
 2022.06.27 12:43:26 INFO  Shut down connection with build server.
 2022.06.27 12:43:26 INFO  Shut down connection with build server.
+2022.07.22 14:14:21 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\.metals\lsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.07.22 14:14:22 INFO  logging to file C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\.metals\metals.log
+2022.07.22 14:14:22 INFO  Started: Metals version 0.11.7 in workspace 'C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example' for client Visual Studio Code 1.69.2.
+2022.07.22 14:14:22 INFO  time: initialize in 0.75s
+2022.07.22 14:14:22 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.07.22 14:14:23 INFO  Attempting to connect to the build server...
+2022.07.22 14:14:23 INFO  Bloop uses C:\Program Files\Java\jdk1.8.0_321\jre defined at C:\Users\JacobMonks\.bloop\bloop.json
+2022.07.22 14:14:22 INFO  skipping build import with status 'Installed'
+2022.07.22 14:14:23 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\.metals\bsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.07.22 14:14:23 INFO  Attempting to connect to the build server...
+2022.07.22 14:14:23 INFO  Bloop uses C:\Program Files\Java\jdk1.8.0_321\jre defined at C:\Users\JacobMonks\.bloop\bloop.json
+2022.07.22 14:14:23 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\JacobMonks\Documents\GitHub\BigData05312022\Notes\Week6\Scala_Example\project\.metals\bsp.trace.json or C:\Users\JacobMonks\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2022.07.22 14:14:23 INFO  time: Connected to build server in 0.43s
+2022.07.22 14:14:23 INFO  Connected to Build server: Bloop v1.5.2
+2022.07.22 14:14:24 INFO  shutting down Metals
+2022.07.22 14:14:24 INFO  Shut down connection with build server.
+2022.07.22 14:14:24 INFO  Shut down connection with build server.
