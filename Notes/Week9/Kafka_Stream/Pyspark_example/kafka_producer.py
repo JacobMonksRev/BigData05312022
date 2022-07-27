@@ -1,5 +1,5 @@
 #kafka_producer.py
-
+# This example comes courtesy of Ajay Jayantilal Singala
 from kafka import KafkaProducer
 from datetime import datetime
 import time

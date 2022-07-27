@@ -1,4 +1,5 @@
 #kafka_streaming_avro_demo.py
+# This example comes courtesy of Ajay Jayantilal Singala
 from pyspark.sql import SparkSession
 from pyspark.sql.avro.functions import from_avro
 from pyspark.sql.functions import col

@@ -1,7 +1,7 @@
 Write a Python function that takes an input integer 'n' and does the following:
 - Determine if 'n' is a prime number (only divisible by itself and 1)
 - If 'n' is a prime number, print "Prime".
-- If 'n' is a composite number, print "Composite"
+- If 'n' is a composite number, print "Composite".
 
 Ex1. n = 23
 23 is divisible by 1 and 23 only => 23 is prime.

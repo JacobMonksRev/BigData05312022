@@ -1,5 +1,5 @@
 #kafka_consumer.py
-
+# This example comes courtesy of Ajay Jayantilal Singala
 from sys import api_version
 from kafka import KafkaConsumer
 from json import loads

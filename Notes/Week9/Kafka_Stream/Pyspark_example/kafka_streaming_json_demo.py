@@ -1,5 +1,5 @@
 #kafka_streaming_json_demo.py
-
+# This example comes courtesy of Ajay Jayantilal Singala
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.types import *

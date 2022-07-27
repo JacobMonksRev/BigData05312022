@@ -1,4 +1,5 @@
 #kafka_producer_csv.py
+# This example comes courtesy of Ajay Jayantilal Singala
 # Before using this module, you must do: 
 # ```pip install kafka-python```
 from sys import api_version

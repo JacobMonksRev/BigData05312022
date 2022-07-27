@@ -1,4 +1,5 @@
 #kafka_producer_avro.py
+# This example comes courtesy of Ajay Jayantilal Singala
 from confluent_kafka import Producer
 from avro import schema
 import avro.io

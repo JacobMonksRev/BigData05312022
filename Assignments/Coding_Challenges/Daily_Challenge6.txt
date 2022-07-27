@@ -1,0 +1,36 @@
+Write a python function that takes in a list of numbers and creates a dictionary where the keys are
+each number that exists in the list, and the values are how many times that number appears in the list.
+
+Ex.
+input: lst = [1,4,2,1,2,3]
+output: dict = {1:2 , 2:2 , 3:1 , 4:1}
+
+Solution 1:
+
+def fun(list):
+	dict = {}
+	for i in list:
+		dict[i] = list.count(i)
+	return dict
+
+Solution 2:
+
+from collections import Counter
+
+def fun2(list):
+	return Counter(list)
+
+Solution 3:
+
+def fun3(list):
+	dict = {}
+	dictval = 0
+	for i in list:
+		for j in list:
+			if i == j:
+				dictval += 1
+		dict.update({i:dictval})
+		dictval = 0
+	return dict
+
+

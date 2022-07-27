@@ -1,4 +1,5 @@
 #kafka_streaming_csv_demo.py
+# This example comes courtesy of Ajay Jayantilal Singala
 # run this file in Ubuntu terminal (wsl) with:
 # $SPARK_HOME/bin/spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 kafka_streaming_csv_demo.py
 from pyspark.sql import SparkSession
