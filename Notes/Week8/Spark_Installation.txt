@@ -9,14 +9,14 @@ Verify the installed dependencies:
 ```git --version```
 
 ### Spark Download
-https://www.apache.org/dym/closer.lua/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz
+https://www.apache.org/dyn/closer.lua/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz
 
-```wget https://dlcdn.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz```
+```wget https://dlcdn.apache.org/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz```
 //Extract the saved archive:
-```tar xvzf spark-3.2.1-bin-hadoop3.2.tgz```
-```sudo mv spark-3.2.1-bin-hadoop3.2 /opt```
+```tar xvzf spark-3.3.0-bin-hadoop3.tgz```
+```sudo mv spark-3.3.0-bin-hadoop3 /opt```
 ```cd /opt
-```sudo mv spark-3.2.1-bin-hadoop3.2 spark```
+```sudo mv spark-3.3.0-bin-hadoop3 spark```
 
 ### Configure Spark environment
 ```vi ~/.profile```
