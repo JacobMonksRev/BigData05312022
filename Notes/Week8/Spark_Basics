@@ -31,6 +31,7 @@ RDD - Resilient Distributed Dataset
     3. use a textfile (of format csv).
         rdd3 = sc.textFile('/path/textfile.txt')
     4. Use an existing dataframe or dataset.
+    5. Persist an RDD (more on that later)
 
 - The LINEAGE of an RDD refers to all the transformations that were made to obtain the RDD.
     - lineage can be found using method .toDebugString
