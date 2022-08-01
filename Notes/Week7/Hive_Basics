@@ -79,7 +79,11 @@ Partitions and Buckets:
       - Since bucketing works on hashing instead of partitions, the buckets might be of unequal number of rows.
           - Could cause performance issues.
 
-    CREATE TABLE table_name (col1 datatype, col2 datatype, ...) PARTITIONED BY (col1)
+      - "many small files problem"
+            - partitioning/bucketing creates a bunch of small subsections that makes the file system harder to manage.
+            - This makes data mor ecumbersome to navigate and can have an adverse effect on performance.
+
+    CREATE TABLE table_name (col1 datatype, col2 datatype, ...) PARTITIONED BY (col3 datatype)
     CREATE TABLE table_name (col1 datatype, col2 datatype, ...) CLUSTERED BY (col1) into 5 buckets
     
 Loading data into a Hive table:
