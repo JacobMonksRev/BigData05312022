@@ -28,7 +28,7 @@ RDD - Resilient Distributed Dataset
 - Creating an RDD:
     1. parallelize an existing collection.
     2. transform another rdd.
-    3. use a textfile (of format csv).
+    3. use an existing file (textfeilr, csv, parquet, etc.)
         rdd3 = sc.textFile('/path/textfile.txt')
     4. Use an existing dataframe or dataset.
     5. Persist an RDD (more on that later)
