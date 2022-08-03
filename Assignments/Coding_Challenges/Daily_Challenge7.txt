@@ -1,0 +1,46 @@
+Write a python function that takes a string as input and returns the string with all characters reversed.
+If the word is spelled the same forward and backward (e.g. racecar), print out the word "Palindrome".
+
+Solution 1:
+
+def fun1(str1)
+	str2 = str1[::-1]
+
+	if str1 == str2:
+		print("Palindrome")
+	return str2
+
+Solution 2:
+
+def stringReversal(string):
+    stringList = []
+    reversedString = ''
+    for i in string:
+        stringList.append(i)
+        
+    stringList.reverse()
+    for i in stringList:
+        reversedString = reversedString + i
+    if reversedString == string:
+        print("Palindrome")
+    else:
+        print(reversedString)
+
+Solution 3:
+
+def fun2(str):
+	str2 = "".join(reversed(str))
+	if str2 == str:
+		print("Palindrome")
+	else:
+		return str2
+
+Solution 4:
+
+def word(str):
+    newStr = ""
+    for i in range(len(str)):
+        newStr += str[len(str) - 1 - i]
+    if newStr == str:
+        print("Palindrome")
+    return newStr
