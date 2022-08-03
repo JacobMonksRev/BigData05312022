@@ -56,6 +56,9 @@ RDD - Resilient Distributed Dataset
 
     As of Spark 2.0 dataSets and DataFrames are unified types.
     - DataFrame = DataSet[rows]
+    - DataFrame is now a type alias of DataSet.
+    - This only applies in Scala since DataSets are not supported in Pyspark.
+    - Instead, most DataSet methods are included features of DataFrames in Pyspark.
 
 - Transformations vs Actions
     - Transformations:
