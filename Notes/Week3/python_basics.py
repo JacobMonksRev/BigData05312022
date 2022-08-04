@@ -3,7 +3,7 @@ PYTHON NOTES
 What is Python?
 Python is a general-purpose high-level programming language
     High-Level means human-readable
-    Low level is machien-readable
+    Low level is machine-readable
 Abstraction Levels:
     Machine Code - binary (1s and 0s)
     Assembly Code - invented in 1940s
@@ -43,13 +43,6 @@ Python Statements:
     Compound Statement
     >>> if x > 4:
             print("Hello")
-    Loops:
-    While Loop
-    while(true):
-        print("X is greatre than 5")
-    For Loop
-    for i in range(10):
-        var = var + i
 
 Python datatypes:
     int - integer
@@ -60,7 +53,7 @@ Python datatypes:
 
     To see the datatype of any entity, you can use: type()
     You can also change the type of data that something is:
-        Use the datatype name a sa function
+        Use the datatype name as a function
         Ex. 7 into a float =>
             var = 7
             var = float(var)
@@ -121,7 +114,7 @@ Python Operators:
             listofAnimals = ['cat', 'dog', 'mouse', 'bird']
             var = 'cat'
             Ex. if var in listofAnimals:
-                    print("Cat is in the animal lsit")
+                    print("Cat is in the animal list")
         NOT IN
     Bitwise Operators:
         10011101
@@ -130,24 +123,6 @@ Python Operators:
         ^ - xor (exclusive or)
         >> - right shift 1101110
         << - left shift
-
-If statement
-    Will execute if a condition is true
-
-    if var == 10:
-        print(var)
-
-You can expand an If statement by using elif (else-if)
-Use to check for mlutiple conditions at a time
-
-    if x < 5:
-        print("X is less than 5")
-    elif x < 10:
-        print("X is less than 10, but greater than 5")
-    else x > 10:
-        print("X is greater than 10")
-
-TO execute a .py file in terminal you run the command: py file_name.py
 
 Collections:
     List - ordered set of values, mutable (changeable)
@@ -228,15 +203,50 @@ Interpreter vs Compiler
         Compiler doesn't know the difference between keywords and given identifiers.
         Therefore, you cannot name an entity the same name as a keyword.
 
+Flow Control Statements:
+- These are how we control the flow of the code.
+- determine what code gets executed and when.
+
+    If statement:
+        Will execute if a condition is true
+
+        if var == 10:
+            print(var)
+
+    You can include more conditions in an If statement by using 'elif' (else-if)
+    or you can use 'else' to run code for all other scenarios.
+    Use to check for multiple conditions at a time.
+
+        if x < 5:                                               # checks if x is less than 5
+            print("X is less than 5")                           # run this if x is less than 5
+        elif x < 10:                                            # if not less than 5, check if less than 10
+            print("X is less than 10, but greater than 5")      # run this if x is less than 10
+        else:                                                   # encompasses all other possible values of x
+            print("X is greater than 10")                       # run this if the other conditions were not met
+
+    Loops:
+    - Loops will run multiple times until forced to stop.
+        While-Loop
+        - While-loop will run for as long as a condition is True.
+
+            while(true):
+                print("The condition is True.")
+    
+        For-Loop
+        - For-loops run through a defined number of iterations.
+        - to run the code in a for loop exactly 10 times, you can do the following:
+
+            for i in range(10):
+                print(i)
+
+TO execute a .py file in terminal you run the command: py file_name.py
 
 Functions
-    A block of code that does a specific unit of work
-    A function runs when it is called
-    A function is useful if you have code that you would like to re-use
+    A block of code that does a specific unit of work.
+    A function runs when it is called and can return a value.
+    A function is useful if you have code that you would like to re-use.
+    Declare a function using 'def' keyword and giving the function a name.
 
-    x_value(10)
-    x_value(1)
-    x_value(16)
         """
 def powers_of_2(e = 5):
     return 2 ** e
@@ -259,7 +269,7 @@ def do_nothing():
 """
     Higher Order Functions
         A function is considered a higher order if it takes
-        a function as an argument or returns a function for output.
+        a function as an argument or returns a function as an output.
 """
 
 print("The result of this math is", mult(5, powers_of_2(7)))
@@ -286,9 +296,9 @@ lambda:
     A small, anonymous function
     Take any number of arguments
     But can only have one expression
+    No need to define a lambda ahead of time like a function.
 """
 
-cube = lambda n : n ** 3
 def expo(y):
     return lambda n : n ** y
 
@@ -328,24 +338,46 @@ Namespace:
 Object-Oriented Programming:
     A programming paradigm that revolves around classes and objects
     Encompasses a certain structure of programming
-    Python is considered to be an object-oriented language, but it can also perform functional.
+    Python is considered to be an object-oriented language, but it can also perform functional programming.
     Therefore, Python is multi-paradigmed
 
-    Classes: A structure of blueprint for creating new objects
-    Objects: An instance of a class, it may contain variations or
-             adaptations of the class it is created from
+    Class: A structure or blueprint for creating new objects
+    Object: An instance of a class, it may contain variations or
+            adaptations of the class it is created from
+
+    Example of a class:
+    class Employee:
+        isHuman = True
+        position = 'employee'
+        def __init__(self, name, salary, dept):
+            self.name = name
+            self.salary = salary
+            self.dept = dept
+        def work(self):
+            print(self.name, "is working.")
+
+    Example of an object of the 'Employee' class:
+
+    Emp1 = Employee("Bob",50000,"Marketing")
+
     Four pillars of OOP:
         1. Inheritance - A child class will inherit the attributes and methods from a parent class.
-        
-        2. Polymorphism - a child class(es) and parent class can contain the same methods that do different things.
-            Ex. Animal class with a 'move()' function
-                Snake will slither
-                Dog will run
-                Pengiun will waddle
-                Falcon will fly
+            - In Python, inheritance is done using parentheses ()
+            - In Java and other languages, it is done using the keyword 'extends'
 
-        3. Abstraction - the specific functions or attributes of a class can be abstracted away (or obscured) from the user
-                    - handles complexity by hiding unnecessary details from the user
+            Ex:
+            class Manager(Employee)
+        
+        2. Polymorphism - a child class and parent class can contain the same methods that do different things.
+            
+            Ex.
+            class Manager(Employee):
+                def work(self):
+                    print(self.name, "is attending a meeting.")
+
+        3. Abstraction - the specific functions or attributes of a class can be abstracted away (or obscured)
+                         from the user
+                       - handles complexity by hiding unnecessary details from the user
             Ex. Everyone has and uses a coffee machine
                 Not everyone knows what a coffee machine actually 'does' on the inside.
                 You input the coffee beans and water
@@ -353,7 +385,7 @@ Object-Oriented Programming:
             When you call a class, the attributes and functions are not necessarily known to you,
             but if you know how the class works, then you can still use it.
 
-            Classes can have different access modifiers:
+            In Java and other OOP, Classes can have different access modifiers:
                 1. Public, the default for a class
                 2. Private, if a module instantiates a private class, that module cannot see the class's methods or variables
                 3. Abstract, has defined methods (both abstract and non-abstract) but no implementation for those methods
@@ -405,9 +437,10 @@ Object-Oriented Programming:
                             # protected attribute
                             self.__salesData = list[32.13, 65.89]
 
-            When to use encapsulation:
+            When to use private and protected:
                 You want certain values to remain unchanged or difficult to change accidentally.
                 Adds a layer of security to all attributes and methods in your class.
+                Increases the amount of control over your code.
 
 Strings:
     A datatype that is a list of characters in quotes. 'My name is Jacob'
@@ -425,6 +458,9 @@ Strings:
         str = '   Hello!     \n'
         print(str)
         print(str.strip())
+    Strings are often treated like collections:
+    - They can be iterated through using for loops.
+    - Individual characters can be accessed with an index [].
 
 
 Handling Files in Python:
@@ -441,9 +477,12 @@ Handling Files in Python:
 
     To open a file to write to it:
     myFile = open('newFile.txt', 'w')
+    myFile.write("This is a new line.")
+    Note: using 'w' will overwrite anything that is already in the file.
 
     To open a file to append to the end of it:
     myFile = open('newFile.txt', 'a')
+    myFile.write("This is an appended line.")
 
     When you are done with a file, be sure to close it:
     myFile.close()
@@ -498,7 +537,7 @@ Regular Expressions:
 
     import re
     x = 'Loraine sings in the rain in Spain'
-    check_regex = re.findall('ain')
+    check_regex = re.findall('ain',x)
 
     Search for phone numbers:
         Phone numbers can be in different forms:
@@ -513,11 +552,11 @@ Errors and Exceptions:
     An error is a problem in the code that the compiler / interpreter picks up
         Ex. x = int(input("Please enter a number: "))
         This will create a ValueError if the input is not information that can be converted into 'int'
-        Errors normally occur:
+        Errors that normally occur:
             Syntax errors (incorrectly written code)
-            Runtime errors (errors that occur when the proram tries to execute a command that cannot work)
+            Runtime errors (errors that occur when the program tries to execute a command that cannot work)
         Exception is an error that occurs while the program is running.
-            The terminal usually tells you the type of error tht occured
+            The terminal usually tells you the type of error tht occurred
 
             ValueError
             FileNotFoundError
@@ -526,12 +565,12 @@ Errors and Exceptions:
             BaseError (parent class of all errors)
 
         You can create your own exceptions to occur when something happens that you do not want
-        raise keyword
+        by using the 'raise' keyword
         
 
     Exception handling
         try-except block
-        The code you think may create an exception goe in the try: block
+        The code you think may create an exception goes in the try: block
 
         try:
             Code that could create an error
@@ -569,20 +608,20 @@ import unittest
 
 - A function can only be tested if it has a return value.
 
-def printing(input):
-    print(input)                # by itself, this cannot be tested.
-    return str(input) + "newstring"   # adding this allows it to be tested
+    def printing(input):
+        print(input)                # by itself, this cannot be tested.
+        return str(input) + "newstring"   # adding this allows it to be tested
 
-class MyTest(unittest.TestCase):
-    def my_test(self):
-        self.assertEqual()
-        self.assertNotEqual()
-        self.assertTrue()
-        self.assertFalse()
-        self.assertIs()
-        self.assertIsNot()
-        self.assertIsInstance()
-        self.assertIsNotInstance()
+    class MyTest(unittest.TestCase):
+        def my_test(self):
+            self.assertEqual()
+            self.assertNotEqual()
+            self.assertTrue()
+            self.assertFalse()
+            self.assertIs()
+            self.assertIsNot()
+            self.assertIsInstance()
+            self.assertIsNotInstance()
 
 Collection Comprehension:
 - a short and concise way to create a new collection from one that already exists.
@@ -595,7 +634,7 @@ Ex. you want to take in a list of numbers, and create a list that has the even n
 
 - Dictionary Comprehension
     dict2 = {key:value for (key,value) in dict2 if (key, value satisfies this)}
-Ex. use a list of numbers to create a dictionary where keys and vlaues are the numbers followed bythe numbers squared.
+Ex. use a list of numbers to create a dictionary where keys and values are the numbers followed by the numbers squared.
     list1 = [1,2,3,4,5,6,7,8,9]
     dict1 = {}
     dict1 = {el:el**2 for el in list1}
@@ -611,9 +650,9 @@ Ex. use a list of numbers to create a dictionary where keys and vlaues are the n
 PyPI
 - Python Package Index
 - python's dedicated repository for importing modules and packages.
-- Allows developers to create their own modules and then dliver them remotely so that other developers can easily access them.
+- Allows developers to create their own modules and then deliver them remotely so that other developers can easily access them.
 - Developers can import the previously created libraries for their own purposes.
-- Packages are just collecitons of modules.
+- Packages are just collections of modules.
 
 pip
 - Python package installer.
@@ -622,6 +661,6 @@ pip
     pip search - searches for all PyPI packages
     pip install - install package
     pip uninstall - uninstall a previously installed package
-    pip list - create a list of all currently installed packages
+    pip list - show a list of all currently installed packages
 """
 
