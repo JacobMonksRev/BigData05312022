@@ -26,6 +26,11 @@ IDE - Integrated Development Environment
     VS Code
     IntelliJ
 
+Interpreted Language vs Compiled language:
+    - Interpreters run and evaluate each line one at a time and check that line for errors before running.
+        - Python is an interpreted language
+    - Compilers will go over the entire script before running anything and check the whole program for errors.
+        - Java is a compiled language
 """
 def x_value(x):
     if x < 5:
@@ -89,7 +94,7 @@ Python Operators:
             2
         Exponent Equals **=
         modulo equals %=
-    Comparison Operators:
+    Comparison Operators (return True or False):
         == Check if equal
         > greater than
         < less than
@@ -97,11 +102,11 @@ Python Operators:
         >= greater than or equal to
         <= less than or equal to
     Logical Operators:
-        AND - return true if both statements are true
-            Ex. if x > 5 AND x < 10:
+        AND - return true if both statements are true    &
+            Ex. if x > 5 & x < 10:
                     print("x is between 5 and 10")
-        OR - return true if either statement is true
-            Ex. if right_eye == closed OR left_eye == closed
+        OR - return true if either statement is true     |
+            Ex. if right_eye == closed | left_eye == closed
                     print("depth perception is lost")
         NOT - returns the opposite
             Ex. if NOT sleep_status
@@ -119,7 +124,7 @@ Python Operators:
             listofAnimals = ['cat', 'dog', 'mouse', 'bird']
             var = 'cat'
             Ex. if var in listofAnimals:
-                    print("Cat is in the animal list")
+                    print(var, "is in the animal list")
         NOT IN
     Bitwise Operators:
         10011101
@@ -236,7 +241,9 @@ Flow Control Statements:
 
             while(true):
                 print("The condition is True.")
-    
+            
+            ctrl + C to stop a running program, do this in case of an infinite loop.
+
         For-Loop
         - For-loops run through a defined number of iterations.
         - to run the code in a for loop exactly 10 times, you can do the following:
@@ -480,6 +487,13 @@ Handling Files in Python:
     myFile.seek(0)              - reset the pointer to the beginning of the file
     myFile.seek(#)              - set the pointer at a specific line
 
+    use 'with' to read each line individually.
+    Ex.
+    myFile = open('newfile.txt')
+    with myFile:
+        for line in myFile.readlines():
+            print(line)
+
     To open a file to write to it:
     myFile = open('newFile.txt', 'w')
     myFile.write("This is a new line.")
@@ -574,7 +588,8 @@ Errors and Exceptions:
         
 
     Exception handling
-        try-except block
+        try-except block.
+        called a try-catch block in other languages.
         The code you think may create an exception goes in the try: block
 
         try:
