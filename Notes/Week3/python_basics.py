@@ -51,6 +51,11 @@ Python datatypes:
     boolean - true/false
     complex - imaginary numbers
 
+    Python does 'implicit typing'
+        - it will automatically determine the datatype of new data.
+    Python is 'strongly typed'
+        - it cannot automatically change the datatype of data.
+        - Ex. it cannot add an Int and a String, even if that String is '1'.
     To see the datatype of any entity, you can use: type()
     You can also change the type of data that something is:
         Use the datatype name as a function
