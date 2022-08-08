@@ -50,14 +50,19 @@ Problems that can occur:
     1. Dirty Read: A query reads data that has not yet been committed. Results in inconsistent data
     2. Unrepeatable Read: transaction reads data once, then reads it again and gets a different value
         The data has been modified / deleted since the first read.
-    3. Phantom Read: A transaction grabs a set of data two times, and the second time it finds a newly committed piece of data.
+    3. Phantom Read: A transaction grabs a set of data two times, and the second time it finds a piece of data that didn't exist the first time.
 
     Isolation Levels:
         4 Main levels:
-        Read uncommitted, allows Dirty Reads and phantom reads. The most insecure level.
-        Read Committed, you may only read data from committed transactions, avoids dirty reads.
-        Repeatable Reads, avoids unrepeatable reads by keeping data consistent.
-        Serializeble, the most secure level, avoids phantom reads by forcing transactions to be sequential.
+        Read uncommitted: allows Dirty Reads and phantom reads. The most insecure level.
+        Read Committed: you may only read data from committed transactions, avoids dirty reads.
+        Repeatable Reads: avoids unrepeatable reads by not allowing to read data that has not been committed.
+        Serializeble: the most secure level, avoids phantom reads. Other transactions cannot insert new rows with
+            key values that fall in the range of keys read by a currently ongoing transaciton.
+
+    You can change the isolation level of your transactions by using:
+        SET TRANSACTION ISOLATION LEVEL:
+
 
 Normalization
 - A way to describe the redundancy or integrity of data in your database.
