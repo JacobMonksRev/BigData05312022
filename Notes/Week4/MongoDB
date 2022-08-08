@@ -243,3 +243,24 @@ BASE:
     - Any client on the server who requests the data will receive it.
 
     The idea is that the data can be resolved or fixed at a later time due to Mongo's flexibility.
+
+MySQL vs MongoDB:
+                        |   MySQL:             |   MongoDB:
+------------------------+----------------------+-------------------------------
+Data Representation:    | Records organized    | JSON documents
+                        | into columns         |
+------------------------+----------------------+-------------------------------
+Schema:                 | Define schema in     | No defined schema
+                        | table creation       |
+------------------------+----------------------+-------------------------------
+Types of Data:          | Structured only      | Structured, semi-structured,
+                        |                      | and unstructured
+------------------------+----------------------+-------------------------------
+Joins?                  | All types            | Can embed documents,
+                        |                      | more limited
+------------------------+----------------------+-------------------------------
+Priority:               | Data and transaction | Cloud-based applications
+                        | security             |
+------------------------+----------------------+-------------------------------
+Scalability:            | Vertical and Hybrid  | Horizontal Scaling
+                        | scaling              |
