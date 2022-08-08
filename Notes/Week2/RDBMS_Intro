@@ -98,5 +98,5 @@ CRUD Operations: Create, Read, Update, Delete
 - Standard operations that a DBMS needs to interact with data.
     Update: keyword in MySQL that allows you to edit a piece of data already inserted.
     UPDATE table_name SET col1 = 'value' WHERE student_id = 4
-        - Best rule of thumb is to use the Primary Key in the WHERE clause
-        - That way the system will not be socnfused about what record you are changing.
+        - Best rule of thumb is to use the Primary Key in the WHERE clause.
+        - That way the system will not be confused about what record you are changing.

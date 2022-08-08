@@ -46,7 +46,7 @@ Key words in SQL:
 
         Aggregates: Combining data together to analyze its grouping in some way.
             SUM, MAX, MIN, LAST, FIRST, AVG, COUNT
-            Only possible with GROUP BY clauses
+            Most of the time, this is only possible with GROUP BY clauses
         Scalars: Changing each individual value.
             LCASE, UCASE, LEN (length), ROUND, CIEL, FLOOR
             FLOOR: 3.2 -> 3, 4.9 -> 4 (if there is a decimal, round down)
@@ -86,6 +86,8 @@ Key words in SQL:
         RIGHT/LEFT OUTER JOINS - return all records that match AND all records from the RIGHT/LEFT table
         FULL OUTER JOIN - return all records in both tables IF there is a match in either left or right
         SELF JOIN - When you want to compare multiple columns from the same table to each other
+        CROSS JOIN - return every record of the first table paired with every record of the second table.
+            Ex. If you CROSS JOIN two tables with 10 records each, the result will be 100 records.
 
 AS - Alias
 Use AS when you want to rename a column in your output
@@ -187,7 +189,7 @@ VIEWS
     2. There should be no DISTINCT constraint in the SELECT
     3. View should not be made from multiple tables (through a JOIN clause or otherwise)
     4. Views should not have NOT NULL values
-    5. Views hsould not be made from nested queries
+    5. Views should not be made from nested queries
 
     CREATE OR REPLACE VIEW view_name
 
@@ -208,7 +210,7 @@ INDEXING
     DROP INDEX index_name;
 
     When to use an Index:
-        A column has a lot of variety (high cardinality) in the data sotred there.
+        A column has a lot of variety (high cardinality) in the data stored there.
         A table has a large number of records
         When you use JOINS to combine columns frequently.
     
