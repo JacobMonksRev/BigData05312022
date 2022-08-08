@@ -61,7 +61,7 @@ Problems that can occur:
             key values that fall in the range of keys read by a currently ongoing transaciton.
 
     You can change the isolation level of your transactions by using:
-        SET TRANSACTION ISOLATION LEVEL:
+        SET TRANSACTION ISOLATION LEVEL
 
 
 Normalization
