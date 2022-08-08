@@ -55,10 +55,11 @@ Problems that can occur:
     Isolation Levels:
         4 Main levels:
         Read uncommitted: allows Dirty Reads and phantom reads. The most insecure level.
-        Read Committed: you may only read data from committed transactions, avoids dirty reads.
-        Repeatable Reads: avoids unrepeatable reads by not allowing to read data that has not been committed.
+        Read Committed: you may only read data that has been committed, avoids dirty reads.
+        Repeatable Reads: avoids unrepeatable reads. No other transaction can modify data that has been read by
+                          the current transaction until it has completed.
         Serializeble: the most secure level, avoids phantom reads. Other transactions cannot insert new rows with
-            key values that fall in the range of keys read by a currently ongoing transaciton.
+                          key values that fall in the range of keys read by a currently ongoing transaciton.
 
     You can change the isolation level of your transactions by using:
         SET TRANSACTION ISOLATION LEVEL
