@@ -18,9 +18,10 @@ NoSQL allows us to organize wide variety of data.
 
 Mongo
     - document based NoSQL
+
     Terminology:
     MySQL           Mongo
-    Databse         Database
+    Database        Database
     Table           Collection
     Row/Record      Document
     Column          Field
@@ -170,10 +171,10 @@ db.CollectionName.find( { field: {$regex: 'expression', $options: 'option'} } )
     3. 'x' - ignores whitespace or any characters enclosed in comments (#)
     4. 's' - allows the dot character '.' to match all characters including newlines.
 
-Ex.
-db.CollectionName.find( { field: {$regex: 'string', $options: 'i'} } ) #contains this string
-db.CollectionName.find( { field: {$regex: '^[ABC]', $options: 'i'} } ) #start with these letters
-db.CollectionName.find( { field: {$regex: '[ABC]$', $options: 'i'} } ) #ends with these letters
+    Ex.
+    db.CollectionName.find( { field: {$regex: 'string', $options: 'i'} } ) #contains this string
+    db.CollectionName.find( { field: {$regex: '^[ABC]', $options: 'i'} } ) #start with these letters
+    db.CollectionName.find( { field: {$regex: '[ABC]$', $options: 'i'} } ) #ends with these letters
 
 Dropping Collections:
 - Delete is the keyword for documents

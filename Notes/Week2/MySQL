@@ -115,10 +115,11 @@ EXCEPT: (NOT IN in MySQL):
     SELECT ... WHERE columns_name NOT IN (SELECT ...) 
     SELECT ... WHERE column_name NOT IN (set of values)
     Grab all records in the first statement EXCEPT for those that appear in the second
-
-Constraints:
-    DISTINCT - seleting unique rows with no duplicates
+DISTINCT - seleting unique rows with no duplicates
         SELECT DISTINCT ...
+        
+Constraints:
+    
     Creating a table with constraints:
         CREATE TABLE (
             student_id int, 
