@@ -1,2 +1,2 @@
-This is the first line in my newFile.
-This is the second line.
+Employee Jacob 50000 Sales
+Manager Richard 80000 HR
