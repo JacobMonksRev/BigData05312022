@@ -145,8 +145,9 @@ def mult():
 
 ****************************************************************************************************
 
-6. Write a python function that takes 10 user input numbers, and finds the maximum value among them.
-
+6. Write a python function that takes any number of user input numbers, and finds the maximum value among them.
+    Ex. input = 3,7,32,636,23,88,0
+        output = 636
 ****************************************************************************************************
 
 Ex1.
