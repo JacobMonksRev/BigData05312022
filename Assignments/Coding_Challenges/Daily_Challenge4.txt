@@ -1,7 +1,8 @@
 We have a table in MySQL with the following schema:
 
-Employees:
-==========================
+	Employees:
+Fields		| Datatypes
+----------------+---------------
 Name		| VARCHAR(255)	
 Emp_ID		| INT		
 Dept		| VARCHAR(255)	

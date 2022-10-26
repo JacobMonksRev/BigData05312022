@@ -1,2 +1,0 @@
-banana,jacob,python,example,file
-apple,bob,scala,exercise,module
